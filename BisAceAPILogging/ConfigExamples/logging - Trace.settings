@@ -1,0 +1,3 @@
+minimum-level=Verbose
+using:Trace=Serilog.Sinks.Trace
+write-to:Trace=

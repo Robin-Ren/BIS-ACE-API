@@ -1,0 +1,4 @@
+minimum-level=Verbose
+using:RollingFile=Serilog.Sinks.RollingFile
+write-to:RollingFile.pathFormat=g:\utils\logs\WebCP-{Date}.log
+write-to:RollingFile.retainedFileCountLimit=10

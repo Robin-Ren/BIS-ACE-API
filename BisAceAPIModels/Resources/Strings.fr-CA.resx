@@ -1,0 +1,1710 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddressInfoIsLimitedTo500Characters" xml:space="preserve">
+    <value>L'info de l'adresse est limitée à 500 caractères.</value>
+  </data>
+  <data name="ALineAttachmentWithTheGivenIDCouldNotBeFound" xml:space="preserve">
+    <value>Un attachement de ligne avec l'ID donnée n'a pas été trouvé.</value>
+  </data>
+  <data name="AnErrorOccurredAttemptingToConfirmIntegrationReceived" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la tentative de confirmation de l'intégration reçue.</value>
+  </data>
+  <data name="AnErrorOccurredAttemptingToSetIntegrationError" xml:space="preserve">
+    <value>An error occurred attempting to set integration error.</value>
+  </data>
+  <data name="AnErrorOccurredAttemptingToUpdateOneOfTheQuoteFields" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la tentative de mise à jour de l'un des champs de la soumission.</value>
+  </data>
+  <data name="AnErrorOccurredAttemptingToUpdateQuoteExtraFields" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la tentative de mise à jour des champs supplémentaires de soumission.</value>
+  </data>
+  <data name="AnErrorOccurredAttemptingToUpdateTheQuotesManufacturingStatus" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la tentative de mise à jour de l'état de fabrication de la soumission.</value>
+  </data>
+  <data name="AnErrorOccurredAttemptingToWriteAQuoteHistoryEntry" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la tentative d'écriture d'une entrée d'historique de soumission.</value>
+  </data>
+  <data name="AnErrorOccurredLinkingTheAccountPleaseConfirmThatTheCodeIsAccurate" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la liaison du compte. S'il vous plaît confirmer que le code est exact.</value>
+  </data>
+  <data name="AnIssueOccurredFindingTheQuote" xml:space="preserve">
+    <value>Un problème est survenu lors de la recherche de la soumission.</value>
+  </data>
+  <data name="AQuoteAttachmentWithTheGivenIdCouldNotBeFound" xml:space="preserve">
+    <value>Une pièce jointe de soumission avec l'ID donnée n'a pas pu être trouvée.</value>
+  </data>
+  <data name="AReferenceIdForAtLeastOneOfTheCustomerFieldsMustBeProvided" xml:space="preserve">
+    <value>Un identifiant de référence pour au moins un des champs client doit être fourni.</value>
+  </data>
+  <data name="AUserWithTheSpecifiedEmailDoesNotExist" xml:space="preserve">
+    <value>Un utilisateur avec l'adresse courriel spécifiée n'existe pas.</value>
+  </data>
+  <data name="BearerTokenNotFoundInTheHeader" xml:space="preserve">
+    <value>Jeton porteur non trouvé dans l'en-tête.</value>
+  </data>
+  <data name="CannotCopyThisLine" xml:space="preserve">
+    <value>Impossible de copier cette ligne.</value>
+  </data>
+  <data name="CannotMoveLinesBasedOnCurrentSettings" xml:space="preserve">
+    <value>Impossible de déplacer les lignes en fonction des paramètres actuels.</value>
+  </data>
+  <data name="DisplayFileNameWasSpecifiedButNoImageFileWasSpecified" xml:space="preserve">
+    <value>Le nom du fichier d'affichage a été spécifié mais aucun fichier d'image n'a été spécifié.</value>
+  </data>
+  <data name="DisplayFileNameWasSpecifiedWithNoImageFile" xml:space="preserve">
+    <value>Le nom du fichier d'affichage a été spécifié sans fichier d'image.</value>
+  </data>
+  <data name="DisplayNameIsLimitedTo100Characters" xml:space="preserve">
+    <value>Le nom d'affichage est limité à 100 caractères.</value>
+  </data>
+  <data name="EmailNotSent" xml:space="preserve">
+    <value>Courriel non envoyé.</value>
+  </data>
+  <data name="ErrorProducingReport" xml:space="preserve">
+    <value>Erreur lors de la production du rapport.</value>
+  </data>
+  <data name="FailedToApplyTheUpdatedLinesToTheNewQuote" xml:space="preserve">
+    <value>Impossible d'appliquer les lignes mises à jour à la nouvelle soumission.</value>
+  </data>
+  <data name="FailedToSaveTheQuoteAttachments" xml:space="preserve">
+    <value>Échec de l'enregistrement des pièces jointes de soumission.</value>
+  </data>
+  <data name="FailedToSaveTheUpdatedQuote" xml:space="preserve">
+    <value>Impossible d'enregistrer la soumission mise à jour.</value>
+  </data>
+  <data name="FileNameIsLimitedTo500Characters" xml:space="preserve">
+    <value>Le nom de fichier est limité à 500 caractères.</value>
+  </data>
+  <data name="InconsistentParametersALogoWasSpecifiedAndTheExistingImageShouldBeKept" xml:space="preserve">
+    <value>Paramètres incohérents: un logo a été spécifié et l'image existante doit être conservée.</value>
+  </data>
+  <data name="InspireIsNotEnabled" xml:space="preserve">
+    <value>Inspire n'est pas activé.</value>
+  </data>
+  <data name="InvalidEmptyQuoteIDSpecified" xml:space="preserve">
+    <value>Identifiant de soumission spécifié invalide/vide.</value>
+  </data>
+  <data name="InvalidEmptyQuoteIDSpecifiedQuoteContextIsRequiredToSearchForASKU" xml:space="preserve">
+    <value>Identifiant de soumission spécifié invalide/vide. Un contexte de soumission est requis pour rechercher un sku</value>
+  </data>
+  <data name="InvalidInputFormat" xml:space="preserve">
+    <value>Format d'entrée invalide.</value>
+  </data>
+  <data name="InvalidManufacturingStatusSpecified" xml:space="preserve">
+    <value>L'état de fabrication spécifié n'est pas valide.</value>
+  </data>
+  <data name="InvalidQuoteFieldSpecified" xml:space="preserve">
+    <value>Champ de soumission spécifié est invalide.</value>
+  </data>
+  <data name="InvalidSKUIDMustBeGreaterThanZero" xml:space="preserve">
+    <value>Identifiant sku non valide. Il doit être supérieur à zéro.</value>
+  </data>
+  <data name="LinesCanOnlyBeMovedOnQuotesThatHaveNeverBeenOrdered" xml:space="preserve">
+    <value>Les lignes ne peuvent être déplacées que sur des soumissions qui n'ont jamais été commandées.</value>
+  </data>
+  <data name="MustProvideParametersInTheBody" xml:space="preserve">
+    <value>Doit fournir des paramètres dans le corps.</value>
+  </data>
+  <data name="MustProvideTheLinesWCPLineItemOverviewInTheMessageBody" xml:space="preserve">
+    <value>Doit fournir le WCPLineItemOverview de la ligne dans le corps du message, y compris un LineId correspondant à l'URL.</value>
+  </data>
+  <data name="MustProvideTheQuotesWCPQuoteBillingAddressInTheMessageBody" xml:space="preserve">
+    <value>Doit fournir le WCPQuoteBillingAddress de la soumission dans le corps du message, y compris un QuoteID correspondant à l'URL.</value>
+  </data>
+  <data name="MustProvideTheQuotesWCPQuoteShippingAddressInTheMessageBody" xml:space="preserve">
+    <value>Doit fournir le WCPQuoteShippingAddress de la soumission dans le corps du message, y compris un QuoteID correspondant à l'URL.</value>
+  </data>
+  <data name="MustProvideTheReportsWCPReportInputsInTheMessageBody" xml:space="preserve">
+    <value>Doit fournir les WCPReportInputs du rapport dans le corps du message, y compris un ReportId qui correspond à l'URL.</value>
+  </data>
+  <data name="MustProvideTheWcpCustomerPricingDetailsInTheMessageBody" xml:space="preserve">
+    <value>Doit fournir le WcpCustomerPricingDetails dans le corps du message, y compris un LineItemId qui correspond à l'URL.</value>
+  </data>
+  <data name="MustProvideTheWcpLineItemDealerPricingDetailsInTheMessageBody" xml:space="preserve">
+    <value>Doit fournir le WcpLineItemDealerPricingDetails dans le corps du message, y compris un LineItemId qui correspond à l'URL.</value>
+  </data>
+  <data name="MustProvideTheWCPTrackedGlobalChangesAndCandidatesInTheMessageBody" xml:space="preserve">
+    <value>Doit fournir les WCPTrackedGlobalChangesAndCandidates dans le corps du message, y compris un QuoteId qui correspond à l'URL.</value>
+  </data>
+  <data name="NoAttachmentExistsWithThisQuoteAttachmentId" xml:space="preserve">
+    <value>Aucune pièce jointe n'existe avec cet identifiant de pièce jointe.</value>
+  </data>
+  <data name="NoCenterpointContextFound" xml:space="preserve">
+    <value>Aucun contexte Centerpoint trouvé.</value>
+  </data>
+  <data name="NoCenterpointSystemIDFound" xml:space="preserve">
+    <value>Aucun ID système Centerpoint trouvé.</value>
+  </data>
+  <data name="NoClaimCodeReturnedForUser" xml:space="preserve">
+    <value>Aucun code de réclamation renvoyé pour l'utilisateur.</value>
+  </data>
+  <data name="NoDisplayNameSpecified" xml:space="preserve">
+    <value>Aucun nom d'affichage spécifié</value>
+  </data>
+  <data name="NoInputSpecified" xml:space="preserve">
+    <value>Aucune entrée spécifiée.</value>
+  </data>
+  <data name="NoPricingPreferencesSpecified" xml:space="preserve">
+    <value>Aucune préférence de prix spécifiée.</value>
+  </data>
+  <data name="NoUploadFolderFound" xml:space="preserve">
+    <value>Aucun dossier de téléchargement trouvé.</value>
+  </data>
+  <data name="NoUserInformationFound" xml:space="preserve">
+    <value>Aucune information d'utilisateur trouvée.</value>
+  </data>
+  <data name="OneOrMoreErrorsOccurredWhenValidatingTheHeaderPleaseSeeTheIndividualFieldsForMoreInfo" xml:space="preserve">
+    <value>Une ou plusieurs erreurs se sont produites lors de la validation de l'en-tête. S'il vous plaît voir les champs individuels pour plus d'informations.</value>
+  </data>
+  <data name="ParametersForMovingALineMustBeProvided" xml:space="preserve">
+    <value>Les paramètres de déplacement d'une ligne doivent être fournis.</value>
+  </data>
+  <data name="PutQuoteBillingAddressAsyncIsNotYetSupported" xml:space="preserve">
+    <value>PutQuoteBillingAddressAsync n'est pas encore supporté.</value>
+  </data>
+  <data name="QuoteIDMustBeSpecified" xml:space="preserve">
+    <value>L'identifiant de soumission doit être spécifié.</value>
+  </data>
+  <data name="TheActivationWasSuccessfulButThereWasAnErrorCreatingTheDefaultSetttingsForTheUser" xml:space="preserve">
+    <value>L'activation a réussi, mais une erreur s'est produite lors de la création des paramètres par défaut de l'utilisateur.</value>
+  </data>
+  <data name="TheEmailForTheRequestedUserHasAlreadyBeenConfirmed" xml:space="preserve">
+    <value>Le courriel de l'utilisateur demandé a déjà été confirmé.</value>
+  </data>
+  <data name="TheLineIsNotActiveInTheQuote" xml:space="preserve">
+    <value>La ligne n'est pas active dans la soumission.</value>
+  </data>
+  <data name="TheLineIsSetupChargeAndCannotBeMoved" xml:space="preserve">
+    <value>La ligne est SetupCharge et ne peut pas être déplacée.</value>
+  </data>
+  <data name="ThereIsNothingToUpdateNoPricingFieldsInWcpCustomerPricingDetailsHaveAValue" xml:space="preserve">
+    <value>Il n'y a rien à mettre à jour. Aucun champ de prix sur les WcpCustomerPricingDetails fournis n'a de valeur.</value>
+  </data>
+  <data name="ThereIsNothingToUpdateNoPricingFieldsInWcpDealerPricingDetailsHaveAValue" xml:space="preserve">
+    <value>Il n'y a rien à mettre à jour. Aucun champ de prix sur les WcpDealerPricingDetails fournis n'a de valeur.</value>
+  </data>
+  <data name="TheResultingLineCouldNotBeAddedToTheQuote" xml:space="preserve">
+    <value>La ligne résultante n'a pas pu être ajoutée à la soumission.</value>
+  </data>
+  <data name="ThereWasAnErrorSendingTheEmail" xml:space="preserve">
+    <value>Une erreur s'est produite lors de l'envoi du courriel.</value>
+  </data>
+  <data name="TheTargetIndexToMoveTheLineToMustNotBeNegative" xml:space="preserve">
+    <value>L'index cible pour déplacer la ligne ne doit pas être négatif.</value>
+  </data>
+  <data name="TheUserIsNotAssociatedToTheSpecificClient" xml:space="preserve">
+    <value>L'utilisateur n'est pas associé au client spécifié.</value>
+  </data>
+  <data name="TheViewIdentifierInTheBodyMustMatchTheViewIdentifierInTheURL" xml:space="preserve">
+    <value>L'identificateur de vue dans le corps doit correspondre à l'identificateur de vue dans l'URL.</value>
+  </data>
+  <data name="ThisLineMayNotBeCopied" xml:space="preserve">
+    <value>Cette ligne ne peut pas être copiée.</value>
+  </data>
+  <data name="ThisQuoteIsWaitingForEngineeringLineCannotBeMoved" xml:space="preserve">
+    <value>Cette soumission attend l'ingénierie. La ligne ne peut pas être déplacée</value>
+  </data>
+  <data name="UnableToDetermineTheConfigurationAPIURLForThisLinesBrand" xml:space="preserve">
+    <value>Impossible de déterminer l'URL de l'API de configuration pour la marque de cette ligne.</value>
+  </data>
+  <data name="UserCannotViewQuoteForTheLine" xml:space="preserve">
+    <value>L'utilisateur ne peut pas voir la soumission pour la ligne.</value>
+  </data>
+  <data name="UserDoesntHaveAccessToTheLinesQuote" xml:space="preserve">
+    <value>L'utilisateur n'a pas accès à la soumission de la ligne.</value>
+  </data>
+  <data name="ValidationOnTheFieldsDidNotSucceedSeeTheIndividualFieldsForMoreInformation" xml:space="preserve">
+    <value>La validation sur les champs n'a pas réussi. Voir les champs individuels pour plus d'informations.</value>
+  </data>
+  <data name="TheQuoteInformationCouldNotBeVerified" xml:space="preserve">
+    <value>Les informations de soumission n'ont pas pu être vérifiées.</value>
+  </data>
+  <data name="ACandidateLineIsNotActiveInTheQuote" xml:space="preserve">
+    <value>Une ligne candidate n'est pas active dans la soumission.</value>
+  </data>
+  <data name="ACustomerIdMustBeProvidedBeforeAnyUpdatesCanBeMade" xml:space="preserve">
+    <value>Un identifiant client doit être fourni avant toute mise à jour.</value>
+  </data>
+  <data name="AnAddressIdWasNotProvided" xml:space="preserve">
+    <value>Un ID d'adresse n'a pas été fourni.</value>
+  </data>
+  <data name="AnAttachmentFileNameMustBeProvided" xml:space="preserve">
+    <value>Un nom de fichier joint doit être fourni.</value>
+  </data>
+  <data name="AnErrorOccurredCreatingTheCustomerBillingAddressRecord" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la création de l'enregistrement de l'adresse de facturation du client.</value>
+  </data>
+  <data name="AnErrorOccurredCreatingTheCustomerRecord" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la création de l'enregistrement client.</value>
+  </data>
+  <data name="AnErrorOccurredCreatingTheCustomerShippingAddressRecord" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la création de l'enregistrement de l'adresse de livraison du client.</value>
+  </data>
+  <data name="AnErrorOccurredCreatingThePreferencesRecords" xml:space="preserve">
+    <value>Une erreur s'est produite lors des enregistrements de préférences.</value>
+  </data>
+  <data name="AttachmentDataMustBeProvided" xml:space="preserve">
+    <value>Les données jointes doivent être fournies.</value>
+  </data>
+  <data name="AttachmentSizeCannotExceed5Mb" xml:space="preserve">
+    <value>La taille de la pièce jointe ne peut pas dépasser 5 MB.</value>
+  </data>
+  <data name="AValidCustomerMustBeProvided" xml:space="preserve">
+    <value>Un client valide doit être fourni.</value>
+  </data>
+  <data name="CannotApplyGlobalChangesForThisQuote" xml:space="preserve">
+    <value>Impossible d'appliquer des modifications globales pour cette soumission.</value>
+  </data>
+  <data name="CannotAssignCustomerDataToTheQuoteNoCustomerDataWasProvided" xml:space="preserve">
+    <value>Impossible d'affecter les données client à la soumission. Aucune donnée client n'a été fournie.</value>
+  </data>
+  <data name="CannotCopyQuote" xml:space="preserve">
+    <value>Impossible de copier la soumission.</value>
+  </data>
+  <data name="CannotCopyQuotesThatContainDealerVendorQuotes" xml:space="preserve">
+    <value>Impossible de copier les soumissions contenant des soumissions de revendeurs.</value>
+  </data>
+  <data name="CannotCopyQuotesWithValueAddOrBranchCatalogLines" xml:space="preserve">
+    <value>Impossible de copier des soumissions avec des lignes de catalogue à valeur ajoutée ou de branche.</value>
+  </data>
+  <data name="CannotCopyTemplates" xml:space="preserve">
+    <value>Impossible de copier les modèles.</value>
+  </data>
+  <data name="CannotCopyThisTypeOfQuote" xml:space="preserve">
+    <value>Impossible de copier ce type de soumission.</value>
+  </data>
+  <data name="CannotOrderDueToTheUpdateLinesOnOrderSetting" xml:space="preserve">
+    <value>Impossible de commander en raison du paramètre UpdateLinesOnOrder.</value>
+  </data>
+  <data name="CannotOrderQuotesThatContainDealerVendorQuotes" xml:space="preserve">
+    <value>Impossible de commander des soumissions contenant des soumissions de revendeurs.</value>
+  </data>
+  <data name="CannotUpdateLinesForTheCopyQuote" xml:space="preserve">
+    <value>Impossible de mettre à jour les lignes pour la copie de soumission.</value>
+  </data>
+  <data name="CannotUpdateLinesForTheQuote" xml:space="preserve">
+    <value>Impossible de mettre à jour les lignes pour la soumission.</value>
+  </data>
+  <data name="ChangesToTheShippingAddressAreNotAllowedBecauseTheAddressIsLocked" xml:space="preserve">
+    <value>Les changements d'adresse de livraison ne sont pas autorisés car l'adresse est verrouillée.</value>
+  </data>
+  <data name="ChooseAtLeastOneDisplayField" xml:space="preserve">
+    <value>Choisissez au moins un champ d'affichage.</value>
+  </data>
+  <data name="CustomerInformationCannotBeSharedWithTheManufacturerSystem" xml:space="preserve">
+    <value>Les informations client ne peuvent pas être partagées avec le système du fabricant.</value>
+  </data>
+  <data name="EitherTheSourceClientShippingRecordIdFieldMustBeSetOrTheOverrideAddressFieldMustBeTrueInOrderToUpdateTheShippingInformation" xml:space="preserve">
+    <value>Soit le champ SourceClientShippingRecordID doit être défini ou le champ OverrideAddress doit être à vrai pour mettre à jour les informations d'expédition.</value>
+  </data>
+  <data name="FailedToLoadTheQuote" xml:space="preserve">
+    <value>Impossible de charger la soumission.</value>
+  </data>
+  <data name="FailedToSaveTheQuoteWithTheDeletedAttachment" xml:space="preserve">
+    <value>Impossible d'enregistrer la soumission avec la pièce jointe supprimée.</value>
+  </data>
+  <data name="FailedToSaveTheSettingsToTheDatabase" xml:space="preserve">
+    <value>Impossible d'enregistrer les paramètres dans la base de données.</value>
+  </data>
+  <data name="InputParametersMustBeProvidedInTheMessageBodyInOrderToWriteHistory" xml:space="preserve">
+    <value>Les paramètres d'entrée doivent être fournis dans le corps du message pour écrire l'historique.</value>
+  </data>
+  <data name="InvalidConfiguratorTypeValue" xml:space="preserve">
+    <value>Valeur ConfiguratorType non valide.</value>
+  </data>
+  <data name="InvalidDisplayMeasurementType" xml:space="preserve">
+    <value>Type de mesure d'affichage incorrect</value>
+  </data>
+  <data name="InvalidProductionStatusSpecified" xml:space="preserve">
+    <value>L'état de production n'est pas valide.</value>
+  </data>
+  <data name="InvalidQuotePrintHeader" xml:space="preserve">
+    <value>En-tête d'impression de soumission invalide.</value>
+  </data>
+  <data name="LineItemIdIsNotProvided" xml:space="preserve">
+    <value>L'identifiant de ligne article n'est pas fourni.</value>
+  </data>
+  <data name="MustProvideTheLinesWcpPutLineItemManufacturingStatusParametersInTheMessageBody" xml:space="preserve">
+    <value>Doit fournir les WcpPutLineItemManufacturingStatusParameters de la ligne dans le corps du message.</value>
+  </data>
+  <data name="MustProvideTheLinesWcpPutLineItemProductionStatusParametersInTheMessageBody" xml:space="preserve">
+    <value>Doit fournir les WcpPutLineItemProductionStatusParameters de la ligne dans le corps du message.</value>
+  </data>
+  <data name="MustProvideTheViewsBuildDetails" xml:space="preserve">
+    <value>Doit fournir les détails de construction de la vue.</value>
+  </data>
+  <data name="NoAddressMatchingTheProvidedIdCouldBeFound" xml:space="preserve">
+    <value>Aucune adresse correspondant à l'ID fournie n'a pu être trouvée.</value>
+  </data>
+  <data name="NoAttachmentInformationWasProvided" xml:space="preserve">
+    <value>Aucune information de pièce jointe n'a été fournie.</value>
+  </data>
+  <data name="NoBillingAddressDataWasFound" xml:space="preserve">
+    <value>Aucune adresse de facturation n'a été trouvée.</value>
+  </data>
+  <data name="NoClientIdWasProvidedForTheQuoteAndTheUserDoesNotHaveADefaultClientAssociatedToIt" xml:space="preserve">
+    <value>Aucun identifiant de client n'a été fourni pour la soumission et aucun client par défaut n'est associé à l'utilisateur.</value>
+  </data>
+  <data name="NoCustomerBillingAddressWithTheMatchingIdCouldBeFound" xml:space="preserve">
+    <value>Aucune adresse de facturation client avec l'ID correspondant n'a pu être trouvée.</value>
+  </data>
+  <data name="NoCustomerDataCouldBeFound" xml:space="preserve">
+    <value>Aucune donnée client n'a pu être trouvée.</value>
+  </data>
+  <data name="NoCustomerIsAssignedToTheAddressaCustomerMustBeAssignedBeforeAnyUpdatesCanBeMade" xml:space="preserve">
+    <value>Aucun client n'est affecté à l'adresse. Un client doit être affecté avant toute mise à jour.</value>
+  </data>
+  <data name="NoCustomerShippingAddressWithTheMatchingIdCouldBeFound" xml:space="preserve">
+    <value>Aucune adresse de livraison du client avec l'ID correspondant n'a pu être trouvée.</value>
+  </data>
+  <data name="NoCustomerWithTheMatchingIdCouldBeFound" xml:space="preserve">
+    <value>Aucun client avec l'ID correspondant n'a pu être trouvé.</value>
+  </data>
+  <data name="NoInformationWasProvidedToUpdateTheLineWith" xml:space="preserve">
+    <value>Aucune information n'a été fournie pour mettre à jour la ligne.</value>
+  </data>
+  <data name="NoLineItemsAreSelectedToApplyGlobalChanges" xml:space="preserve">
+    <value>Aucune ligne article n'est sélectionnée pour appliquer des modifications globales.</value>
+  </data>
+  <data name="NoLineOrQuoteInformationProvided" xml:space="preserve">
+    <value>Aucune ligne ou information de soumission fournie.</value>
+  </data>
+  <data name="NoPartFound" xml:space="preserve">
+    <value>Aucune pièce trouvée.</value>
+  </data>
+  <data name="NoSettingsSpecified" xml:space="preserve">
+    <value>Aucun paramètre spécifié.</value>
+  </data>
+  <data name="NoShippingAddressDataWasFound" xml:space="preserve">
+    <value>Aucune donnée d'adresse de livraison n'a été trouvée.</value>
+  </data>
+  <data name="NotesAreNotAllowedOnANewQuote" xml:space="preserve">
+    <value>Les notes ne sont pas autorisées sur une nouvelle soumission.</value>
+  </data>
+  <data name="NoUserChanges" xml:space="preserve">
+    <value>Aucun changement par l'utilisateur.</value>
+  </data>
+  <data name="OneOrMoreIssuesWereFoundWhenValidatingTheQuoteHeader" xml:space="preserve">
+    <value>Un ou plusieurs problèmes ont été détectés lors de la validation de l'en-tête de soumission.</value>
+  </data>
+  <data name="ProductUpdatesAreRequiredBeforeOrderingUpdateTheQuoteAndOrderAgain" xml:space="preserve">
+    <value>Les mises à jour de produit sont requises avant de commander. Mettez à jour la soumission et commandez à nouveau.</value>
+  </data>
+  <data name="QuotesCannotBeSubmittedToEngineeringWhileTheEffectiveDateIsOverridden" xml:space="preserve">
+    <value>Les soumissions ne peuvent pas être soumises à l'ingénierie lorsque la date d'entrée en vigueur est remplacée.</value>
+  </data>
+  <data name="ReviewQuoteDetailsAndTryAgain" xml:space="preserve">
+    <value>Vérifiez les détails de la soumission et réessayez.</value>
+  </data>
+  <data name="TheAttachmentFileDescriptionIsLimitedTo50Characters" xml:space="preserve">
+    <value>La description du fichier joint est limitée à 50 caractères.</value>
+  </data>
+  <data name="TheAttachmentFileNameIsLimitedTo100Characters" xml:space="preserve">
+    <value>Le nom du fichier joint est limité à 100 caractères.</value>
+  </data>
+  <data name="TheCopyQuoteActionIsNotAvailable" xml:space="preserve">
+    <value>L'action de copie de soumission n'est pas disponible.</value>
+  </data>
+  <data name="TheCurrentLineItemManufacturingStatusMatchesTheInputDataNoChangesHaveBeenMade" xml:space="preserve">
+    <value>L'état de fabrication actuel de la ligne article correspond aux données d'entrée. Aucun changement n'a été fait.</value>
+  </data>
+  <data name="TheCustomerBillingAddressCouldBeFoundInTheDatabase" xml:space="preserve">
+    <value>L'adresse de facturation du client peut être trouvée dans la base de données.</value>
+  </data>
+  <data name="TheCustomerDoesNotExistInTheSystem" xml:space="preserve">
+    <value>Le client n'existe pas dans le système.</value>
+  </data>
+  <data name="TheCustomerIdAlreadyHasAValueTheIdWillBeSetWhenAddingTheCustomerAndShouldNotBeProvided" xml:space="preserve">
+    <value>L'identifiant client a déjà une valeur. L'identifiant sera défini lors de l'ajout du client et ne doit pas être fourni.</value>
+  </data>
+  <data name="TheCustomerIdAndAddressIdOfAnExistingAddressAreNotAllowedToBeUpdated" xml:space="preserve">
+    <value>L'ID client et l'ID d'adresse d'une adresse existante ne peuvent pas être mis à jour.</value>
+  </data>
+  <data name="TheCustomerRecordWasNotFoundInTheDatabase" xml:space="preserve">
+    <value>L'enregistrement client n'a pas été trouvé dans la base de données.</value>
+  </data>
+  <data name="TheCustomerReferenceDataWasUnableToBeRemovedForTheGivenQuote" xml:space="preserve">
+    <value>Les données de référence du client n'ont pas pu être supprimées pour la soumission donnée.</value>
+  </data>
+  <data name="TheCustomerReferenceDataWasUnableToBeUpdatedForTheGivenQuote" xml:space="preserve">
+    <value>Les données de référence du client n'ont pas pu être mises à jour pour la soumission donnée.</value>
+  </data>
+  <data name="TheCustomerSettingsInformationCouldNotBeSaved" xml:space="preserve">
+    <value>Les informations sur les paramètres du client n'ont pas pu être enregistrées.</value>
+  </data>
+  <data name="TheCustomerShippingAddressCouldBeFoundInTheDatabase" xml:space="preserve">
+    <value>L'adresse d'expédition du client peut être trouvée dans la base de données.</value>
+  </data>
+  <data name="TheCustomerShippingAddressWasNotFound" xml:space="preserve">
+    <value>L'adresse d'expédition du client n'a pas été trouvée.</value>
+  </data>
+  <data name="TheCustomerWasNotFound" xml:space="preserve">
+    <value>Le client n'a pas été trouvé.</value>
+  </data>
+  <data name="TheEngineeringWorkflowCouldNotBeStartedEitherNoWorkflowExistsOrNoLinesNeedEngineering" xml:space="preserve">
+    <value>Le workflow d'ingénierie n'a pas pu être démarré. Soit aucun flux de travail n'existe, soit aucune ligne n'a besoin d'ingénierie.</value>
+  </data>
+  <data name="TheIdOfTheAddressMustBeProvided" xml:space="preserve">
+    <value>L'identifiant de l'adresse doit être fourni.</value>
+  </data>
+  <data name="TheLinesSpecifiedDoNotBelongToASingleQuote" xml:space="preserve">
+    <value>Les lignes spécifiées n'appartiennent pas à une seule soumission.</value>
+  </data>
+  <data name="TheProvidedAddressHasAnAssignedCustomerIdThatDoesNotMatchTheCustomerIdFromTheUrl" xml:space="preserve">
+    <value>L'adresse fournie a une ID client attribuée qui ne correspond pas à l'ID client de l'URL.</value>
+  </data>
+  <data name="TheProvidedAddressIsNullaValidAddressMustBeProvided" xml:space="preserve">
+    <value>L'adresse fournie est nulle. Une adresse valide doit être fournie.</value>
+  </data>
+  <data name="TheProvidedClientIdIsNotActive" xml:space="preserve">
+    <value>L'ID client fournie n'est pas active.</value>
+  </data>
+  <data name="TheProvidedCustomerDoesNotMatchTheCustomerIdFromTheUrl" xml:space="preserve">
+    <value>Le client fourni ne correspond pas à l'identifiant client de l'URL.</value>
+  </data>
+  <data name="TheProvidedLineIdDoesNotMatchTheLineIdFromTheUrl" xml:space="preserve">
+    <value>L'ID de ligne fournie ne correspond pas à l'ID de ligne de l'URL.</value>
+  </data>
+  <data name="TheQuoteHasNoPriceBookAssignedOrTheAssignedPriceBookIsNoLongerValid" xml:space="preserve">
+    <value>La soumission n'a aucun livre de prix attribué, ou le livre de prix attribué n'est plus valide.</value>
+  </data>
+  <data name="TheQuoteNotesToUpdateAreRequired" xml:space="preserve">
+    <value>Les notes de soumission à mettre à jour sont obligatoires.</value>
+  </data>
+  <data name="TheQuotePrintHeaderIdProvidedIsNotAssociatedToTheUser" xml:space="preserve">
+    <value>L'identifiant d'en-tête d'impression de soumission fourni n'est pas associé à l'utilisateur.</value>
+  </data>
+  <data name="TheReferencedBillingAddressCouldNotBeFound" xml:space="preserve">
+    <value>L'adresse de facturation référencée n'a pas pu être trouvée.</value>
+  </data>
+  <data name="TheReferencedShippingAddressCouldNotBeFound" xml:space="preserve">
+    <value>L'adresse de livraison référencée n'a pas pu être trouvée.</value>
+  </data>
+  <data name="TheRequestedAddressCouldNotBeFound" xml:space="preserve">
+    <value>L'adresse demandée n'a pas pu être trouvée.</value>
+  </data>
+  <data name="TheRequestedBillingAddressMustBeAssociatedToTheSameCustomerAsTheRequestedShippingAddress" xml:space="preserve">
+    <value>L'adresse de facturation demandée doit être associée au même client que l'adresse de livraison demandée.</value>
+  </data>
+  <data name="TheRequestedCustomerMustBeTheOwnerOfTheRequestedAddresses" xml:space="preserve">
+    <value>Le client demandé doit être le propriétaire des adresses demandées.</value>
+  </data>
+  <data name="TheRequestedCustomerSettingsInformationDoesNotExist" xml:space="preserve">
+    <value>Les informations sur les paramètres client demandées n'existent pas.</value>
+  </data>
+  <data name="TheRequestedQuoteWasNotFound" xml:space="preserve">
+    <value>La soumission demandée n'a pas été trouvée.</value>
+  </data>
+  <data name="TheResultsCannotBeRetrievedBecauseTheUpdatePkRequestForTheGivenLineHasNotFinishedProcessing" xml:space="preserve">
+    <value>The results cannot be retrieved because the update pk request for the given line has not finished processing.</value>
+  </data>
+  <data name="TheResultsCannotBeUpdatedBecauseTheLineIsInTheProcessOfUpdating" xml:space="preserve">
+    <value>Les résultats ne peuvent pas être mis à jour car la ligne est en cours de mise à jour.</value>
+  </data>
+  <data name="TheSettingWasNotUpdated" xml:space="preserve">
+    <value>Le paramètre n'a pas été mis à jour.</value>
+  </data>
+  <data name="TheSourceClientShippingRecordIdProvidedIsNotAssociatedToTheQuotesClient" xml:space="preserve">
+    <value>Le SourceClientShippingRecordID fourni n'est pas associé au client de la soumission.</value>
+  </data>
+  <data name="TheSpecifiedQuotePrintHeaderCouldNotBeFoundPleaseTryAgainWithAValidQuotePrintHeader" xml:space="preserve">
+    <value>L'en-tête d'impression de la soumission spécifiée n'a pas pu être trouvé. Veuillez réessayer avec un en-tête d'impression de soumission valide.</value>
+  </data>
+  <data name="TheSubmitOrderActionIsNotAvailable" xml:space="preserve">
+    <value>L'action d'envoi de commande n'est pas disponible.</value>
+  </data>
+  <data name="TheSubmitOrderActionIsNotEnabledForThisQuote" xml:space="preserve">
+    <value>L'action d'envoi de commande n'est pas activée pour cette soumission.</value>
+  </data>
+  <data name="TheSubmitToEngineeringActionIsNotAvailable" xml:space="preserve">
+    <value>L'action Soumettre à l'ingénierie n'est pas disponible.</value>
+  </data>
+  <data name="TheSubmitToEngineeringActionIsNotEnabledForOrderedQuotes" xml:space="preserve">
+    <value>L'action Soumettre à l'ingénierie n'est pas activée pour les soumissions commandées.</value>
+  </data>
+  <data name="TheSubmitToEngineeringActionIsNotEnabledForThisQuote" xml:space="preserve">
+    <value>L'action Soumettre à l'ingénierie n'est pas activée pour cette soumission.</value>
+  </data>
+  <data name="TheUserDoesNotHaveAccessToTheCustomer" xml:space="preserve">
+    <value>L'utilisateur n'a pas accès au client.</value>
+  </data>
+  <data name="TheUserDoesNotHavePermissionToOverrideTheShippingAddress" xml:space="preserve">
+    <value>L'utilisateur n'a pas l'autorisation de remplacer l'adresse de livraison.</value>
+  </data>
+  <data name="TheUserDoesNotHavePermissionToSelectANewShippingAddressOnAnOrderedQuote" xml:space="preserve">
+    <value>L'utilisateur n'a pas l'autorisation de sélectionner une nouvelle adresse de livraison sur une soumission commandée.</value>
+  </data>
+  <data name="TheViewCouldNotBeDeleted" xml:space="preserve">
+    <value>La vue n'a pas pu être supprimée.</value>
+  </data>
+  <data name="TheViewCouldNotBeUpdated" xml:space="preserve">
+    <value>La vue n'a pas pu être mise à jour</value>
+  </data>
+  <data name="TheWarrantiesOnTheQuoteCouldNotBeValidatedPleaseCheckTheWarrantiesAndTryAgain" xml:space="preserve">
+    <value>Les garanties sur la soumission n'ont pas pu être validées. Veuillez vérifier les garanties et réessayer.</value>
+  </data>
+  <data name="ThisLineItemMasterCannotBeViewedOrEditedUsingThisConfigurationApi" xml:space="preserve">
+    <value>Cette ligne article maitresse ne peut pas être visualisée ou modifiée à l'aide de cette API de configuration.</value>
+  </data>
+  <data name="UnableToUpdateTheQuotePrintHeader" xml:space="preserve">
+    <value>Impossible de mettre à jour l'en-tête d'impression de soumission.</value>
+  </data>
+  <data name="UploadingTheImageDataOfTheQuotePrintHeaderFailed" xml:space="preserve">
+    <value>Le téléchargement des données d'image de l'en-tête d'impression de soumission a échoué.</value>
+  </data>
+  <data name="UserCannotEditQuote" xml:space="preserve">
+    <value>L'utilisateur ne peut pas modifier la soumission.</value>
+  </data>
+  <data name="UserCannotViewTheQuote" xml:space="preserve">
+    <value>L'utilisateur ne peut pas voir la soumission.</value>
+  </data>
+  <data name="UserDoesNotHaveAccessToTheQuote" xml:space="preserve">
+    <value>L'utilisateur n'a pas accès à la soumission.</value>
+  </data>
+  <data name="UserDoesNotHaveAccessToTheQuoteToCopy" xml:space="preserve">
+    <value>L'utilisateur n'a pas accès à la soumission à copier.</value>
+  </data>
+  <data name="UserDoesntHaveAccessToTheSetupChargesQuote" xml:space="preserve">
+    <value>L'utilisateur n'a pas accès à la soumission du frais d'installation.</value>
+  </data>
+  <data name="ValidCustomerSettingsInformationMustBeProvided" xml:space="preserve">
+    <value>Des informations valides sur les paramètres du client doivent être fournies.</value>
+  </data>
+  <data name="AFileNameMustBeProvidedInOrderToExportTheQuote" xml:space="preserve">
+    <value>Un nom de fichier doit être fourni pour exporter la soumission.</value>
+  </data>
+  <data name="AnApplicationObjectIsRequiredButWasNotProvided" xml:space="preserve">
+    <value>Un objet d'application est requis mais n'a pas été fourni.</value>
+  </data>
+  <data name="APreferenceCannotBeSetForThisQuestion" xml:space="preserve">
+    <value>Une préférence ne peut pas être définie pour cette question.</value>
+  </data>
+  <data name="AQuoteIsRequiredButWasNotProvided" xml:space="preserve">
+    <value>Une soumission est requise mais n'a pas été fournie.</value>
+  </data>
+  <data name="AQuoteWithTheSpecifiedIdWasNotFound" xml:space="preserve">
+    <value>Une soumission avec l'identifiant spécifié n'a pas été trouvée.</value>
+  </data>
+  <data name="CannotBeginProductSelectionForMullingWhileStillInAnotherProductSelectionMode" xml:space="preserve">
+    <value>Impossible de commencer la sélection du produit pour l'assemblage lorsqu'encore dans un autre mode de sélection de produit.</value>
+  </data>
+  <data name="CannotCopyAUnitDuringProductSelection" xml:space="preserve">
+    <value>Impossible de copier une unité pendant la sélection du produit.</value>
+  </data>
+  <data name="CannotDeleteAUnitDuringProductSelection" xml:space="preserve">
+    <value>Impossible de supprimer une unité pendant la sélection du produit.</value>
+  </data>
+  <data name="CannotSpecifyALineIdWhenCreatingANewLinePassInAnEmptyGuid" xml:space="preserve">
+    <value>Impossible de spécifier un LineId lors de la création d'une nouvelle ligne. Passez dans un GUID vide.</value>
+  </data>
+  <data name="CannotUseTheManualLineConfigurator" xml:space="preserve">
+    <value>Impossible d'utiliser le configurateur de ligne manuel.</value>
+  </data>
+  <data name="CatalogUpdatesHaveBeenReleased" xml:space="preserve">
+    <value>Les mises à jour du catalogue ont été publiées.</value>
+  </data>
+  <data name="CouldNotFindThePreferredAnswerOnTheQuestion" xml:space="preserve">
+    <value>Impossible de trouver la réponse préférée à la question.</value>
+  </data>
+  <data name="CouldNotFindTheSelectedAnswerOnTheQuestion" xml:space="preserve">
+    <value>Impossible de trouver la réponse sélectionnée à la question.</value>
+  </data>
+  <data name="CurrentUserIsNotAllowedToExportTheQuote" xml:space="preserve">
+    <value>L'utilisateur actuel n'est pas autorisé à exporter la soumission.</value>
+  </data>
+  <data name="CutLengthIsRequired" xml:space="preserve">
+    <value>La longueur de coupe est requise.</value>
+  </data>
+  <data name="CutLengthMustBeAPositiveNumber" xml:space="preserve">
+    <value>La longueur de coupe doit être un nombre positif.</value>
+  </data>
+  <data name="CutLengthWasSpecifiedButThisPartDoesNotUseCutLength" xml:space="preserve">
+    <value>La longueur de coupe a été spécifiée mais cette partie n'utilise pas la longueur de coupe.</value>
+  </data>
+  <data name="DisallowedMullingAction" xml:space="preserve">
+    <value>Action d'assemblage non autorisée.</value>
+  </data>
+  <data name="FailedToGetXmlDataOfTheQuote" xml:space="preserve">
+    <value>Impossible d'obtenir les données XML de la soumission.</value>
+  </data>
+  <data name="FailedToLoadTheLineItemMaster" xml:space="preserve">
+    <value>Impossible de charger la ligne article maîtresse.</value>
+  </data>
+  <data name="InstallableFlagWasSpecifiedButInstallableFlagIsNotUsed" xml:space="preserve">
+    <value>L'indicateur installable a été spécifié mais l'indicateur installable n'est pas utilisé.</value>
+  </data>
+  <data name="InvalidActionDuringProductSelection" xml:space="preserve">
+    <value>Action non valide lors de la sélection du produit.</value>
+  </data>
+  <data name="InvalidFormatForTheConfigurationSessionKey" xml:space="preserve">
+    <value>Format non valide pour la clé de session de configuration.</value>
+  </data>
+  <data name="InvalidNewHeightTheWidthIsAlreadySetToNegative1" xml:space="preserve">
+    <value>Nouvelle hauteur non valide. La largeur est déjà définie à -1.</value>
+  </data>
+  <data name="InvalidNewWidthTheHeightIsAlreadySetToNegative1" xml:space="preserve">
+    <value>Nouvelle largeur non valide. La hauteur est déjà définie à -1.</value>
+  </data>
+  <data name="InvalidOrUnsupportedMullingActionParameter" xml:space="preserve">
+    <value>Paramètre d'action d'assemblage non valide ou non pris en charge.</value>
+  </data>
+  <data name="InvalidWindowsetId" xml:space="preserve">
+    <value>Id windowset invalide.</value>
+  </data>
+  <data name="LaborChargeCannotBeNegative" xml:space="preserve">
+    <value>La charge de travail ne peut pas être négative.</value>
+  </data>
+  <data name="LaborChargeWasSpecifiedButLaborChargeIsNotUsed" xml:space="preserve">
+    <value>La charge de travail a été spécifiée, mais la charge de travail n'est pas utilisée.</value>
+  </data>
+  <data name="LineItemMasterIdMismatch" xml:space="preserve">
+    <value>Non-concordance d'ID de la ligne article maîtresse.</value>
+  </data>
+  <data name="LineLevelSkusAreNotSupported" xml:space="preserve">
+    <value>Les skus au niveau de la ligne ne sont pas pris en charge.</value>
+  </data>
+  <data name="LineQuantityMustBeAPositiveNumber" xml:space="preserve">
+    <value>La quantité de lignes doit être un nombre positif.</value>
+  </data>
+  <data name="MustAnswerAllProductSelectionQuestionsBeforeCreatingTheNewMulledUnit" xml:space="preserve">
+    <value>Doit répondre à toutes les questions de sélection de produits avant de créer la nouvelle unité assemblée.</value>
+  </data>
+  <data name="MustBeginProductSelectionForTheNewMulledUnitBeforeCreatingTheNewMulledUnit" xml:space="preserve">
+    <value>Doit commencer la sélection du produit pour la nouvelle unité assemblée avant de créer la nouvelle unité assemblée.</value>
+  </data>
+  <data name="MustProvideAQuoteIdentifierInTheInputModel" xml:space="preserve">
+    <value>Doit fournir un identifiant de soumission dans le modèle d'entrée.</value>
+  </data>
+  <data name="NoAnswerProvidedToUpdateThePreferenceWith" xml:space="preserve">
+    <value>Aucune réponse fournie pour mettre à jour la préférence.</value>
+  </data>
+  <data name="NoAnswerProvidedToUpdateTheQuestionWith" xml:space="preserve">
+    <value>Aucune réponse fournie pour mettre à jour la question.</value>
+  </data>
+  <data name="NoInspireUserFound" xml:space="preserve">
+    <value>Aucun utilisateur Inspire trouvé.</value>
+  </data>
+  <data name="NoLineIdProvidedForEdit" xml:space="preserve">
+    <value>Aucun identifiant de ligne fourni pour l'édition.</value>
+  </data>
+  <data name="NoLineItemIdsWereProvided" xml:space="preserve">
+    <value>Aucun ID de ligne article n'a été fourni.</value>
+  </data>
+  <data name="NoParametersWereProvidedToExportTheQuote" xml:space="preserve">
+    <value>Aucun paramètre n'a été fourni pour exporter la soumission.</value>
+  </data>
+  <data name="NoQuestionWasSupplied" xml:space="preserve">
+    <value>Aucune question n'a été fournie.</value>
+  </data>
+  <data name="ProvidedQuestionIdDoesNotMatchResourceIdentifier" xml:space="preserve">
+    <value>L'ID de question fournie ne correspond pas à l'identifiant de ressource.</value>
+  </data>
+  <data name="QuoteIdMismatch" xml:space="preserve">
+    <value>Non-concordance d'ID de soumission.</value>
+  </data>
+  <data name="QuoteReadOnlyFieldDataIsRequiredButWasNotProvided" xml:space="preserve">
+    <value>Les données de champ en lecture seule sont obligatoires mais n'ont pas été fournies.</value>
+  </data>
+  <data name="ReportOptionsDoNotContainBackendNames" xml:space="preserve">
+    <value>Les options de rapport ne contiennent pas de noms de backend.</value>
+  </data>
+  <data name="SettingPreferencesForFreeTextQuestionsIsNotSupported" xml:space="preserve">
+    <value>La définition des préférences pour les questions de texte libre n'est pas prise en charge.</value>
+  </data>
+  <data name="StockUnitCouldNotBeLoaded" xml:space="preserve">
+    <value>L'unité de stock n'a pas pu être chargée.</value>
+  </data>
+  <data name="SystemMismatch" xml:space="preserve">
+    <value>Non-concordance du système.</value>
+  </data>
+  <data name="TheConfigurationSessionBelongsToADifferentSystem" xml:space="preserve">
+    <value>La session de configuration appartient à un système différent.</value>
+  </data>
+  <data name="TheConfigurationSessionBelongsToADifferentUser" xml:space="preserve">
+    <value>La session de configuration appartient à un utilisateur différent.</value>
+  </data>
+  <data name="TheConfigurationSessionUsesADifferentWebConfiguratorContext" xml:space="preserve">
+    <value>La session de configuration utilise un contexte de configurateur Web différent.</value>
+  </data>
+  <data name="TheCurrentSessionIsNotAnAnonymousSession" xml:space="preserve">
+    <value>La session en cours n'est pas une session anonyme.</value>
+  </data>
+  <data name="TheDrawingidMustNonNegativeAndLessThanTheNumberOfAvailableDrawings" xml:space="preserve">
+    <value>Le drawingId doit être non négatif et inférieur au nombre de dessins disponibles.</value>
+  </data>
+  <data name="TheGivenQuoteDoesNotHaveAStatusOfPendingIntegration" xml:space="preserve">
+    <value>La soumission donnée n'a pas le statut de PendingIntegration.</value>
+  </data>
+  <data name="TheLineIsNotAManualLineTypeAndCannotBeViewedWithTheManualLineConfigurator" xml:space="preserve">
+    <value>La ligne n'est pas un type de ligne manuelle et ne peut pas être affichée avec le configurateur de ligne manuel.</value>
+  </data>
+  <data name="TheLineIsNotAPartLine" xml:space="preserve">
+    <value>La ligne n'est pas une ligne de pièce.</value>
+  </data>
+  <data name="TheLinesIdentifierFromTheUrlDoesNotMatchTheLineIdentifierInTheInputModel" xml:space="preserve">
+    <value>L'identificateur de ligne de l'URL ne correspond pas à l'identificateur de ligne dans le modèle d'entrée.</value>
+  </data>
+  <data name="TheLineSpecifiedToEditDoesNotExistOnTheQuote" xml:space="preserve">
+    <value>La ligne spécifiée pour modifier n'existe pas sur la soumission.</value>
+  </data>
+  <data name="TheLinesQuoteIdentifierDoesNotMatchTheQuoteIdentifierInTheInputModel" xml:space="preserve">
+    <value>L'identificateur de soumission de la ligne ne correspond pas à l'identificateur de soumission dans le modèle d'entrée.</value>
+  </data>
+  <data name="TheManualLineConfiguratorIsNotAvailable" xml:space="preserve">
+    <value>Le configurateur de ligne manuel n'est pas disponible.</value>
+  </data>
+  <data name="ThePartsLineConfiguratorIsNotAvailable" xml:space="preserve">
+    <value>Le configurateur de ligne de pièces n'est pas disponible.</value>
+  </data>
+  <data name="ThePartsLineConfiguratorIsNotUsedInThisEnvironment" xml:space="preserve">
+    <value>Le configurateur de ligne de pièces n'est pas utilisé dans cet environnement.</value>
+  </data>
+  <data name="TheQuestionIsReadOnlyAndMayNotBeChanged" xml:space="preserve">
+    <value>La question est en lecture seule et ne peut pas être modifiée.</value>
+  </data>
+  <data name="TheQuoteIsCertifiedAndFurtherModificationsAreNotAllowed" xml:space="preserve">
+    <value>La soumission est certifiée et d'autres modifications ne sont pas autorisées.</value>
+  </data>
+  <data name="TheQuoteMayNotBeSaved" xml:space="preserve">
+    <value>La soumission peut ne pas être enregistrée.</value>
+  </data>
+  <data name="TheResultsCannotBeUpdatedBecauseSomeLinesOnTheQuoteAreStillInTheProcessOfUpdating" xml:space="preserve">
+    <value>Les résultats ne peuvent pas être mis à jour car certaines lignes de la soumission sont toujours en cours de mise à jour.</value>
+  </data>
+  <data name="TheSkuConfiguratorIsNotAvailable" xml:space="preserve">
+    <value>Le configurateur de sku n'est pas disponible.</value>
+  </data>
+  <data name="TheSpecifiedAnswerTextCouldNotBeConvertedToANumericValue" xml:space="preserve">
+    <value>Le texte de réponse spécifié n'a pas pu être converti en une valeur numérique.</value>
+  </data>
+  <data name="TheSpecifiedBrandIdentifierDoesNotMatchTheBrandOfTheSpecifiedLineToEdit" xml:space="preserve">
+    <value>L'identificateur de marque spécifié ne correspond pas à la marque de la ligne spécifiée à modifier.</value>
+  </data>
+  <data name="TheSpecifiedLineMayNotBeEditedSinceItHasBeenCanceled" xml:space="preserve">
+    <value>La ligne spécifiée peut ne pas être modifiée puisqu'elle a été annulée.</value>
+  </data>
+  <data name="TheSpecifiedLineMayNotBeEditedSinceItIsFromAVendorQuote" xml:space="preserve">
+    <value>La ligne spécifiée ne peut pas être modifiée car elle provient d'une soumission fournisseur.</value>
+  </data>
+  <data name="TheSpecifiedLineMayNotBeEditedSinceItIsInvolvedInAReturn" xml:space="preserve">
+    <value>La ligne spécifiée ne peut pas être modifiée car elle est impliquée dans un retour.</value>
+  </data>
+  <data name="TheSpecifiedLineMayNotBeEditedSinceItIsNotFromTheWindowAndDoorConfigurator" xml:space="preserve">
+    <value>La ligne spécifiée ne peut pas être modifiée car elle ne provient pas du configurateur de portes et fenêtres.</value>
+  </data>
+  <data name="TheSpecifiedQuoteIsNotAssociatedWithTheCurrentAnonymousSession" xml:space="preserve">
+    <value>La soumission spécifiée n'est pas associée à la session anonyme en cours.</value>
+  </data>
+  <data name="ThisQuoteIsAlreadyOrderedAndMayNotBeOrderedAgain" xml:space="preserve">
+    <value>Cette soumission est déjà commandée et ne peut plus être commandée.</value>
+  </data>
+  <data name="ThisQuoteIsInReviewAndThusIsNotEditable" xml:space="preserve">
+    <value>Cette soumission est en révision et n'est donc pas modifiable.</value>
+  </data>
+  <data name="ThisQuoteIsReadOnlyAndCannotBeModified" xml:space="preserve">
+    <value>Cette soumission est en lecture seule et ne peut pas être modifiée.</value>
+  </data>
+  <data name="UnableToLocateExistingLine" xml:space="preserve">
+    <value>Impossible de localiser la ligne existante.</value>
+  </data>
+  <data name="UnableToLocateExistingLineItem" xml:space="preserve">
+    <value>Impossible de localiser la ligne article existante.</value>
+  </data>
+  <data name="UnableToUpdateQuoteFieldBecauseTheQuoteIsNotInStatusOrdered" xml:space="preserve">
+    <value>Impossible de mettre à jour le champ de soumission car la soumission n'est pas en statut commandé.</value>
+  </data>
+  <data name="UnitConfigurationDataAccessIsNotSet" xml:space="preserve">
+    <value>L'accès aux données de configuration de l'unité n'est pas défini.</value>
+  </data>
+  <data name="UnsupportedMullingAction" xml:space="preserve">
+    <value>Action d'assemblage non supportée.</value>
+  </data>
+  <data name="UnsupportedOutputFormat" xml:space="preserve">
+    <value>Format de sortie non supporté.</value>
+  </data>
+  <data name="UserDoesNotHaveAccessToTheBrand" xml:space="preserve">
+    <value>L'utilisateur n'a pas accès à la marque.</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>Utilisateur non trouvé.</value>
+  </data>
+  <data name="UsingDifferentAnswersCannotChangeSinceThisQuestionDoesNotAllowDifferentAnswersPerUnit" xml:space="preserve">
+    <value>UsingDifferentAnswers ne peut pas changer puisque cette question ne permet pas de réponses différentes par unité.</value>
+  </data>
+  <data name="YouMustBeginProductSelectionBeforeCancellingTheNewMulledUnit" xml:space="preserve">
+    <value>Vous devez commencer la sélection du produit avant d'annuler la nouvelle unité assemblée.</value>
+  </data>
+  <data name="AnErrorOccurredGeneratingTheQuoteContext_P0" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la génération du contexte de la soumission: {0}.</value>
+  </data>
+  <data name="AViewWithTheNameOf_P0_AlreadyExists" xml:space="preserve">
+    <value>Une vue portant le nom de {0} existe déjà.</value>
+  </data>
+  <data name="ErrorSettingField_P0" xml:space="preserve">
+    <value>Erreur lors du réglage du champ: {0}.</value>
+  </data>
+  <data name="ExceptionOccurredWhileSendingAManufacturerEmail_P0" xml:space="preserve">
+    <value>Une exception s'est produite lors de l'envoi d'un courriel du fabricant ({0})</value>
+  </data>
+  <data name="ExceptionOccurredWhileSendingAnEmailToTheCustomer_P0" xml:space="preserve">
+    <value>Une exception s'est produite lors de l'envoi d'un courriel au client ({0})</value>
+  </data>
+  <data name="FailedToInsertQuoteIntoMessageTableReturnCodeIs_P0" xml:space="preserve">
+    <value>Échec de l'insertion de la soumission dans la table des messages. Le code de retour est {0}.</value>
+  </data>
+  <data name="FailedToTurnTheQuoteIntoAnOrderReturnCodeIs_P0_ReturnMessageIs_P1" xml:space="preserve">
+    <value>Impossible de transformer la soumission en commande. Le code de retour est {0}. Le message de retour est {1}.</value>
+  </data>
+  <data name="FieldIsReadOnly_P0" xml:space="preserve">
+    <value>Le champ est en lecture seule: {0}.</value>
+  </data>
+  <data name="FieldWithId_P0_AndDisplayDoesNotExistAsAHeaderField_P1" xml:space="preserve">
+    <value>Le champ avec l'ID {0} et l'affichage {1} n'existe pas en tant que champ d'en-tête.</value>
+  </data>
+  <data name="FieldWithId_P0_WasFoundTwiceInTheProvidedHeader" xml:space="preserve">
+    <value>Le champ avec l'ID {0} a été trouvé deux fois dans l'en-tête fourni.</value>
+  </data>
+  <data name="InvalidFilterValuesForField_P0_TheStartOfTheRangeCannotBeGreaterThanTheEndOfTheRange" xml:space="preserve">
+    <value>Valeurs de filtre non valides pour le champ {0}. Le début de la plage ne peut pas être supérieur à la fin de la plage.</value>
+  </data>
+  <data name="InvalidFilterValuesForField_P0_SelectAtLeastOneItemFromTheList" xml:space="preserve">
+    <value>Valeurs de filtre non valides pour le champ {0}. Sélectionnez au moins un élément de la liste.</value>
+  </data>
+  <data name="InvalidIdentifierForTheUnitToCopy" xml:space="preserve">
+    <value>Identificateur non valide pour l'unité à copier.</value>
+  </data>
+  <data name="InvalidIdentifierForTheUnitToDelete" xml:space="preserve">
+    <value>Identificateur non valide pour l'unité à supprimer.</value>
+  </data>
+  <data name="ModificationsAreOnlyAllowedOnActiveQuotesTheQuotesCurrentStatusIs_P0" xml:space="preserve">
+    <value>Les modifications ne sont autorisées que sur les soumissions actives. Le statut actuel de la soumission est {0}.</value>
+  </data>
+  <data name="ModificationsAreOnlyAllowedOnStandardQuotesTheQuotesCurrentTypeIs_P0" xml:space="preserve">
+    <value>Les modifications ne sont autorisées que sur les soumissions standards. Le type actuel de la soumission est {0}.</value>
+  </data>
+  <data name="MullingSitesNotSpecifiedOrInvalid" xml:space="preserve">
+    <value>Sites d'assemblage non spécifiés ou non valides.</value>
+  </data>
+  <data name="ResponseContent_P0" xml:space="preserve">
+    <value>Contenu de la réponse : {0}</value>
+  </data>
+  <data name="SomeOfTheChosenFilterValuesForField_P0_AreNoLongerAvailable" xml:space="preserve">
+    <value>Certaines des valeurs de filtre choisies pour le champ {0} ne sont plus disponibles.</value>
+  </data>
+  <data name="TheAddressLineThreeFieldMayNotBeUsedCombineYourAddressIntoTwoLines" xml:space="preserve">
+    <value>Le champ de la ligne d'adresse trois peut ne pas être utilisé. Combinez votre adresse en deux lignes.</value>
+  </data>
+  <data name="TheBillingAddressCannotBeSharedWithTheManufacturerSystem" xml:space="preserve">
+    <value>L'adresse de facturation ne peut pas être partagée avec le système du fabricant.</value>
+  </data>
+  <data name="TheChosenFilterValuesForField_P0_AreNoLongerAvailable" xml:space="preserve">
+    <value>Les valeurs de filtre choisies pour le champ {0} ne sont plus disponibles.</value>
+  </data>
+  <data name="TheCustomerReferencesWereRemovedSuccessfullyButAnErrorOccurredUpdatingTheLinkedQuoteAndTheQuoteWasNotSaved" xml:space="preserve">
+    <value>Les références client ont été supprimées, mais une erreur est survenue lors de la mise à jour de la soumission liée et la soumission n'a pas été sauvegardée.</value>
+  </data>
+  <data name="TheCustomerReferencesWereUpdatedSuccessfullyButAnErrorOccurredUpdatingTheLinkedQuoteAndTheQuoteWasNotSaved" xml:space="preserve">
+    <value>Les références client ont été mises à jour avec succès, mais une erreur est survenue lors de la mise à jour de la soumission liée et la soumission n'a pas été sauvegardée.</value>
+  </data>
+  <data name="TheDisplayFieldWithKey_P0_IsNoLongerAvailable" xml:space="preserve">
+    <value>Le champ d'affichage avec la clé {0} n'est plus disponible.</value>
+  </data>
+  <data name="TheListFilterFieldWithKey_P0_IsNoLongerAvailable" xml:space="preserve">
+    <value>Le champ de filtre de liste avec la clé {0} n'est plus disponible.</value>
+  </data>
+  <data name="TheNameFieldIsRequired" xml:space="preserve">
+    <value>Le champ de nom est requis.</value>
+  </data>
+  <data name="TheNumericFilterFieldWithKey_P0_IsNoLongerAvailable" xml:space="preserve">
+    <value>Le champ de filtre numérique avec la clé {0} n'est plus disponible.</value>
+  </data>
+  <data name="TheProvidedValueOf_P0_IsNotValidForTheSetting_P1" xml:space="preserve">
+    <value>La valeur fournie de {0} n'est pas valide pour le paramètre {1}.</value>
+  </data>
+  <data name="TheResponseWasSuccessfulButDeserializingODataContentIsNotYetSupported" xml:space="preserve">
+    <value>La réponse a été réussie, mais la désérialisation du contenu OData n'est pas encore prise en charge.</value>
+  </data>
+  <data name="TheResponseWasSuccessfulButTheContentCouldNotBeDeserializedTheExpectedTypeWas_P0" xml:space="preserve">
+    <value>La réponse a été réussie mais le contenu n'a pas pu être désérialisé. Le type attendu était {0}.</value>
+  </data>
+  <data name="TheShippingAddressCannotBeSharedWithTheManufacturerSystem" xml:space="preserve">
+    <value>L'adresse de livraison ne peut pas être partagée avec le système du fabricant.</value>
+  </data>
+  <data name="TheTextFilterFieldWithKey_P0_IsNoLongerAvailable" xml:space="preserve">
+    <value>Le champ de filtre de texte avec la clé {0} n'est plus disponible.</value>
+  </data>
+  <data name="UpdatingCustomerInformationIsDisallowed" xml:space="preserve">
+    <value>La mise à jour des informations client n'est pas autorisée.</value>
+  </data>
+  <data name="UpdatingCustomerInformationIsDisallowedDueDisabledFields" xml:space="preserve">
+    <value>La mise à jour des informations client n'est pas autorisée en raison de champs désactivés.</value>
+  </data>
+  <data name="UpdatingCustomerInformationIsDisallowedDueToTheCustomerSearchFeature" xml:space="preserve">
+    <value>La mise à jour des informations client n'est pas autorisée en raison de la fonction de recherche du client.</value>
+  </data>
+  <data name="UpdatingCustomerInformationIsDisallowedDueToTheProjectOwnerFeature" xml:space="preserve">
+    <value>La mise à jour des informations client n'est pas autorisée en raison de la fonctionnalité du propriétaire du projet.</value>
+  </data>
+  <data name="UpdatingCustomerInformationIsDisallowedOnceTheQuoteHasLines" xml:space="preserve">
+    <value>La mise à jour des informations client n'est pas autorisée une fois que la soumission a des lignes.</value>
+  </data>
+  <data name="YourUserSecurityPreventsGettingTheConfiguratorPricingInfoPleaseWorkWithAnAdminUserToAllowThisIfNeeded" xml:space="preserve">
+    <value>La sécurité de votre utilisateur empêche d'obtenir les informations de prix du configurateur. S'il vous plaît travailler avec un utilisateur admin pour permettre cela si nécessaire.</value>
+  </data>
+  <data name="AnErrorOccurredWhileLoadingTheQuote" xml:space="preserve">
+    <value>Une erreur est survenue lors du chargement de la soumission:</value>
+  </data>
+  <data name="AnUnexpectedErrorOccurredProcessingTheImage_P0" xml:space="preserve">
+    <value>Une erreur inattendue s'est produite lors du traitement de l'image: {0}</value>
+  </data>
+  <data name="CenterpointDatabaseNameNotSpecifiedInTheSettingsFile" xml:space="preserve">
+    <value>Nom de base de données Centerpoint non spécifié dans le fichier de paramètres.</value>
+  </data>
+  <data name="ErrorGettingQuoteId" xml:space="preserve">
+    <value>Erreur lors de l'obtention de l'ID de soumission.</value>
+  </data>
+  <data name="FailedToUpdateTheNewLineUsingTheConfigurationAPI" xml:space="preserve">
+    <value>Échec de la mise à jour de la nouvelle ligne à l'aide de l'API de configuration.</value>
+  </data>
+  <data name="FieldIsRequired" xml:space="preserve">
+    <value>Le champ est requis.</value>
+  </data>
+  <data name="InspireContactInformationNotSavedToQuote" xml:space="preserve">
+    <value>Les informations contact Inspire n'ont pas été sauvegardée à la soumission.</value>
+  </data>
+  <data name="InvalidBaseConnectionStringInConfiguration" xml:space="preserve">
+    <value>Chaîne de connexion de base non valide dans la configuration.</value>
+  </data>
+  <data name="InvalidImageFormatValidFormatsAreBmp_Gif_Png_And_Jpg" xml:space="preserve">
+    <value>Format d'image incorrect. Les formats valides sont BMP, GIF, PNG et JPG.</value>
+  </data>
+  <data name="InvalidImageSize_P0" xml:space="preserve">
+    <value>Taille d'image invalide {0}</value>
+  </data>
+  <data name="InvalidMaximumImageHeight" xml:space="preserve">
+    <value>La hauteur maximale de l'image n'est pas valide.</value>
+  </data>
+  <data name="InvalidMaximumImageSize" xml:space="preserve">
+    <value>Taille d'image maximale invalide</value>
+  </data>
+  <data name="InvalidMaximumImageWidth" xml:space="preserve">
+    <value>La largeur maximale de l'image n'est pas valide.</value>
+  </data>
+  <data name="InvalidQuoteLastServerUpdate_P0" xml:space="preserve">
+    <value>Soumission invalide dernière mise à jour du serveur: {0}</value>
+  </data>
+  <data name="InvalidTargetImageFormat" xml:space="preserve">
+    <value>Format d'image cible invalide.</value>
+  </data>
+  <data name="InvalidValueForWhetherToShrinkImages" xml:space="preserve">
+    <value>Valeur non valide pour la réduction des images.</value>
+  </data>
+  <data name="Line_P0_CannotBeEditedBecauseItHasAlreadyObtainedSpecialOrderApprovalIfChangesAreNeededTheLineMustBeDeletedAndReconfigured" xml:space="preserve">
+    <value>Ligne {0} ne peut pas être modifiée car elle a déjà obtenu une approbation de commande spéciale. Si des modifications sont nécessaires, la ligne doit être supprimée et reconfigurée.</value>
+  </data>
+  <data name="MissingBaseConnectionStringInConfiguration" xml:space="preserve">
+    <value>Chaîne de connexion de base manquante dans la configuration.</value>
+  </data>
+  <data name="MissingRequiredConfigurationSettingReportingServiceLocation" xml:space="preserve">
+    <value>Configuration requise manquante pour la définition de ReportingServiceLocation.</value>
+  </data>
+  <data name="MissingRequiredConfigurationSettingWebCPAdminPassword" xml:space="preserve">
+    <value>Configuration requise manquante pour la définition de WebCPAdminPassword.</value>
+  </data>
+  <data name="MissingRequiredConfigurationSettingWebCPAdminUserName" xml:space="preserve">
+    <value>Configuration requise manquante pour la définition de WebCPAdminUserName.</value>
+  </data>
+  <data name="MissingRequiredConfigurationSettingWebCPAuthServer" xml:space="preserve">
+    <value>Configuration requise manquante pour la définition de WebCPAuthServer.</value>
+  </data>
+  <data name="NoPKVersionFoundForThisConfigurator" xml:space="preserve">
+    <value>Aucune version PK trouvée pour ce configurateur.</value>
+  </data>
+  <data name="RemotingIsConfiguredButNoWebServerCenterpointCredentialsArePresent" xml:space="preserve">
+    <value>La communication à distance est configurée mais aucune information d'identification Centerpoint du serveur Web n'est présente.</value>
+  </data>
+  <data name="RequiredFieldsAreMissing" xml:space="preserve">
+    <value>Les champs obligatoires sont manquants.</value>
+  </data>
+  <data name="StatusOf_P0_IsNotSupported" xml:space="preserve">
+    <value>L'état de {0} n'est pas pris en charge.</value>
+  </data>
+  <data name="TheBrandOfSelectedLinesMustMatchTheTrackedGlobalChangesResultsInvalidLineLineItemMasterIdEquals_P0" xml:space="preserve">
+    <value>La marque des lignes sélectionnées doit correspondre aux résultats des changements globaux suivis. Ligne non valide: LineItemMasterID = {0}</value>
+  </data>
+  <data name="TheImageSize_P0_BytesIsLargerThanTheMaximumSize_P1_Bytes" xml:space="preserve">
+    <value>La taille de l'image ({0} octets) est supérieure à la taille maximale ({1} octets).</value>
+  </data>
+  <data name="TheQuoteIsLockedByAnotherUserOrAnotherOperationForThisUser" xml:space="preserve">
+    <value>La soumission est verrouillée par un autre utilisateur ou une autre opération pour cet utilisateur.</value>
+  </data>
+  <data name="TheSpecifiedQuoteCouldNotBeLoaded" xml:space="preserve">
+    <value>La soumission spécifiée n'a pas pu être chargée</value>
+  </data>
+  <data name="TheSystemKey_P0_WasNotFoundIn_P1" xml:space="preserve">
+    <value>La clé système '{0}' n'a pas été trouvée dans {1}.</value>
+  </data>
+  <data name="ThisLinesConfigurationHasBeenUpdatedPleaseSeeThePkUpdateMessagesForMoreDetail" xml:space="preserve">
+    <value>La configuration de cette ligne a été mise à jour. S'il vous plaît voir les messages de mise à jour PK pour plus de détails.</value>
+  </data>
+  <data name="ThisLinesConfigurationHasErrorsPleaseEditTheLineAndFixAccordingly" xml:space="preserve">
+    <value>La configuration de cette ligne comporte des erreurs. Veuillez modifier la ligne et corriger en conséquence.</value>
+  </data>
+  <data name="ThisLinesConfigurationHasWarningsThatPreventCertificationPleaseEditTheLineAndFixAccordingly" xml:space="preserve">
+    <value>La configuration de cette ligne comporte des avertissements qui empêchent la certification. Veuillez modifier la ligne et corriger en conséquence.</value>
+  </data>
+  <data name="ThisLinesConfigurationHasWarningsThatPreventOrderingPleaseEditTheLineAndFixAccordingly" xml:space="preserve">
+    <value>La configuration de cette ligne comporte des avertissements qui empêchent la commande. Veuillez modifier la ligne et corriger en conséquence.</value>
+  </data>
+  <data name="ThisLinesConfigurationHasWarningsYouMayEditTheLineToViewMoreDetails" xml:space="preserve">
+    <value>La configuration de cette ligne comporte des avertissements. Vous pouvez modifier la ligne pour afficher plus de détails</value>
+  </data>
+  <data name="ThisQuoteHasLinesWithConfigurationErrorsPleaseEditTheLinesAndFixAccordingly" xml:space="preserve">
+    <value>Cette citation a des lignes avec des erreurs de configuration. Veuillez modifier les lignes et corriger en conséquence.</value>
+  </data>
+  <data name="ThisQuoteHasLinesWithConfigurationUpdatesPleaseSeeThePkUpdateMessagesForMoreDetail" xml:space="preserve">
+    <value>Cette citation a des lignes avec des mises à jour de configuration. S'il vous plaît voir les messages de mise à jour PK pour plus de détails.</value>
+  </data>
+  <data name="ThisQuoteHasLinesWithConfigurationWarningsYouMayEditTheLinesToViewMoreDetails" xml:space="preserve">
+    <value>Cette citation a des lignes avec des avertissements de configuration. Vous pouvez modifier les lignes pour afficher plus de détails.</value>
+  </data>
+  <data name="TokenRequestReturnedSuccessButDidNotProvideAnAccessToken" xml:space="preserve">
+    <value>La demande de jeton a réussi mais n'a pas fourni de jeton d'accès.</value>
+  </data>
+  <data name="UnableToFindAQuoteWithQuoteId_P0" xml:space="preserve">
+    <value>Impossible de trouver une soumission avec l'ID de soumission '{0}'</value>
+  </data>
+  <data name="UnexpectedFormData_P0" xml:space="preserve">
+    <value>Données de formulaire inattendues: {0}</value>
+  </data>
+  <data name="WebServerCenterPointCredentialsAreMissing" xml:space="preserve">
+    <value>Les informations d'identification CenterPoint du serveur Web sont manquantes.</value>
+  </data>
+  <data name="YouMustSpecifyParadigmPlusDirectoryInTheSettingsFile" xml:space="preserve">
+    <value>Vous devez spécifier 'ParadigmPlusDirectory' dans le fichier de paramètres.</value>
+  </data>
+  <data name="AnswerImageStreamsHaveNotBeenImplementedForThisTypeOfAnswer" xml:space="preserve">
+    <value>Les flux d'images de réponse n'ont pas été implémentés pour ce type de réponse.</value>
+  </data>
+  <data name="CreatingTheQuotePrintHeaderFailedBecauseTheImageDataCouldNotBeSaved" xml:space="preserve">
+    <value>La création de l'en-tête d'impression de soumission a échoué car les données d'image n'ont pas pu être enregistrées.</value>
+  </data>
+  <data name="CustomPartsAreNotSupportedForSKULookups" xml:space="preserve">
+    <value>Les pièces personnalisées ne sont pas prises en charge pour les recherches de SKU</value>
+  </data>
+  <data name="FailedToDeleteTheQuote" xml:space="preserve">
+    <value>Impossible de supprimer la soumission.</value>
+  </data>
+  <data name="FailedToSaveTheNewQuote" xml:space="preserve">
+    <value>Échec de l'enregistrement de la nouvelle soumission.</value>
+  </data>
+  <data name="FailedToSaveTheQuote" xml:space="preserve">
+    <value>Échec de l'enregistrement de la soumission</value>
+  </data>
+  <data name="FailedToSaveTheQuoteAfterApplyingGlobalChanges" xml:space="preserve">
+    <value>Échec de l'enregistrement de la soumission après l'application des modifications globales.</value>
+  </data>
+  <data name="FailedToSaveTheQuoteBillingAddress" xml:space="preserve">
+    <value>Échec de l'enregistrement de l'adresse de facturation de la soumission.</value>
+  </data>
+  <data name="FailedToSaveTheQuoteHeader" xml:space="preserve">
+    <value>Impossible d'enregistrer l'en-tête de soumission.</value>
+  </data>
+  <data name="FailedToSaveTheQuoteNotes" xml:space="preserve">
+    <value>Impossible d'enregistrer les notes de soumission.</value>
+  </data>
+  <data name="FailedToSaveTheQuoteOrProjectName" xml:space="preserve">
+    <value>Impossible d'enregistrer le nom du projet ou de la soumission.</value>
+  </data>
+  <data name="FailedToSaveTheQuotePricingPreferences" xml:space="preserve">
+    <value>Impossible d'enregistrer les préférences de tarification de soumission.</value>
+  </data>
+  <data name="FailedToSaveTheQuoteShippingAddress" xml:space="preserve">
+    <value>Échec de l'enregistrement de l'adresse d'expédition de la soumission.</value>
+  </data>
+  <data name="FileNotFoundAndIsRequired" xml:space="preserve">
+    <value>Fichier non trouvé et requis.</value>
+  </data>
+  <data name="ImagePathForClientAppsIsRequired" xml:space="preserve">
+    <value>ImagePathForClientApps est requis</value>
+  </data>
+  <data name="ImageRenderDirectoryIsRequired" xml:space="preserve">
+    <value>ImageRenderDirectory est requis</value>
+  </data>
+  <data name="InputCannotBeNull" xml:space="preserve">
+    <value>L'entrée ne peut pas être nulle.</value>
+  </data>
+  <data name="InvalidCustomerPreferencesContext_P0" xml:space="preserve">
+    <value>Contexte des préférences client invalide: {0}</value>
+  </data>
+  <data name="InvalidNoteIndexOf_P0" xml:space="preserve">
+    <value>Index de note invalide de: {0}.</value>
+  </data>
+  <data name="InvalidUserPreferencesContext_P0" xml:space="preserve">
+    <value>Contexte des préférences de l'utilisateur invalide: {0}</value>
+  </data>
+  <data name="NoteLengthForNote_P0_IsGreaterThanTheMaxAllowedOf_P1" xml:space="preserve">
+    <value>La longueur de note pour la note {0} est supérieure à la valeur maximale autorisée de {1}.</value>
+  </data>
+  <data name="Note_P0_IsReadOnlyAndCantBeChanged" xml:space="preserve">
+    <value>La note {0} est en lecture seule et ne peut pas être modifiée.</value>
+  </data>
+  <data name="RestoringASavedSessionHasNotBeenImplementedForThisConfiguratorType" xml:space="preserve">
+    <value>La restauration d'une session enregistrée n'a pas été implémentée pour ce type de configurateur.</value>
+  </data>
+  <data name="TheAddressLineOneFieldAllowsAtMost_P0_Characters" xml:space="preserve">
+    <value>Le champ de la ligne d'adresse 1 autorise au maximum {0} caractères.</value>
+  </data>
+  <data name="TheAddressLineOneFieldContainsProhibitedCharactersOrIsNotInAnAllowedFormat" xml:space="preserve">
+    <value>Le champ de la ligne d'adresse 1 contient des caractères interdits ou n'est pas dans un format autorisé.</value>
+  </data>
+  <data name="TheAddressLineOneFieldContainsProhibitedCharactersPleaseTypeItAgain" xml:space="preserve">
+    <value>Le champ de la ligne d'adresse 1 contient des caractères interdits. Veuillez le taper à nouveau.</value>
+  </data>
+  <data name="TheAddressLineTwoFieldAllowsAtMost_P0_Characters" xml:space="preserve">
+    <value>Le champ de la ligne d'adresse deux autorise au maximum {0} caractères.</value>
+  </data>
+  <data name="TheAddressLineTwoFieldContainsProhibitedCharactersOrIsNotInAnAllowedFormat" xml:space="preserve">
+    <value>Le champ de la ligne d'adresse deux contient des caractères interdits ou n'est pas dans un format autorisé.</value>
+  </data>
+  <data name="TheAddressLineTwoFieldContainsProhibitedCharactersPleaseTypeItAgain" xml:space="preserve">
+    <value>Le champ de la ligne d'adresse deux contient des caractères interdits. Veuillez le taper à nouveau.</value>
+  </data>
+  <data name="TheCityFieldAllowsAtMost_P0_Characters" xml:space="preserve">
+    <value>Le champ de la ville autorise au maximum {0} caractères.</value>
+  </data>
+  <data name="TheCityFieldContainsProhibitedCharactersOrIsNotInAnAllowedFormat" xml:space="preserve">
+    <value>Le champ de la ville contient des caractères interdits ou n'est pas dans un format autorisé.</value>
+  </data>
+  <data name="TheConfiguratorTypeMustBeConfiguratorTypesNonConfigPart" xml:space="preserve">
+    <value>Le type de configurateur doit être ConfiguratorTypes.NonConfigPart</value>
+  </data>
+  <data name="TheCountryFieldAllowsAtMost_P0_Characters" xml:space="preserve">
+    <value>Le champ pays autorise au maximum {0} caractères.</value>
+  </data>
+  <data name="TheCountryFieldContainsProhibitedCharactersOrIsNotInAnAllowedFormat" xml:space="preserve">
+    <value>Le champ pays contient des caractères interdits ou n'est pas dans un format autorisé.</value>
+  </data>
+  <data name="TheCountyFieldAllowsAtMost_P0_Characters" xml:space="preserve">
+    <value>Le champ de comté autorise au maximum {0} caractères.</value>
+  </data>
+  <data name="TheCountyFieldContainsProhibitedCharactersOrIsNotInAnAllowedFormat" xml:space="preserve">
+    <value>Le champ de comté contient des caractères interdits ou n'est pas dans un format autorisé.</value>
+  </data>
+  <data name="TheEmailFieldAllowsAtMost_P0_Characters" xml:space="preserve">
+    <value>Le champ courriel autorise au maximum {0} caractères.</value>
+  </data>
+  <data name="TheEmailFieldContainsProhibitedCharactersOrIsNotInAnAllowedFormat" xml:space="preserve">
+    <value>Le champ de courriel contient des caractères interdits ou n'est pas dans un format autorisé.</value>
+  </data>
+  <data name="TheFaxFieldAllowsAtMost_P0_Characters" xml:space="preserve">
+    <value>Le champ de fax autorise au maximum {0} caractères.</value>
+  </data>
+  <data name="TheFaxNumberFieldContainsProhibitedCharactersOrIsNotInAnAllowedFormat" xml:space="preserve">
+    <value>Le champ du numéro de fax contient des caractères interdits ou n'est pas dans un format autorisé.</value>
+  </data>
+  <data name="TheLotFieldAllowsAtMost_P0_Characters" xml:space="preserve">
+    <value>Le champ de lot autorise au maximum {0} caractères.</value>
+  </data>
+  <data name="TheLotFieldContainsProhibitedCharactersOrIsNotInAnAllowedFormat" xml:space="preserve">
+    <value>Le champ de lot contient des caractères interdits ou n'est pas dans un format autorisé.</value>
+  </data>
+  <data name="TheMobilePhoneFieldAllowsAtMost_P0_Characters" xml:space="preserve">
+    <value>Le champ de cellulaire autorise au maximum {0} caractères.</value>
+  </data>
+  <data name="TheMobilePhoneNumberFieldContainsProhibitedCharactersOrIsNotInAnAllowedFormat" xml:space="preserve">
+    <value>Le champ du numéro de cellulaire contient des caractères interdits ou n'est pas dans un format autorisé.</value>
+  </data>
+  <data name="ThePhoneFieldAllowsAtMost_P0_Characters" xml:space="preserve">
+    <value>Le champ de téléphone autorise au maximum {0} caractères.</value>
+  </data>
+  <data name="ThePhoneNumberFieldContainsProhibitedCharactersOrIsNotInAnAllowedFormat" xml:space="preserve">
+    <value>Le champ du numéro de téléphone contient des caractères interdits ou n'est pas dans un format autorisé.</value>
+  </data>
+  <data name="ThePostalCodeFieldAllowsAtMost_P0_Characters" xml:space="preserve">
+    <value>Le champ de code postal autorise au maximum {0} caractères.</value>
+  </data>
+  <data name="ThePostalCodeFieldContainsProhibitedCharactersOrIsNotInAnAllowedFormat" xml:space="preserve">
+    <value>Le champ du code postal contient des caractères interdits ou n'est pas dans un format autorisé.</value>
+  </data>
+  <data name="ThePriceAdjustmentsToNotFitWithinTheSpecifiedMargins" xml:space="preserve">
+    <value>Les ajustements de prix ne correspondent pas aux marges spécifiées.</value>
+  </data>
+  <data name="ThePricingTypeRequested_P0_DoesNotMatchThePricingTypeOnTheQuote_P1" xml:space="preserve">
+    <value>Le type de tarification demandé ({0}) ne correspond pas au type de tarification indiqué sur la soumission ({1}).</value>
+  </data>
+  <data name="TheProvidedModelFailedValidation" xml:space="preserve">
+    <value>Le modèle fourni a échoué à la validation.</value>
+  </data>
+  <data name="TheQuoteCouldNotBeSaved" xml:space="preserve">
+    <value>La soumission n'a pas pu être enregistrée.</value>
+  </data>
+  <data name="TheStateProvinceFieldAllowsAtMost_P0_Characters" xml:space="preserve">
+    <value>Le champ état/province autorise au maximum {0} caractères.</value>
+  </data>
+  <data name="TheStateProvinceFieldContainsProhibitedCharactersOrIsNotInAnAllowedFormat" xml:space="preserve">
+    <value>Le champ état/province contient des caractères interdits ou n'est pas dans un format autorisé.</value>
+  </data>
+  <data name="TheUnitConfigurationIsMissingForThisPartSKU" xml:space="preserve">
+    <value>La configuration de l'unité est manquante pour le sku de cette pièce</value>
+  </data>
+  <data name="TheUpdateLineFeatureForValueAddItemsAndDiscreteItemsHasNotBeenImplementedInWebCP" xml:space="preserve">
+    <value>La fonctionnalité UpdateLine pour les éléments de valeur ajoutée et les éléments distincts n'a pas été implémentée dans Web CP.</value>
+  </data>
+  <data name="UnhandledTypeOf_P0" xml:space="preserve">
+    <value>Type non manipulé de: {0}</value>
+  </data>
+  <data name="UpdatingTheQuotePrintHeaderFailedBecauseTheImageDataCouldNotBeSaved" xml:space="preserve">
+    <value>La mise à jour de l'en-tête d'impression de soumission a échoué car les données d'image n'ont pas pu être enregistrées.</value>
+  </data>
+  <data name="OptionFile_P0_EitherContainsNoDataOrBadlyFormattedXmlYouMayFixTheXmlOrRemoveTheFileFromEnvironmentsSettingFilesOptionFilesConfigurationSetting" xml:space="preserve">
+    <value>Le fichier d'options: '{0}' ne contient aucune donnée ou est un fichier XML mal formaté. Vous pouvez corriger le fichier XML ou retirer le fichier du paramètre de configuration 'OptionFiles' du fichier de paramètres de l'environnement.</value>
+  </data>
+  <data name="RequiredClaimNotSpecified" xml:space="preserve">
+    <value>Demande obligatoire non spécifiée.</value>
+  </data>
+  <data name="SystemNotSpecified" xml:space="preserve">
+    <value>Système non spécifié</value>
+  </data>
+  <data name="The_P0_IconHasNotBeenImplemented" xml:space="preserve">
+    <value>L'icône {0} n'a pas été implémentée.</value>
+  </data>
+  <data name="UserNotSpecified" xml:space="preserve">
+    <value>Utilisateur non spécifié</value>
+  </data>
+  <data name="NoCallContextWasFoundForThisEnvironment" xml:space="preserve">
+    <value>Aucun contexte d'appel n'a été trouvé pour cet environnement.</value>
+  </data>
+  <data name="ThankYouForShoppingWithWebCenterPointYourQuoteIsAttached" xml:space="preserve">
+    <value>Merci d'avoir magasiné avec Web CenterPoint. Votre soumission est jointe.</value>
+  </data>
+  <data name="YourSessionHasExpiredPleaseRefreshYourBrowserOrCreateANewLineItem" xml:space="preserve">
+    <value>Votre session a expiré. Veuillez actualiser votre navigateur ou créer une nouvelle ligne article.</value>
+  </data>
+  <data name="YourWebCenterPointQuote" xml:space="preserve">
+    <value>Votre soumission Web CenterPoint</value>
+  </data>
+  <data name="TheActivationWasSuccessfulButThereWasAnErrorRemovingTheClaimCode" xml:space="preserve">
+    <value>L'activation a réussi, mais une erreur s'est produite lors de la suppression du code de demande.</value>
+  </data>
+  <data name="ThereWasAnErrorCreatingTheUserLink" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la création du lien utilisateur.</value>
+  </data>
+  <data name="NoProductListsFound" xml:space="preserve">
+    <value>Aucune liste de produits n'a été trouvée</value>
+  </data>
+  <data name="ProductListSelectedAnswersNotFound" xml:space="preserve">
+    <value>Les réponses à votre liste de produits sélectionnées n'ont pas été trouvées.</value>
+  </data>
+  <data name="InvalidUser" xml:space="preserve">
+    <value>Utilisateur invalide.</value>
+  </data>
+  <data name="ProductListSelectionsRequired" xml:space="preserve">
+    <value>Sélection de la liste de produits requise</value>
+  </data>
+  <data name="FailedToLoadAssociatedQuotes" xml:space="preserve">
+    <value>Impossible de charger les soumissions associées.</value>
+  </data>
+  <data name="AnUnexpectedErrorOccurred" xml:space="preserve">
+    <value>Une erreur inattendue s'est produite.</value>
+  </data>
+  <data name="UserAlreadyExists" xml:space="preserve">
+    <value>L'utilisateur existe déjà.</value>
+  </data>
+  <data name="AnErrorOccurredCreatingTheTemplateRecord" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la création de l'enregistrement du modèle.</value>
+  </data>
+  <data name="ATemplateWithTheGivenIdCouldNotBeFound" xml:space="preserve">
+    <value>Un modèle avec l'ID donné n'a pas pu être trouvé.</value>
+  </data>
+  <data name="TheTemplateRecordWasNotFoundInTheDatabase" xml:space="preserve">
+    <value>L'enregistrement du modèle n'a pas été trouvé dans la base de données.</value>
+  </data>
+  <data name="AQuoteDoesNotExistWithTheGivenQuoteId" xml:space="preserve">
+    <value>Une soumission n'existe pas avec l'ID de soumission donné.</value>
+  </data>
+  <data name="ClientInformationIsNotProvided" xml:space="preserve">
+    <value>Les informations client ne sont pas fournies.</value>
+  </data>
+  <data name="InconsistentDataInTheNewTemplate" xml:space="preserve">
+    <value>Données incohérentes dans le nouveau modèle.</value>
+  </data>
+  <data name="NoTemplateInformationWasProvided" xml:space="preserve">
+    <value>Aucune information sur le modèle n'a été fournie.</value>
+  </data>
+  <data name="UserDoesNotHaveSecurityToViewTheQuote" xml:space="preserve">
+    <value>L'utilisateur n'a pas d'accès de sécurité pour voir la soumission.</value>
+  </data>
+  <data name="FailedToSaveTheTemplateData" xml:space="preserve">
+    <value>Impossible d'enregistrer les données du modèle.</value>
+  </data>
+  <data name="UserDoesNotHavePermissionToCreateOptions" xml:space="preserve">
+    <value>L'utilisateur n'a pas l'autorisation de créer des options de modèle.</value>
+  </data>
+  <data name="UserIsNotAnInternalUser" xml:space="preserve">
+    <value>Pas un utilisateur interne.</value>
+  </data>
+  <data name="TheQuoteIsNotATemplateQuote" xml:space="preserve">
+    <value>La soumission n'est pas un modèle de soumission.</value>
+  </data>
+  <data name="CannotEditWithProductListSelections" xml:space="preserve">
+    <value>Les sélections de la liste de produits ne peuvent pas être utilisées lors du démarrage du configurateur pour modifier une ligne existante. Débutez d'abord la session, puis dites à la session d'appliquer les nouvelles sélections de la liste de produits.</value>
+  </data>
+  <data name="InvalidBrandID" xml:space="preserve">
+    <value>Identifiant de marque non valide.</value>
+  </data>
+  <data name="MissingRequiredFieldsForProductListSelections" xml:space="preserve">
+    <value>Vous avez fourni des sélections de liste de produits, mais vous n'avez pas fourni l'un des champs obligatoires.</value>
+  </data>
+  <data name="TheCurrentSessionIsNotAnInspireSession" xml:space="preserve">
+    <value>La session en cours n'est pas une session Inspire.</value>
+  </data>
+  <data name="ContentForTheAttachmentCouldNotBeLoaded" xml:space="preserve">
+    <value>Le contenu de la pièce jointe n'a pas pu être chargé. Veuillez vérifier que la taille maximale du fichier (5 Mo) n'a pas été dépassée.</value>
+  </data>
+  <data name="QuoteIsAlreadyAssociatedToATemplate" xml:space="preserve">
+    <value>Cette soumission est déjà associée à un modèle.</value>
+  </data>
+  <data name="AnErrorOccuredUpdatingTheTemplate" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la mise à jour de l'enregistrement du modèle.</value>
+  </data>
+  <data name="ContentHeaderKey_P0_HasAnInvalidValue" xml:space="preserve">
+    <value>La clé d'en-tête de contenu {0} a une valeur non valide.</value>
+  </data>
+  <data name="ParentQuoteIdDoesNotExistInTheOptionsList" xml:space="preserve">
+    <value>L'ID de soumission parent n'existe pas dans la liste des options.</value>
+  </data>
+  <data name="ThereWasAnErrorCreatingAQuoteFromTemplate" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la création d'une soumission à partir du modèle.</value>
+  </data>
+  <data name="ClientInformationOnTemplateDoesNotMatchWithTheQuote" xml:space="preserve">
+    <value>Les informations sur le client ne correspondent pas à la soumission.</value>
+  </data>
+  <data name="TheQuoteIsNotAssociatedToATemplate" xml:space="preserve">
+    <value>La soumission n'est pas associé à un modèle.</value>
+  </data>
+  <data name="CannotCreateAQuoteAsParentTemplateContainsDealerVendorQuotes" xml:space="preserve">
+    <value>Impossible de créer une soumission en tant que modèle parent contenant des soumissions de revendeur.</value>
+  </data>
+  <data name="InspireUserAlreadyHasAssociatedQuote" xml:space="preserve">
+    <value>Une soumission associée existe déjà. Cette soumission doit être supprimée en premier.</value>
+  </data>
+  <data name="QuoteIsAlreadyAssociatedWithInspireAccount" xml:space="preserve">
+    <value>Vous devez supprimer la soumission existante avant de pouvoir créer une nouvelle soumission.</value>
+  </data>
+  <data name="TemplateIsNotAnActiveTemplate" xml:space="preserve">
+    <value>Le modèle n'est pas un modèle actif.</value>
+  </data>
+  <data name="AreYouSureYouAreReadyToSubmitYourQuote" xml:space="preserve">
+    <value>Êtes-vous sûr d'être prêt à soumettre votre soumission?</value>
+  </data>
+  <data name="NoOptionInformationWasProvided" xml:space="preserve">
+    <value>Aucune information d'option n'a été fournie pour la nouvelle option.</value>
+  </data>
+  <data name="AViewWithThisIdDoesNotExist" xml:space="preserve">
+    <value>Une vue avec cet ID n'existe pas</value>
+  </data>
+  <data name="FailedToUpdateTheTemplateRecord" xml:space="preserve">
+    <value>Échec de la mise à jour de l'enregistrement du modèle</value>
+  </data>
+  <data name="NoTemplatesAreAssociatedWithThisClient" xml:space="preserve">
+    <value>Aucun modèle n'est associé à ce client.</value>
+  </data>
+  <data name="UserDoesNotHavePermissionToCreateTemplates" xml:space="preserve">
+    <value>L'utilisateur n'a pas l'autorisation de créer des modèles.</value>
+  </data>
+  <data name="AQuoteInOpenStatusCanBeConvertedToATemplateQuote" xml:space="preserve">
+    <value>Une soumission en statut ouvert peut être convertie en un modèle de soumission.</value>
+  </data>
+  <data name="ATemplateMustHaveANameAndDescription" xml:space="preserve">
+    <value>Un modèle doit avoir un nom et une description.</value>
+  </data>
+  <data name="AColumnNameOrExtraFieldNumberMustBeSpecifiedToLoadValuesFrom" xml:space="preserve">
+    <value>Un nom de colonne ou un numéro de champ supplémentaire doit être spécifié pour charger les valeurs.</value>
+  </data>
+  <data name="ActiveSalesRepCodeSettingMustBeAValidInteger" xml:space="preserve">
+    <value>Le paramètre ActiveSalesRepCode doit être un entier valide.</value>
+  </data>
+  <data name="APropertyNameOrExtraFieldNumberMustBeSpecifiedToLoadValuesFrom" xml:space="preserve">
+    <value>Un nom de propriété ou un numéro de champ supplémentaire doit être spécifié pour charger des valeurs.</value>
+  </data>
+  <data name="CheckPerClientSettingMustBeSpecifiedIfCheckingForDuplicatePONumbers" xml:space="preserve">
+    <value>Le paramètre CheckPerClient doit être spécifié si vous recherchez des numéros de bon de commande en double.</value>
+  </data>
+  <data name="CheckPOForDuplicatesSettingIsNotSpecified" xml:space="preserve">
+    <value>Le paramètre CheckPOForDuplicates n'est pas spécifié.</value>
+  </data>
+  <data name="EitherTheSecuritySettingForValidationOrManufacturerFlagForValidationSettingNeedsToBeSpecified" xml:space="preserve">
+    <value>Le paramètre SecuritySettingForValidation ou ManufacturerFlagForValidation doit être spécifié.</value>
+  </data>
+  <data name="EitherTheSuccessStateOrFailureStateSettingNeedsToBeSpecified" xml:space="preserve">
+    <value>Le paramètre SuccessState ou FailureState doit être spécifié.</value>
+  </data>
+  <data name="ErrorParsingDefaultDateValue_P0_ToADate" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la valeur par défaut {0} à une date.</value>
+  </data>
+  <data name="ErrorParsingDefaultValue_P0_ToANumber" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la valeur par défaut {0} à un nombre.</value>
+  </data>
+  <data name="ErrorParsingHiddenProperty" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la propriété masquée.</value>
+  </data>
+  <data name="ErrorParsingIncrementValue_P0_ToANumber" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la valeur de l'incrément {0} à un nombre.</value>
+  </data>
+  <data name="ErrorParsingMaxDateValue_P0_ToADate" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la valeur de date maximale {0} à une date.</value>
+  </data>
+  <data name="ErrorParsingMaxLengthProperty" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la propriété MaxLength</value>
+  </data>
+  <data name="ErrorParsingMaxValue_P0_ToANumber" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la valeur maximale {0} à un nombre.</value>
+  </data>
+  <data name="ErrorParsingMinDateValue_P0_ToADate" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la valeur min date {0} à une date.</value>
+  </data>
+  <data name="ErrorParsingMinValue_P0_ToANumber" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la valeur min {0} à un nombre.</value>
+  </data>
+  <data name="ErrorParsingOrderProperty" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la propriété Order.</value>
+  </data>
+  <data name="ErrorParsingReadOnlyProperty" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la propriété ReadOnly.</value>
+  </data>
+  <data name="ErrorParsingRequiredProperty" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la propriété requise.</value>
+  </data>
+  <data name="ErrorParsingSaveAfterChangeProperty" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la propriété SaveAfterChange.</value>
+  </data>
+  <data name="ErrorParsingValue_P0_ToANumber" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la valeur {0} d'un nombre.</value>
+  </data>
+  <data name="ErrorParsingValue_P0_ToBoolean" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la valeur {0} à booléen.</value>
+  </data>
+  <data name="ErrorParsingValue_P0_ToDate" xml:space="preserve">
+    <value>Erreur lors de la décomposition syntaxique de la valeur {0} à ce jour.</value>
+  </data>
+  <data name="FailedToFindThePropertyOrFieldNamed_P0_OnType_P1" xml:space="preserve">
+    <value>Impossible de trouver la propriété ou le champ nommé {0} sur le type {1}.</value>
+  </data>
+  <data name="FieldMustBeOnA_P0_Increment" xml:space="preserve">
+    <value>Le champ doit être sur un incrément de {0}.</value>
+  </data>
+  <data name="FieldValueCannotBeAfter_P0" xml:space="preserve">
+    <value>La valeur du champ ne peut pas être après {0}</value>
+  </data>
+  <data name="FieldValueCannotBeBefore_P0" xml:space="preserve">
+    <value>La valeur du champ ne peut pas être antérieure à {0}</value>
+  </data>
+  <data name="FieldValueCannotBeGreaterThan_P0" xml:space="preserve">
+    <value>La valeur du champ ne peut pas être supérieure à {0}</value>
+  </data>
+  <data name="FieldValueCannotBeLessThan_P0" xml:space="preserve">
+    <value>La valeur du champ ne peut pas être inférieure à {0}</value>
+  </data>
+  <data name="FieldValue_P0_DoesNotMatchAnAvailableOption" xml:space="preserve">
+    <value>La valeur du champ {0} ne correspond pas à une option disponible.</value>
+  </data>
+  <data name="InvalidQuote" xml:space="preserve">
+    <value>Soumission invalide</value>
+  </data>
+  <data name="InvalidShipDate_P0" xml:space="preserve">
+    <value>Date d'expédition incorrecte ({0}).</value>
+  </data>
+  <data name="LengthIsTooLongMaxLengthIs_P0" xml:space="preserve">
+    <value>La longueur est trop longue. La longueur maximale est {0}.</value>
+  </data>
+  <data name="NameSettingMustBeSpecifiedForACenterpointConfigurableField" xml:space="preserve">
+    <value>Le paramètre de nom doit être spécifié pour un champ configurable Centerpoint.</value>
+  </data>
+  <data name="NullIsNotValidValueForQuoteLastServerUpdate" xml:space="preserve">
+    <value>Null n'est pas une valeur valide pour QuoteLastServerUpdate.</value>
+  </data>
+  <data name="P0_DoesNotHaveAValueFromTheAvailableListOfOptions" xml:space="preserve">
+    <value>{0} n'a pas de valeur dans la liste d'options disponible.</value>
+  </data>
+  <data name="P0_IsNoLongerAvailableAsASalespersonPleaseSelectAnotherValue" xml:space="preserve">
+    <value>{0} n'est plus disponible en tant que vendeur. Veuillez sélectionner une autre valeur</value>
+  </data>
+  <data name="P0_IsNoLongerAvailableAsAShippingMethodPleaseSelectAnotherValue" xml:space="preserve">
+    <value>{0} n'est plus disponible comme mode de livraison. Veuillez sélectionner une autre valeur</value>
+  </data>
+  <data name="P0_IsNotAValidExtraFieldNumberExtraFieldNumbersMustBeBetween1And10" xml:space="preserve">
+    <value>{0} n'est pas un numéro de champ supplémentaire valide. Les numéros de champs supplémentaires doivent être compris entre 1 et 10.</value>
+  </data>
+  <data name="PurchaseOrder_P0_HasAlreadyBeenUsed" xml:space="preserve">
+    <value>La commande d'achat {0} a déjà été utilisée</value>
+  </data>
+  <data name="TheBaseFieldForAPONumberDecoratorMustBeATextBasedField" xml:space="preserve">
+    <value>Le champ de base d'un décorateur de numéros de commande doit être un champ textuel.</value>
+  </data>
+  <data name="TheBaseFieldForThisQuoteDatabaseColumnDecoratorMustBeAGenericWithType_P0" xml:space="preserve">
+    <value>Le champ de base pour ce décorateur de colonne de base de données de soumission doit être générique avec le type {0}</value>
+  </data>
+  <data name="ThereAreNoValidShipDatesForThisQuote" xml:space="preserve">
+    <value>Il n'y a aucune date d'expédition valide pour cette soumission.</value>
+  </data>
+  <data name="TheSelectedDateIsNotAValidDayOfTheWeek" xml:space="preserve">
+    <value>La date sélectionnée n'est pas un jour valide de la semaine.</value>
+  </data>
+  <data name="TheValueStoredForTheHeaderIsNotAValidValue" xml:space="preserve">
+    <value>La valeur stockée pour l'en-tête n'est pas une valeur valide.</value>
+  </data>
+  <data name="ThisDayOfTheWeek_P0_IsNotAllowed" xml:space="preserve">
+    <value>Ce jour de la semaine ({0}) n'est pas autorisé.</value>
+  </data>
+  <data name="ThisShipDateIsAnExcludedDate" xml:space="preserve">
+    <value>Cette date d'expédition est une date exclue.</value>
+  </data>
+  <data name="UseDefaultValueSettingIsNotSpecified" xml:space="preserve">
+    <value>Le paramètre UseDefaultValue n'est pas spécifié.</value>
+  </data>
+  <data name="ValueCannotContainATimeComponent" xml:space="preserve">
+    <value>La valeur ne peut pas contenir de composant de temps.</value>
+  </data>
+  <data name="ValueDoesNotMatchTheRequiredFormat" xml:space="preserve">
+    <value>La valeur ne correspond pas au format requis.</value>
+  </data>
+  <data name="ValueId_P0_MustBeAnInteger" xml:space="preserve">
+    <value>L'ID de valeur {0} doit être un nombre entier.</value>
+  </data>
+  <data name="AColumnNameOrExtraFieldNumberMustBeSpecifiedToSaveValuesTo" xml:space="preserve">
+    <value>Un nom de colonne ou un numéro de champ supplémentaire doit être spécifié pour enregistrer les valeurs.</value>
+  </data>
+  <data name="APropertyNameOrExtraFieldNumberMustBeSpecifiedToSaveValuesTo" xml:space="preserve">
+    <value>Un nom de propriété ou un numéro de champ supplémentaire doit être spécifié pour enregistrer les valeurs.</value>
+  </data>
+  <data name="NoDefaultOptionsAssociatedForThisQuoteId" xml:space="preserve">
+    <value>Aucune option par défaut n'est associée à cet ID de soumission.</value>
+  </data>
+  <data name="LineIdProvidedForNewLine" xml:space="preserve">
+    <value>Un identifiant de ligne a été fourni pour une nouvelle ligne.</value>
+  </data>
+  <data name="InvalidSystem" xml:space="preserve">
+    <value>Système invalide.</value>
+  </data>
+  <data name="LinesOutOfDataReasons_P0" xml:space="preserve">
+    <value>Certaines lignes ont été jugées périmées pour les raisons suivantes: {0}.</value>
+  </data>
+</root>
