@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using BisAceAPIBusinessLogicInterface;
 using BisAceAPIModels.Models;
 

@@ -53,7 +53,6 @@ namespace BisAceDIContainer.DIContainer
             _bisConfigurationManagers.Add(0, bisConfigurationManager);
             _currentConfig = systemConfig;
 
-            //*RR+1 07/03/17 WMP-66 ERP API - Implement Controllers for API
             ProcessCommonRegister(globalConfig);
         }
 
@@ -137,7 +136,6 @@ namespace BisAceDIContainer.DIContainer
         /// </summary>
         private void RegisterLogger()
         {
-            //*BCL+logger 12/29/16 WEB-629   WebCP Logging
             _container.RegisterConditional(typeof(ILog),
                 c => typeof(LogAdapter<>).MakeGenericType(c.Consumer.ImplementationType),
                 Lifestyle.Singleton,

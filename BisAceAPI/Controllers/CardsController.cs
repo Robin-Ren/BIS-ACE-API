@@ -14,7 +14,7 @@ namespace BisAceAPI.Controllers
 {
     //[ClaimsAuthorize]
     [RoutePrefix("api")]
-    public class BISController : BisApiController
+    public class CardsController : ABisApiController
     {
         #region Controller Meta Data
         private readonly Func<IBisResult> _resultFactory;
@@ -22,7 +22,7 @@ namespace BisAceAPI.Controllers
         #endregion
 
         #region Constructor
-        public BISController(Func<IBisResult> resultFactory,
+        public CardsController(Func<IBisResult> resultFactory,
             ICardsBusinessLogic cardsBusinessLogic)
         {
             _resultFactory = resultFactory;
@@ -390,8 +390,6 @@ namespace BisAceAPI.Controllers
             string strColumn = "cardid";
             string strTable = "cards";
             string strWhere = String.Format("cardno='{0}' and status>0", strCardNo);
-
-            // Fetch card(s) for person
 
             API_RETURN_CODES_CS result = ace_Query.Select(strColumn, strTable, strWhere);
 

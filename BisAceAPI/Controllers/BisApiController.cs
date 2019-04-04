@@ -10,7 +10,7 @@ using BisAceAPIModels.Models.Enums;
 
 namespace BisAceAPI.Controllers
 {
-    public abstract class BisApiController : ApiController
+    public abstract class ABisApiController : ApiController
     {
         protected API_RETURN_CODES_CS TryLogin(out AccessEngine aceEngine)
         {

@@ -109,7 +109,7 @@ namespace BisAceAPIModels.Options
 
             if (configEl != null)
             {
-                //CSR+2 5/18 WEB-1790 only add top level elements to avoid adding child elements to inappropriate places in the document
+                //Only add top level elements to avoid adding child elements to inappropriate places in the document
                 optionsEl.Add(configEl.Elements());
                 //optionsEl.Add(configEl.Descendants());
             }

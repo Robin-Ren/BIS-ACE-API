@@ -1,16 +1,4 @@
-﻿//////-------------------------------------------------------------------------------------------------------
-////// Copyright © WTS Paradigm 2013-2014, 2016
-//////
-////// Name:            ServiceCreator
-////// Created:         *bjk 12/26/13 WPL029750 move to better shared location
-////// Purpose:         Shared service creator logic
-////// Modifications:   
-//////                  *JEB 03/07/14 WPL030401 Add new stress test service
-//////                  *JEB 07/25/14 WPL031850 Add new Web Centerpoint API service
-//////                  *BCL 12/10/14 WPL032979 Allow anonymous access to WCF reporting service
-//////                  *nrv 08/12/16 WEB-169   Copied here from TQ2
-//////-------------------------------------------------------------------------------------------------------
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -28,9 +16,6 @@ namespace ASI.WCF
     /// </summary>
     internal static class ServiceCreator
     {
-        //*BCL+noTCPSecurity 12/10/14 WPL032979 Allow anonymous access to WCF reporting service
-        //*bjk++ 12/18/13 WPL029750 moved from service static to here to share logic
-        //*BCL 12/20/12 WPL025158 Move touchquote reports to server processing
         /// <summary>
         /// Creates a NetTCP binding for communications with a WCF service
         /// </summary>
@@ -47,9 +32,8 @@ namespace ASI.WCF
             b.ReaderQuotas.MaxArrayLength = 671088640;
             b.ReceiveTimeout = TimeSpan.MaxValue;
             b.SendTimeout = TimeSpan.MaxValue;
-            b.Namespace = "http://wtsparadigm.com/binding";
+            b.Namespace = "http://contoso.com/binding";
 
-            //*BCL+7 12/10/14 WPL032979 Allow anonymous access to WCF reporting service
             //Set the security and transport modes to 'none'
             if (noTCPSecurity)
             {

@@ -109,7 +109,7 @@ namespace BisAceAPIModels.Models
         /// <param name="message">The localized error message</param>
         public void AddLocalizedErrorMessage(string message)
         {
-            if (!string.IsNullOrEmpty(message)) //CSR+if 2/18 WEB-1641 this is public now so validate there is a real error message
+            if (!string.IsNullOrEmpty(message))
             {
                 _errorMessages.Add(message);
             }

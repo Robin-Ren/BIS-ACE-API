@@ -140,7 +140,7 @@ namespace BisAceAPI
                             // If settings were actually loaded
                             if (settings.Count > 0)
                             {
-                                // Create the new call context and add it in to the available contexts //CSR+1 3/18 WEB-1684 add config directory
+                                // Create the new call context and add it in to the available contexts
                                 _systemConfigs.Add(sysId, new BisApplicationConfig(settings));
                             }
                         }

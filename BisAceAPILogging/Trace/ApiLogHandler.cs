@@ -42,7 +42,7 @@ namespace BisAceAPILogging.Trace
                 var apiLogEntry = CreateApiLogEntryWithRequestData(request);
                 if (request.Content != null)
                 {
-                    //*MAS+1 01/08/18 WEB-1561 Check to see if the Task holds any Exceptions with the Request Data, if yes, do not populate the field. Else, it returns System.Aggregate exceptions.
+                    //Check to see if the Task holds any Exceptions with the Request Data, if yes, do not populate the field. Else, it returns System.Aggregate exceptions.
                     await request.Content.ReadAsStringAsync()
                         .ContinueWith(task =>
                         {
@@ -62,7 +62,7 @@ namespace BisAceAPILogging.Trace
                         if (response.Content != null)
                         {
                             apiLogEntry.ResponseContentBody = response.Content.ReadAsStringAsync().Result;
-                            apiLogEntry.ResponseContentType = response.Content.Headers.ContentType?.MediaType; //CSR 12/17 WEB-1214 don't crash when content type is null
+                            apiLogEntry.ResponseContentType = response.Content.Headers.ContentType?.MediaType;
                             apiLogEntry.ResponseHeaders = SerializeHeaders(response.Content.Headers);
                         }
 

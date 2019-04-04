@@ -65,7 +65,6 @@ namespace BisAceAPIModels.Utils
                 }
             }
             throw new ArgumentException("Not found.", "description");
-            // or return default(T);
         }
 
         public static string GetNameFromDescription<T>(string description)
@@ -88,7 +87,6 @@ namespace BisAceAPIModels.Utils
                 }
             }
             throw new ArgumentException("Not found.", "description");
-            // or return default(T);
         }
 
 
