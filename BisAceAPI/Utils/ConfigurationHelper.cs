@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
+using BisAceAPIModels;
 
 namespace BisAceAPI
 {
     public static class ConfigurationHelper
     {
-        internal static string SERVER_NAME = GetConfigString(Models.ConstantStrings.BIS_SERVER_NAME, true);
+        internal static string SERVER_NAME = GetConfigString(BisConstants.BIS_SERVER_NAME, true);
 
         /// <summary>
         /// Returns the specified string value from the application .config file

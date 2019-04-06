@@ -15,7 +15,6 @@ namespace BisAceAPI.WebCore
     /// <summary>
     /// Result class which builds a 400 Http response with an object in the body.
     /// </summary>
-    /// <typeparam name="T">The type to use with this model.</typeparam>
     /// <seealso cref="System.Web.Http.IHttpActionResult" />
     internal class BadRequestWithModelResult : IHttpActionResult
     {

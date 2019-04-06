@@ -22,7 +22,7 @@ namespace BisAceAPI.Controllers
         #endregion
 
         #region Constructor
-        public CardsController(Func<IBisResult> resultFactory,
+        public DoorAccessGroupsController(Func<IBisResult> resultFactory,
             ICardsBusinessLogic cardsBusinessLogic)
         {
             _resultFactory = resultFactory;
@@ -55,41 +55,6 @@ namespace BisAceAPI.Controllers
                     result.ErrorMessage = ConstantStrings.RESPONSE_LOGIN_ERROR;
                     return CreateResponseFromResult(result);
                 }
-
-                // Get card by card number
-                var cardId = GetCardId(cardNumber.PadLeft(12, '0'), ace);
-
-                ACECards aceCard = new ACECards(ace);
-                apiCallResult = aceCard.Get(cardId);
-
-                if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
-                {
-                    result.ErrorType = BisErrorType.NotFound;
-                    result.ErrorMessage = ConstantStrings.RESPONSE_CARD_NOT_FOUND;
-                    return CreateResponseFromResult(result);
-                }
-
-                ACEPersons person = new ACEPersons(ace);
-                apiCallResult = person.Get(aceCard.PERSID);
-
-                if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
-                {
-                    result.ErrorType = BisErrorType.NotFound;
-                    result.ErrorMessage = ConstantStrings.RESPONSE_PERSON_NOT_FOUND;
-                    return CreateResponseFromResult(result);
-                }
-
-                BisCard card = new BisCard
-                {
-                    CardNumber = aceCard.CARDNO.PadLeft(12, '0')
-                };
-                person.GetCustomFieldValue("CardName", out string cardName);
-                //person.GetCustomFieldValue("CardStartValidDate", out string cardStartValidDate);
-
-                card.CardName = cardName;
-                //card.CardStartValidDate = cardStartValidDate;
-
-                result.SetResource(card);
 
                 return CreateResponseFromResult(result);
             }

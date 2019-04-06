@@ -18,8 +18,8 @@ namespace BisAceDIContainer.DIContainer
     {
         private SimpleInjector.Container _container;
         private BisApplicationConfig _currentConfig;
-        private Dictionary<int, BisApplicationConfig> _systemConfigs;
-        private Dictionary<int, BisConfigurationManager> _bisConfigurationManagers;
+        private readonly Dictionary<int, BisApplicationConfig> _systemConfigs;
+        private readonly Dictionary<int, BisConfigurationManager> _bisConfigurationManagers;
 
         /// <summary>
         /// Initializes a new instance of the DIContainer class.
@@ -49,8 +49,10 @@ namespace BisAceDIContainer.DIContainer
         public BisDIContainer(BisApplicationConfig systemConfig, BisConfigurationManager bisConfigurationManager,
                                  HttpConfiguration globalConfig)
         {
-            _bisConfigurationManagers = new Dictionary<int, BisConfigurationManager>();
-            _bisConfigurationManagers.Add(0, bisConfigurationManager);
+            _bisConfigurationManagers = new Dictionary<int, BisConfigurationManager>
+            {
+                { 0, bisConfigurationManager }
+            };
             _currentConfig = systemConfig;
 
             ProcessCommonRegister(globalConfig);
@@ -121,6 +123,7 @@ namespace BisAceDIContainer.DIContainer
         {
             // ToDo - Use reflection for this so we don't pull in the actual dll references
             _container.Register<ICardsBusinessLogic, CardsBusinessLogic>();
+            _container.Register<IPersonsBusinessLogic, PersonsBusinessLogic>();
         }
 
         /// <summary>
@@ -129,6 +132,7 @@ namespace BisAceDIContainer.DIContainer
         private void RegisterDataAccess()
         {
             _container.Register<ICardsDataAccess, CardsDataAccess>();
+            _container.Register<IPersonsDataAccess, PersonsDataAccess>();
         }
 
         /// <summary>

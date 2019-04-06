@@ -10,8 +10,16 @@ using BisAceAPIModels.Models.Enums;
 
 namespace BisAceAPI.Controllers
 {
+    /// <summary>
+    /// Base controller class.
+    /// </summary>
     public abstract class ABisApiController : ApiController
     {
+        /// <summary>
+        /// Try to login to BIS System.
+        /// </summary>
+        /// <param name="aceEngine">Output instance of access engine.</param>
+        /// <returns></returns>
         protected API_RETURN_CODES_CS TryLogin(out AccessEngine aceEngine)
         {
             IEnumerable<string> userValues;
@@ -81,7 +89,7 @@ namespace BisAceAPI.Controllers
         /// The resource specified will be returned within a 200 result.
         /// </summary>
         /// <typeparam name="TResource">The type of the resource.</typeparam>
-        /// <param name="BisResult">The result.</param>
+        /// <param name="result">The result.</param>
         /// <returns>
         /// A 200 or 400-level response based on the data in the provided result.
         /// </returns>

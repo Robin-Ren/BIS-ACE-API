@@ -28,7 +28,7 @@ namespace BisAceAPIModels.Options
     /// <typeparam name="T">The type of the options class</typeparam>
     public class BisOptions<T> : IBisOptions<T> where T : class, new()
     {
-        private T _value;
+        private readonly T _value;
 
         /// <summary>
         /// The options object.
@@ -78,10 +78,7 @@ namespace BisAceAPIModels.Options
 
                 options = (T)optionsSerializer.Deserialize(ms);
 
-                if (afterCreate != null)
-                {
-                    afterCreate(options);
-                }
+                afterCreate?.Invoke(options);
             }
 
             return new BisOptions<T>(options) { SystemId = systemId };

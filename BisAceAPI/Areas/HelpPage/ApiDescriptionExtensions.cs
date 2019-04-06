@@ -5,6 +5,9 @@ using System.Web.Http.Description;
 
 namespace BisAceAPI.Areas.HelpPage
 {
+    /// <summary>
+    /// Extension class for ApiDescription
+    /// </summary>
     public static class ApiDescriptionExtensions
     {
         /// <summary>

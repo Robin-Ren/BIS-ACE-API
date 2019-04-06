@@ -50,9 +50,13 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="W32_ACEInterface">
+      <HintPath>..\..\..\BISAPI\BISAPI\ASSEM\W32_ACEInterface.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BisAceAPIBusinessLogicHelperMethods.cs" />
+    <Compile Include="PersonsBusinessLogic.cs" />
     <Compile Include="CardsBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceCreator.cs" />
@@ -76,6 +80,10 @@
     <ProjectReference Include="..\BisAceAPIDataAccess\BisAceAPIDataAccess.csproj">
       <Project>{298A436B-DAB6-4B46-890C-E9A4AB124B83}</Project>
       <Name>BisAceAPIDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BisAceAPIModels\BisAceAPIModels.csproj">
+      <Project>{E780DEF0-28FA-47EE-A141-53F87E725AD0}</Project>
+      <Name>BisAceAPIModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

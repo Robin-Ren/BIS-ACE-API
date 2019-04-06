@@ -25,9 +25,11 @@ namespace ASI.WCF
         /// <param name="noTCPSecurity">if set to <c>true</c> [the TCP security bindings will be set to none].</param>
         public static void GetServiceObjectsTCP(out System.ServiceModel.EndpointAddress e, out System.ServiceModel.NetTcpBinding b, string UpdateServer, bool noTCPSecurity)
         {
-            b = new System.ServiceModel.NetTcpBinding();
-            b.MaxConnections = 256;
-            b.MaxReceivedMessageSize = 671088640;
+            b = new NetTcpBinding
+            {
+                MaxConnections = 256,
+                MaxReceivedMessageSize = 671088640
+            };
             b.ReaderQuotas.MaxStringContentLength = 671088640;
             b.ReaderQuotas.MaxArrayLength = 671088640;
             b.ReceiveTimeout = TimeSpan.MaxValue;

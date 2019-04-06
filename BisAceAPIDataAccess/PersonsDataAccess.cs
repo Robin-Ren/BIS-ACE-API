@@ -6,7 +6,7 @@ using BisAceDatabaseContext;
 
 namespace BisAceAPIDataAccess
 {
-    public class CardsDataAccess : ICardsDataAccess
+    public class PersonsDataAccess : IPersonsDataAccess
     {
         #region Private Members
         private readonly IDatabaseContext _dbContext;
@@ -17,7 +17,7 @@ namespace BisAceAPIDataAccess
         /// Constructor. Takes in the database context object to use
         /// </summary>
         /// <param name="databaseContext">Database context to use to make queries.</param>
-        public CardsDataAccess(IDatabaseContext databaseContext)
+        public PersonsDataAccess(IDatabaseContext databaseContext)
         {
             _dbContext = databaseContext;
         }

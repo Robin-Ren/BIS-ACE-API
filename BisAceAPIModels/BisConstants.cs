@@ -49,5 +49,14 @@ namespace BisAceAPIModels
         /// </summary>
         public static readonly string API_CONFIG_PART_IMAGES_DIRECTORY_NAME = "_partsimages";
         #endregion
+
+        #region APIMessages
+        public static readonly string BIS_SERVER_NAME = "BisServerName";
+        public static readonly string RESPONSE_REQUEST_BODY_MUST_BE_PROVIDED = "Request body must be provided!";
+        public static readonly string RESPONSE_BIS_API_CALL_FAILED = "Failed to call BIS API.";
+        public static readonly string RESPONSE_LOGIN_ERROR = "Failed to login.";
+        public static readonly string RESPONSE_CARD_NOT_FOUND = "Card can not be found.";
+        public static readonly string RESPONSE_PERSON_NOT_FOUND = "Person can not be found.";
+        #endregion
     }
 }

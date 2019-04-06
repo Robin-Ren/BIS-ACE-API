@@ -10,9 +10,13 @@ using BisAceAPI;
 
 namespace BisAceAPI
 {
+#pragma warning disable CS1591
     public class WebApiApplication : System.Web.HttpApplication
+#pragma warning restore CS1591
     {
+#pragma warning disable CS1591
         protected void Application_Start()
+#pragma warning restore CS1591
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

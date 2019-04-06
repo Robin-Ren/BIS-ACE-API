@@ -125,9 +125,7 @@ namespace BisAceAPI
 
                 foreach (string key in configSettingKeys)
                 {
-                    int sysId;
-
-                    if (int.TryParse(key.Remove(0, BisConstants.CONFIG_SYS_CONFIG_PREFIX.Length), out sysId) && !_systemConfigs.ContainsKey(sysId))
+                    if (int.TryParse(key.Remove(0, BisConstants.CONFIG_SYS_CONFIG_PREFIX.Length), out int sysId) && !_systemConfigs.ContainsKey(sysId))
                     {
                         // Get the file name and path to the specific settings file
                         string fileName = Path.Combine(configDirectory, ConfigurationManager.AppSettings[key] + ".settings");

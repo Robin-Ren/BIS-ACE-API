@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace BisAceAPI.Utils
+namespace BisAceAPIModels.Utils
 {
     public class HexadecimalEncodingHelper
     {
@@ -18,7 +18,7 @@ namespace BisAceAPI.Utils
                 sb.Append(t.ToString("X2"));
             }
 
-            return sb.ToString(); // returns: "48656C6C6F20776F726C64" for "Hello world"
+            return sb.ToString();
         }
 
         public static string FromHexString(string hexString)
@@ -29,7 +29,7 @@ namespace BisAceAPI.Utils
                 bytes[i] = Convert.ToByte(hexString.Substring(i * 2, 2), 16);
             }
 
-            return Encoding.Unicode.GetString(bytes); // returns: "Hello world" for "48656C6C6F20776F726C64"
+            return Encoding.Unicode.GetString(bytes);
         }
     }
 }

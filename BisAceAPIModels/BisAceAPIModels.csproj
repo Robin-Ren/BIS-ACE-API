@@ -90,6 +90,7 @@
     </Compile>
     <Compile Include="Utils\EnumHelper.cs" />
     <Compile Include="BisExceptions.cs" />
+    <Compile Include="Utils\HexadecimalEncodingHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Strings.fr-FR.resx">
