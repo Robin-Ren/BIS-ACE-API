@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BisAceAPIBusinessLogicHelperMethods.cs" />
+    <Compile Include="LiftAccessGroupsBusinessLogic.cs" />
+    <Compile Include="DoorAccessGroupsBusinessLogic.cs" />
     <Compile Include="PersonsBusinessLogic.cs" />
     <Compile Include="CardsBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +82,10 @@
     <ProjectReference Include="..\BisAceAPIDataAccess\BisAceAPIDataAccess.csproj">
       <Project>{298A436B-DAB6-4B46-890C-E9A4AB124B83}</Project>
       <Name>BisAceAPIDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BisAceAPILogging\BisAceAPILogging.csproj">
+      <Project>{F3C3D51E-F3F7-4320-BBE7-DE7571AF4C05}</Project>
+      <Name>BisAceAPILogging</Name>
     </ProjectReference>
     <ProjectReference Include="..\BisAceAPIModels\BisAceAPIModels.csproj">
       <Project>{E780DEF0-28FA-47EE-A141-53F87E725AD0}</Project>

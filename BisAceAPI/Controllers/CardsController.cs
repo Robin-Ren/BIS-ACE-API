@@ -9,6 +9,7 @@ using BisAceAPIModels.Models;
 using BisAceAPIModels.Models.Enums;
 using BisAceAPIBusinessLogicInterface;
 using BisAceAPIModels;
+using BisAceAPILogging;
 
 namespace BisAceAPI.Controllers
 {
@@ -20,7 +21,6 @@ namespace BisAceAPI.Controllers
     public class CardsController : ABisApiController
     {
         #region Controller Meta Data
-        private readonly Func<IBisResult> _resultFactory;
         private readonly ICardsBusinessLogic _cardsBL;
         #endregion
 
@@ -28,13 +28,14 @@ namespace BisAceAPI.Controllers
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="resultFactory"></param>
-        /// <param name="cardsBusinessLogic"></param>
-        public CardsController(Func<IBisResult> resultFactory,
-            ICardsBusinessLogic cardsBusinessLogic)
+        public CardsController(
+            Func<IBisResult> resultFactory,
+            ICardsBusinessLogic cardsBusinessLogic,
+            ILog logger)
         {
             _resultFactory = resultFactory;
             _cardsBL = cardsBusinessLogic;
+            _logger = logger;
         }
         #endregion
 
@@ -47,18 +48,9 @@ namespace BisAceAPI.Controllers
         [ResponseType(typeof(BisCard))]
         public IHttpActionResult Get(string cardNumber)
         {
-            IBisResult result = _resultFactory();
-
             try
             {
-                API_RETURN_CODES_CS apiCallResult = TryLogin(out AccessEngine ace);
-
-                if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
-                {
-                    result.ErrorType = BisErrorType.Unauthorised;
-                    result.ErrorMessage = BisConstants.RESPONSE_LOGIN_ERROR;
-                    return CreateResponseFromResult(result);
-                }
+                IBisResult result = TryLogin(out AccessEngine ace);
 
                 // Validate if the card exists by card No.
                 result = _cardsBL.ValidateCardExist(ace, cardNumber);
@@ -88,18 +80,9 @@ namespace BisAceAPI.Controllers
         [ResponseType(typeof(BisHttpResultBase))]
         public IHttpActionResult PostCard([FromBody]BisCard card)
         {
-            IBisResult result = _resultFactory();
-
             try
             {
-                API_RETURN_CODES_CS apiCallResult = TryLogin(out AccessEngine ace);
-
-                if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
-                {
-                    result.ErrorType = BisErrorType.Unauthorised;
-                    result.ErrorMessage = BisConstants.RESPONSE_LOGIN_ERROR;
-                    return CreateResponseFromResult(result);
-                }
+                IBisResult result = TryLogin(out AccessEngine ace);
 
                 // Save card data
                 result = _cardsBL.CreateCard(ace, card);
@@ -121,18 +104,9 @@ namespace BisAceAPI.Controllers
         [ResponseType(typeof(BisHttpResultBase))]
         public IHttpActionResult PutCard([FromBody]BisCard card)
         {
-            IBisResult result = _resultFactory();
-
             try
             {
-                API_RETURN_CODES_CS apiCallResult = TryLogin(out AccessEngine ace);
-
-                if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
-                {
-                    result.ErrorType = BisErrorType.Unauthorised;
-                    result.ErrorMessage = BisConstants.RESPONSE_LOGIN_ERROR;
-                    return CreateResponseFromResult(result);
-                }
+                IBisResult result = TryLogin(out AccessEngine ace);
 
                 // Validate if the card exists by card No.
                 result = _cardsBL.ValidateCardExist(ace, card.CardNumber);
@@ -163,18 +137,9 @@ namespace BisAceAPI.Controllers
         [ResponseType(typeof(BisCard))]
         public IHttpActionResult DeleteCard(string cardNumber)
         {
-            IBisResult result = _resultFactory();
-
             try
             {
-                API_RETURN_CODES_CS apiCallResult = TryLogin(out AccessEngine ace);
-
-                if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
-                {
-                    result.ErrorType = BisErrorType.Unauthorised;
-                    result.ErrorMessage = BisConstants.RESPONSE_LOGIN_ERROR;
-                    return CreateResponseFromResult(result);
-                }
+                IBisResult result = TryLogin(out AccessEngine ace);
 
                 if (string.IsNullOrEmpty(cardNumber))
                 {
@@ -192,7 +157,7 @@ namespace BisAceAPI.Controllers
                 ACECards aceCard = result.GetResource<ACECards>();
 
                 // Delete card
-                apiCallResult = _cardsBL.DeleteCard(aceCard);
+                API_RETURN_CODES_CS apiCallResult = _cardsBL.DeleteCard(aceCard);
 
                 if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
                 {
@@ -210,75 +175,6 @@ namespace BisAceAPI.Controllers
                 return InternalServerError(ex);
             }
         }
-
-        [HttpGet]
-        [Route("GetDoorAccessGroups/{cardNumber}")]
-        [ResponseType(typeof(BisCard))]
-        public IHttpActionResult GetDoorAccessGroups(string cardNumber)
-        {
-            IBisResult result = _resultFactory();
-
-            if (string.IsNullOrEmpty(cardNumber))
-            {
-                result.ErrorType = BisErrorType.InvalidInput;
-                result.ErrorMessage = BisConstants.RESPONSE_REQUEST_BODY_MUST_BE_PROVIDED;
-                return CreateResponseFromResult(result);
-            }
-
-            try
-            {
-                API_RETURN_CODES_CS apiCallResult = TryLogin(out AccessEngine ace);
-
-                if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
-                {
-                    result.ErrorType = BisErrorType.Unauthorised;
-                    result.ErrorMessage = BisConstants.RESPONSE_LOGIN_ERROR;
-                    return CreateResponseFromResult(result);
-                }
-
-                // Get card by card number
-                var cardId = _cardsBL.GetCardId(cardNumber.PadLeft(12, '0'), ace);
-
-                ACECards aceCard = new ACECards(ace);
-                apiCallResult = aceCard.Get(cardId);
-
-                if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
-                {
-                    result.ErrorType = BisErrorType.NotFound;
-                    result.ErrorMessage = BisConstants.RESPONSE_CARD_NOT_FOUND;
-                    return CreateResponseFromResult(result);
-                }
-
-                ACEPersons person = new ACEPersons(ace);
-                apiCallResult = person.Get(aceCard.PERSID);
-
-                if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
-                {
-                    result.ErrorType = BisErrorType.NotFound;
-                    result.ErrorMessage = BisConstants.RESPONSE_PERSON_NOT_FOUND;
-                    return CreateResponseFromResult(result);
-                }
-
-                BisCard card = new BisCard
-                {
-                    CardNumber = aceCard.CARDNO.PadLeft(12, '0')
-                };
-                person.GetCustomFieldValue("CardName", out string cardName);
-                //person.GetCustomFieldValue("CardStartValidDate", out string cardStartValidDate);
-
-                card.CardName = cardName;
-                //card.CardStartValidDate = cardStartValidDate;
-
-                result.SetResource(card);
-
-                return CreateResponseFromResult(result);
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(ex);
-            }
-        }
-
 
         #region Private Methods
 

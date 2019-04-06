@@ -12,6 +12,9 @@ using BisAceAPIModels;
 
 namespace BisAceAPI.Controllers
 {
+    /// <summary>
+    /// Controller for door access groups.
+    /// </summary>
     //[ClaimsAuthorize]
     [RoutePrefix("api")]
     public class DoorAccessGroupsController : ABisApiController
@@ -22,6 +25,11 @@ namespace BisAceAPI.Controllers
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="resultFactory"></param>
+        /// <param name="cardsBusinessLogic"></param>
         public DoorAccessGroupsController(Func<IBisResult> resultFactory,
             ICardsBusinessLogic cardsBusinessLogic)
         {
@@ -30,31 +38,18 @@ namespace BisAceAPI.Controllers
         }
         #endregion
 
-
+        /// <summary>
+        /// Get door access groups
+        /// </summary>
+        /// <param name="cardNumber"></param>
         [HttpGet]
         [Route("GetDoorAccessGroups/{cardNumber}")]
         [ResponseType(typeof(BisCard))]
         public IHttpActionResult GetDoorAccessGroups(string cardNumber)
         {
-            IBisResult result = _resultFactory();
-
-            if (string.IsNullOrEmpty(cardNumber))
-            {
-                result.ErrorType = BisErrorType.InvalidInput;
-                result.ErrorMessage = BisConstants.RESPONSE_REQUEST_BODY_MUST_BE_PROVIDED;
-                return CreateResponseFromResult(result);
-            }
-
             try
             {
-                API_RETURN_CODES_CS apiCallResult = TryLogin(out AccessEngine ace);
-
-                if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
-                {
-                    result.ErrorType = BisErrorType.Unauthorised;
-                    result.ErrorMessage = BisConstants.RESPONSE_LOGIN_ERROR;
-                    return CreateResponseFromResult(result);
-                }
+                IBisResult result = TryLogin(out AccessEngine ace);
 
                 return CreateResponseFromResult(result);
             }

@@ -5,6 +5,8 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using BisAceAPI.WebCore;
+using BisAceAPILogging;
+using BisAceAPIModels;
 using BisAceAPIModels.Models;
 using BisAceAPIModels.Models.Enums;
 
@@ -15,19 +17,29 @@ namespace BisAceAPI.Controllers
     /// </summary>
     public abstract class ABisApiController : ApiController
     {
+        #region Controller Meta Data
+        /// <summary>
+        /// Factory to build IBisResult.
+        /// </summary>
+        protected Func<IBisResult> _resultFactory;
+
+        /// <summary>
+        /// Serilog Logger.
+        /// </summary>
+        protected ILog _logger;
+        #endregion
+
         /// <summary>
         /// Try to login to BIS System.
         /// </summary>
         /// <param name="aceEngine">Output instance of access engine.</param>
         /// <returns></returns>
-        protected API_RETURN_CODES_CS TryLogin(out AccessEngine aceEngine)
+        protected IBisResult TryLogin(out AccessEngine aceEngine)
         {
-            IEnumerable<string> userValues;
-            IEnumerable<string> passwordValues;
             var userId = string.Empty;
             var password = string.Empty;
 
-            if (Request.Headers.TryGetValues("user", out userValues))
+            if (Request.Headers.TryGetValues("user", out IEnumerable<string> userValues))
             {
                 var usersEnumerator = userValues.GetEnumerator();
                 if (usersEnumerator.MoveNext())
@@ -35,7 +47,7 @@ namespace BisAceAPI.Controllers
                     userId = usersEnumerator.Current;
                 }
             }
-            if (Request.Headers.TryGetValues("password", out passwordValues))
+            if (Request.Headers.TryGetValues("password", out IEnumerable<string> passwordValues))
             {
                 var passwordEnumerator = passwordValues.GetEnumerator();
                 if (passwordEnumerator.MoveNext())
@@ -44,9 +56,17 @@ namespace BisAceAPI.Controllers
                 }
             }
 
+            IBisResult result = _resultFactory();
+
             // Do the login process here
             aceEngine = new AccessEngine();
-            API_RETURN_CODES_CS result = aceEngine.Login(userId, password, ConfigurationHelper.SERVER_NAME);
+            API_RETURN_CODES_CS apiCallResult = aceEngine.Login(userId, password, ConfigurationHelper.SERVER_NAME);
+
+            if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
+            {
+                result.ErrorType = BisErrorType.Unauthorised;
+                result.ErrorMessage = BisConstants.RESPONSE_LOGIN_ERROR;
+            }
 
             return result;
         }

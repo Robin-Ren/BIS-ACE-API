@@ -1,6 +1,0 @@
-minimum-level=Verbose
-using:Seq=Serilog.Sinks.Seq
-write-to:Seq=
-write-to:Seq.serverUrl=http://localhost:5341
-internal-Diagnostics=true
-webapi-trace-minimum-level=Warning

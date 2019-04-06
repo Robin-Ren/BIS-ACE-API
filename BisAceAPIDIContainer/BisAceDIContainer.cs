@@ -124,6 +124,8 @@ namespace BisAceDIContainer.DIContainer
             // ToDo - Use reflection for this so we don't pull in the actual dll references
             _container.Register<ICardsBusinessLogic, CardsBusinessLogic>();
             _container.Register<IPersonsBusinessLogic, PersonsBusinessLogic>();
+            _container.Register<IDoorAccessGroupsBusinessLogic, DoorAccessGroupsBusinessLogic>();
+            _container.Register<ILiftAccessGroupsBusinessLogic, LiftAccessGroupsBusinessLogic>();
         }
 
         /// <summary>
@@ -133,6 +135,8 @@ namespace BisAceDIContainer.DIContainer
         {
             _container.Register<ICardsDataAccess, CardsDataAccess>();
             _container.Register<IPersonsDataAccess, PersonsDataAccess>();
+            _container.Register<IDoorAccessGroupsDataAccess, DoorAccessGroupsDataAccess>();
+            _container.Register<ILiftAccessGroupsDataAccess, LiftAccessGroupsDataAccess>();
         }
 
         /// <summary>
@@ -148,7 +152,7 @@ namespace BisAceDIContainer.DIContainer
         #endregion
 
         /// <summary>
-        /// Gets the WebCP call context for the specified system.
+        /// Gets the BisAce call context for the specified system.
         /// </summary>
         /// <param name="systemId">Id of the system to get the call context for.</param>
         /// <returns>

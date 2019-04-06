@@ -96,11 +96,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="ConfigExamples\logging - RollingFile.settings" />
-    <None Include="ConfigExamples\logging - Seq.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-    </None>
-    <None Include="ConfigExamples\logging - Trace.settings" />
+    <None Include="ConfigExamples\logging.settings" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

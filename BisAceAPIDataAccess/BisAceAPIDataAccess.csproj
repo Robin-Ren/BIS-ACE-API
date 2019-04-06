@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoorAccessGroupsDataAccess.cs" />
+    <Compile Include="LiftAccessGroupsDataAccess.cs" />
     <Compile Include="PersonsDataAccess.cs" />
     <Compile Include="CardsDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -155,9 +155,16 @@ namespace BisAceAPILogging
         private static void CreateLogger(IEnumerable<KeyValuePair<string, string>> settings)
         {
             _levelSwitch.MinimumLevel = GetLevelSwitch(settings);
+            GetRollingFile(settings, out string pathFormatInSetting, out string outputTemplateInSetting, out int retainedFileCountLimitInSetting);
+
             //LibLog is used as an abstraction, so just create the logger here - no need to return it to caller
             Log.Logger = new LoggerConfiguration()
-              .ReadFrom.KeyValuePairs(settings)
+              //.ReadFrom.KeyValuePairs(settings)
+              .WriteTo.RollingFile(
+                pathFormat: pathFormatInSetting,
+                outputTemplate: outputTemplateInSetting,
+                retainedFileCountLimit: retainedFileCountLimitInSetting)
+              .MinimumLevel.Information()
               .Enrich.WithMachineName() //ensure that machine name is auto-added to every entry
               .MinimumLevel.ControlledBy(_levelSwitch) //this will override the config file - we pulled the value above
               .CreateLogger();
@@ -193,6 +200,39 @@ namespace BisAceAPILogging
             }
             return Serilog.Events.LogEventLevel.Information;
         }
+
+        /// <summary>
+        /// Gets the rolling file info for serilog
+        /// </summary>
+        /// <param name="settings">The settings.</param>
+        private static void GetRollingFile(IEnumerable<KeyValuePair<string, string>> settings, out string pathFormat, out string outputTemplate, out int retainedFileCountLimit)
+        {
+            pathFormat = string.Empty;
+            outputTemplate = string.Empty;
+            retainedFileCountLimit = 0;
+
+            var dict = settings.ToDictionary(x => x.Key, x => x.Value);
+
+            if (dict.ContainsKey("write-to:RollingFile.pathFormat"))
+            {
+                pathFormat = dict["write-to:RollingFile.pathFormat"];
+            }
+
+            if (dict.ContainsKey("write-to:RollingFile.outputTemplate"))
+            {
+                outputTemplate = dict["write-to:RollingFile.outputTemplate"];
+            }
+
+            if (dict.ContainsKey("write-to:RollingFile.retainedFileCountLimit"))
+            {
+                var countLimit = dict["write-to:RollingFile.retainedFileCountLimit"];
+                if(!int.TryParse(countLimit, out retainedFileCountLimit))
+                {
+                    retainedFileCountLimit = 5;
+                }
+            }
+        }
+
         /// <summary>
         /// Setup the internal diagnostics.
         /// </summary>

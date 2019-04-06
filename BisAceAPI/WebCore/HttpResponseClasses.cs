@@ -50,7 +50,7 @@ namespace BisAceAPI.WebCore
     /// <seealso cref="System.Web.Http.IHttpActionResult" />
     internal class BadRequestWithErrorResponseModelResult : IHttpActionResult
     {
-        private BisErrorResponseViewModel _model;
+        private readonly BisErrorResponseViewModel _model;
         private HttpRequestMessage _request;
 
         /// <summary>

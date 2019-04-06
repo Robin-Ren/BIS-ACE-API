@@ -1125,14 +1125,14 @@
   <data name="MissingRequiredConfigurationSettingReportingServiceLocation" xml:space="preserve">
     <value>Configuration requise manquante pour la définition de ReportingServiceLocation.</value>
   </data>
-  <data name="MissingRequiredConfigurationSettingWebCPAdminPassword" xml:space="preserve">
-    <value>Configuration requise manquante pour la définition de WebCPAdminPassword.</value>
+  <data name="MissingRequiredConfigurationSettingBisAceAdminPassword" xml:space="preserve">
+    <value>Configuration requise manquante pour la définition de BisAceAdminPassword.</value>
   </data>
-  <data name="MissingRequiredConfigurationSettingWebCPAdminUserName" xml:space="preserve">
-    <value>Configuration requise manquante pour la définition de WebCPAdminUserName.</value>
+  <data name="MissingRequiredConfigurationSettingBisAceAdminUserName" xml:space="preserve">
+    <value>Configuration requise manquante pour la définition de BisAceAdminUserName.</value>
   </data>
-  <data name="MissingRequiredConfigurationSettingWebCPAuthServer" xml:space="preserve">
-    <value>Configuration requise manquante pour la définition de WebCPAuthServer.</value>
+  <data name="MissingRequiredConfigurationSettingBisAceAuthServer" xml:space="preserve">
+    <value>Configuration requise manquante pour la définition de BisAceAuthServer.</value>
   </data>
   <data name="NoPKVersionFoundForThisConfigurator" xml:space="preserve">
     <value>Aucune version PK trouvée pour ce configurateur.</value>
@@ -1365,7 +1365,7 @@
   <data name="TheUnitConfigurationIsMissingForThisPartSKU" xml:space="preserve">
     <value>La configuration de l'unité est manquante pour le sku de cette pièce</value>
   </data>
-  <data name="TheUpdateLineFeatureForValueAddItemsAndDiscreteItemsHasNotBeenImplementedInWebCP" xml:space="preserve">
+  <data name="TheUpdateLineFeatureForValueAddItemsAndDiscreteItemsHasNotBeenImplementedInBisAce" xml:space="preserve">
     <value>La fonctionnalité UpdateLine pour les éléments de valeur ajoutée et les éléments distincts n'a pas été implémentée dans Web CP.</value>
   </data>
   <data name="UnhandledTypeOf_P0" xml:space="preserve">

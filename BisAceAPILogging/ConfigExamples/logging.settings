@@ -1,0 +1,4 @@
+minimum-level=Information
+write-to:RollingFile.pathFormat=E:\logs\BisAce.log
+write-to:RollingFile.outputTemplate={Timestamp:yyyy-MM-dd HH:mm:ss.fff}  [{Level:u3}]  {Message:lj}{NewLine}{Exception}
+write-to:RollingFile.retainedFileCountLimit=10

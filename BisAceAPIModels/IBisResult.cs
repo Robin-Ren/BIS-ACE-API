@@ -5,7 +5,7 @@ using BisAceAPIModels.Models.Enums;
 namespace BisAceAPIModels.Models
 {
     /// <summary>
-    /// Interface for working with action results in WebCP
+    /// Interface for working with action results in BisAce
     /// </summary>
     public interface IBisResult
     {

@@ -8,6 +8,7 @@ using BisAceAPIModels.Models;
 using System;
 using BisAceAPIModels.Models.Enums;
 using BisAceAPIModels;
+using BisAceAPILogging;
 
 namespace BisAceAPIBusinessLogic
 {
@@ -17,18 +18,21 @@ namespace BisAceAPIBusinessLogic
         private readonly IPersonsDataAccess _dataAccess;
         private readonly IBisApplicationConfig _webApiConfig;
         private readonly Func<IBisResult> _resultFactory;
+        private readonly ILog _logger;
         #endregion
 
         #region Constructors
         public PersonsBusinessLogic(
             IPersonsDataAccess dataAccess,
             IBisApplicationConfig config,
-            Func<IBisResult> resultFactory
+            Func<IBisResult> resultFactory,
+            ILog logger
             )
         {
             _dataAccess = dataAccess;
             _webApiConfig = config;
             _resultFactory = resultFactory;
+            _logger = logger;
         }
         #endregion
 
