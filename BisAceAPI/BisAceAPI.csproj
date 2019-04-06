@@ -193,7 +193,6 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\BisApiController.cs" />
     <Compile Include="Controllers\DoorAccessGroupsController.cs" />
-    <Compile Include="Utils\EnumHelper.cs" />
     <Compile Include="Utils\ConfigurationHelper.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CardsController.cs" />

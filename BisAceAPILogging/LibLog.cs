@@ -623,10 +623,7 @@ namespace BisAceAPILogging
 #if !LIBLOG_PROVIDERS_ONLY
         private static void RaiseOnCurrentLogProviderSet()
         {
-            if (s_onCurrentLogProviderSet != null)
-            {
-                s_onCurrentLogProviderSet(s_currentLogProvider);
-            }
+            s_onCurrentLogProviderSet?.Invoke(s_currentLogProvider);
         }
 #endif
 
@@ -707,7 +704,7 @@ namespace BisAceAPILogging
                 return _logger(logLevel, null);
             }
 
-            Func<string> wrappedMessageFunc = () =>
+            return _logger(logLevel, () =>
             {
                 try
                 {
@@ -718,8 +715,7 @@ namespace BisAceAPILogging
                     Log(LogLevel.Error, () => FailedToGenerateLogMessage, ex);
                 }
                 return null;
-            };
-            return _logger(logLevel, wrappedMessageFunc, exception, formatParameters);
+            }, exception, formatParameters);
         }
     }
 #endif
@@ -880,7 +876,7 @@ namespace BisAceAPILogging.LogProviders
         {
             private readonly dynamic _logger;
 
-            private static Func<string, object, string, Exception, object> _logEventInfoFact;
+            private static readonly Func<string, object, string, Exception, object> _logEventInfoFact;
 
             private static readonly object _levelTrace;
             private static readonly object _levelDebug;
@@ -1266,7 +1262,7 @@ namespace BisAceAPILogging.LogProviders
             private readonly Func<object, object, bool> _isEnabledForDelegate;
             private readonly Action<object, object> _logDelegate;
             private readonly Func<object, Type, object, string, Exception, object> _createLoggingEvent;
-            private Action<object, string, object> _loggingEventPropertySetter;
+            private readonly Action<object, string, object> _loggingEventPropertySetter;
 
             [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "ILogger")]
             internal Log4NetLogger(dynamic logger)
@@ -1425,12 +1421,10 @@ namespace BisAceAPILogging.LogProviders
 
                 string message = messageFunc();
 
-                IEnumerable<string> patternMatches;
-
                 string formattedMessage =
                     LogMessageFormatter.FormatStructuredMessage(message,
                                                                 formatParameters,
-                                                                out patternMatches);
+                                                                out IEnumerable<string> patternMatches);
 
                 // determine correct caller - this might change due to jit optimizations with method inlining
                 if (s_callerStackBoundaryType == null)
@@ -2150,8 +2144,7 @@ namespace BisAceAPILogging.LogProviders
             return () =>
             {
                 string targetMessage = messageBuilder();
-                IEnumerable<string> patternMatches;
-                return FormatStructuredMessage(targetMessage, formatParameters, out patternMatches);
+                return FormatStructuredMessage(targetMessage, formatParameters, out IEnumerable<string> patternMatches);
             };
         }
 
@@ -2180,8 +2173,7 @@ namespace BisAceAPILogging.LogProviders
             {
                 var arg = match.Groups["arg"].Value;
 
-                int notUsed;
-                if (!int.TryParse(arg, out notUsed))
+                if (!int.TryParse(arg, out int notUsed))
                 {
                     int argumentIndex = processedArguments.IndexOf(arg);
                     if (argumentIndex == -1)
@@ -2311,10 +2303,7 @@ namespace BisAceAPILogging.LogProviders
 
         public void Dispose()
         {
-            if (_onDispose != null)
-            {
-                _onDispose();
-            }
+            _onDispose?.Invoke();
         }
     }
 }

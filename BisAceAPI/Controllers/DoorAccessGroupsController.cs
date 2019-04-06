@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Description;
-using System.Net.Http;
-using System.Text;
-using BisAceAPI.Utils;
-using BisAceAPIModels.Models;
-using BisAceAPIModels.Models.Enums;
 using BisAceAPIBusinessLogicInterface;
-using BisAceAPIModels;
+using BisAceAPIModels.Models;
 
 namespace BisAceAPI.Controllers
 {
@@ -20,7 +14,6 @@ namespace BisAceAPI.Controllers
     public class DoorAccessGroupsController : ABisApiController
     {
         #region Controller Meta Data
-        private readonly Func<IBisResult> _resultFactory;
         private readonly ICardsBusinessLogic _cardsBL;
         #endregion
 

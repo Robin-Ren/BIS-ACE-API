@@ -164,7 +164,6 @@ namespace BisAceAPILogging
                 pathFormat: pathFormatInSetting,
                 outputTemplate: outputTemplateInSetting,
                 retainedFileCountLimit: retainedFileCountLimitInSetting)
-              .MinimumLevel.Information()
               .Enrich.WithMachineName() //ensure that machine name is auto-added to every entry
               .MinimumLevel.ControlledBy(_levelSwitch) //this will override the config file - we pulled the value above
               .CreateLogger();
@@ -192,8 +191,7 @@ namespace BisAceAPILogging
             if (dict.ContainsKey("minimum-level"))
             {
                 var value = dict["minimum-level"];
-                Serilog.Events.LogEventLevel result;
-                if (Enum.TryParse(value, out result))
+                if (Enum.TryParse(value, out Serilog.Events.LogEventLevel result))
                 {
                     return result;
                 }
@@ -205,6 +203,9 @@ namespace BisAceAPILogging
         /// Gets the rolling file info for serilog
         /// </summary>
         /// <param name="settings">The settings.</param>
+        /// <param name="pathFormat">Output pathFormat from settings.</param>
+        /// <param name="outputTemplate">Output outputTemplate from settings.</param>
+        /// <param name="retainedFileCountLimit">Output retainedFileCountLimit from settings.</param>
         private static void GetRollingFile(IEnumerable<KeyValuePair<string, string>> settings, out string pathFormat, out string outputTemplate, out int retainedFileCountLimit)
         {
             pathFormat = string.Empty;
@@ -255,8 +256,7 @@ namespace BisAceAPILogging
             if (dict.ContainsKey("webapi-trace-minimum-level"))
             {
                 var value = dict["webapi-trace-minimum-level"];
-                TraceLevel setting;
-                if(Enum.TryParse(value, out setting))
+                if(Enum.TryParse(value, out TraceLevel setting))
                 {
                     _minimumWebAPITraceLevel = setting;
                 }

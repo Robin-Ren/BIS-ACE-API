@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Description;
-using System.Net.Http;
-using System.Text;
-using BisAceAPI.Utils;
+using BisAceAPIBusinessLogicInterface;
+using BisAceAPILogging;
+using BisAceAPIModels;
 using BisAceAPIModels.Models;
 using BisAceAPIModels.Models.Enums;
-using BisAceAPIBusinessLogicInterface;
-using BisAceAPIModels;
-using BisAceAPILogging;
 
 namespace BisAceAPI.Controllers
 {

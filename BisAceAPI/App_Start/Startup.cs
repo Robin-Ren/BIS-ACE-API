@@ -41,9 +41,9 @@ namespace BisAceAPI
                 SetupBisConfigurationManager();
                 LoadDIContainer();
             }
-            catch (Exception ex)
+            catch
             {
-                //
+                // do nothing
             }
         }
 
