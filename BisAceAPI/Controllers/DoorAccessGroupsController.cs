@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Description;
 using System.Net.Http;
-using BisAceAPI.Models;
 using System.Text;
 using BisAceAPI.Utils;
 using BisAceAPIModels.Models;
 using BisAceAPIModels.Models.Enums;
 using BisAceAPIBusinessLogicInterface;
+using BisAceAPIModels;
 
 namespace BisAceAPI.Controllers
 {
@@ -41,7 +41,7 @@ namespace BisAceAPI.Controllers
             if (string.IsNullOrEmpty(cardNumber))
             {
                 result.ErrorType = BisErrorType.InvalidInput;
-                result.ErrorMessage = ConstantStrings.RESPONSE_REQUEST_BODY_MUST_BE_PROVIDED;
+                result.ErrorMessage = BisConstants.RESPONSE_REQUEST_BODY_MUST_BE_PROVIDED;
                 return CreateResponseFromResult(result);
             }
 
@@ -52,7 +52,7 @@ namespace BisAceAPI.Controllers
                 if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
                 {
                     result.ErrorType = BisErrorType.Unauthorised;
-                    result.ErrorMessage = ConstantStrings.RESPONSE_LOGIN_ERROR;
+                    result.ErrorMessage = BisConstants.RESPONSE_LOGIN_ERROR;
                     return CreateResponseFromResult(result);
                 }
 
