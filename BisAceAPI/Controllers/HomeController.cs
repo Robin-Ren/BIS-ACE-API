@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace BisAceAPI.Controllers
 {
+#pragma warning disable CS1591
     public class HomeController : Controller
     {
         public ActionResult Index()

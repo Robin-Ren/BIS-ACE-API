@@ -2,6 +2,7 @@ using System;
 
 namespace BisAceAPI.Areas.HelpPage
 {
+#pragma warning disable CS1591
     /// <summary>
     /// This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
     /// </summary>

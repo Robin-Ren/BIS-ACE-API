@@ -12,6 +12,7 @@ using System.Net.Http.Headers;
 using System.Web;
 using System.Web.Http;
 using BisAceAPI.Areas.HelpPage.App_Start;
+#pragma warning disable CS1591
 
 namespace BisAceAPI.Areas.HelpPage
 {

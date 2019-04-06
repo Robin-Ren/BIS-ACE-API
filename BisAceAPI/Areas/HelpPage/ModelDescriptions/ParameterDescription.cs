@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-
+#pragma warning disable CS1591
 namespace BisAceAPI.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterDescription

@@ -8,8 +8,16 @@ using System.Web;
 
 namespace BisAceAPI.WebCore
 {
+    /// <summary>
+    /// Authorization manager
+    /// </summary>
     public class AuthorizationManager : ClaimsAuthorizationManager
     {
+        /// <summary>
+        /// Check access for current authorization context
+        /// </summary>
+        /// <param name="context">Current authorization context</param>
+        /// <returns>True if access is allowed; false otherwise.</returns>
         public override bool CheckAccess(AuthorizationContext context)
         {
             var user = context.Principal;

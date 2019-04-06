@@ -6,6 +6,7 @@ using BisAceAPILogging;
 
 namespace BisAceAPI
 {
+#pragma warning disable CS1591
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)

@@ -13,6 +13,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using BisAceAPI.Areas.HelpPage.ModelDescriptions;
 using BisAceAPI.Areas.HelpPage.Models;
+#pragma warning disable CS1591
 
 namespace BisAceAPI.Areas.HelpPage
 {

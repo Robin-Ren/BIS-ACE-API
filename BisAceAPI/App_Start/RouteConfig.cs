@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
-
+#pragma warning disable CS1591
 namespace BisAceAPI
 {
     public class RouteConfig

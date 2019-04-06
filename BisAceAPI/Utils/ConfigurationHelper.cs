@@ -3,6 +3,9 @@ using BisAceAPIModels;
 
 namespace BisAceAPI
 {
+    /// <summary>
+    /// Helper class for Configuration
+    /// </summary>
     public static class ConfigurationHelper
     {
         internal static string SERVER_NAME = GetConfigString(BisConstants.BIS_SERVER_NAME, true);

@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using BisAceAPI.Areas.HelpPage.ModelDescriptions;
+#pragma warning disable CS1591
 
 namespace BisAceAPI.Areas.HelpPage.App_Start
 {

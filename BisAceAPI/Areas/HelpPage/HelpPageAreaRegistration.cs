@@ -1,5 +1,6 @@
 using System.Web.Http;
 using System.Web.Mvc;
+#pragma warning disable CS1591
 
 namespace BisAceAPI.Areas.HelpPage
 {
