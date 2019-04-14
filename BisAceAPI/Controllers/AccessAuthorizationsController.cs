@@ -7,11 +7,11 @@ using BisAceAPIModels.Models;
 namespace BisAceAPI.Controllers
 {
     /// <summary>
-    /// Controller for door access groups.
+    /// Controller for access authorizations.
     /// </summary>
     //[ClaimsAuthorize]
     [RoutePrefix("api")]
-    public class DoorAccessGroupsController : ABisApiController
+    public class AccessAuthorizationsController : ABisApiController
     {
         #region Controller Meta Data
         private readonly ICardsBusinessLogic _cardsBL;
@@ -23,7 +23,7 @@ namespace BisAceAPI.Controllers
         /// </summary>
         /// <param name="resultFactory"></param>
         /// <param name="cardsBusinessLogic"></param>
-        public DoorAccessGroupsController(Func<IBisResult> resultFactory,
+        public AccessAuthorizationsController(Func<IBisResult> resultFactory,
             ICardsBusinessLogic cardsBusinessLogic)
         {
             _resultFactory = resultFactory;
@@ -32,17 +32,18 @@ namespace BisAceAPI.Controllers
         #endregion
 
         /// <summary>
-        /// Get door access groups
+        /// Get access authorizations
         /// </summary>
-        /// <param name="cardNumber"></param>
         [HttpGet]
-        [Route("GetDoorAccessGroups/{cardNumber}")]
+        [Route("GetAuthorizations")]
         [ResponseType(typeof(BisCard))]
-        public IHttpActionResult GetDoorAccessGroups(string cardNumber)
+        public IHttpActionResult GetAllAuthorizations()
         {
             try
             {
                 IBisResult result = TryLogin(out AccessEngine ace);
+
+
 
                 return CreateResponseFromResult(result);
             }

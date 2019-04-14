@@ -100,20 +100,64 @@ namespace BisAceAPIBusinessLogic
             }
 
             var person = result.GetResource<ACEPersons>();
+            // Check auth per person
+            var lstAuthorization = GetAuthorizationsForPersonId(ace, person.GetPersonId());
 
             BisCard card = new BisCard
             {
                 CardNumber = aceCard.CARDNO.PadLeft(12, '0')
             };
-            person.GetCustomFieldValue("CardName", out string cardName);
-            //person.GetCustomFieldValue("CardStartValidDate", out string cardStartValidDate);
 
-            card.CardName = cardName;
-            //card.CardStartValidDate = cardStartValidDate;
+            card.CardStartValidDate = person.AUTHFROM.ToString();
+            card.CardExpiryDate = person.AUTHUNTIL.ToString();
 
             result.SetResource(card);
 
             return result;
+        }
+
+        public List<ACEAuthorizations> GetAuthorizationsForPersonId(AccessEngine ace, string personId)
+        {
+            List<ACEAuthorizations> listAuthorizations = new List<ACEAuthorizations>();
+
+            var query = new ACEQuery(ace);
+            String str_Columns = "bsuser.authorizations.authid";
+            String str_Tables = "bsuser.authperperson JOIN bsuser.authorizations on(bsuser.authperperson.authid = bsuser.authorizations.authid) ";
+            String str_Where = string.Format("bsuser.authperperson.persid = \'{0}\'", personId);
+
+            API_RETURN_CODES_CS result = query.Select(str_Columns, str_Tables, str_Where);
+
+
+            if (API_RETURN_CODES_CS.API_SUCCESS_CS == result)
+            {
+                var AuthIds = new List<string>();
+                ACEColumnValue cellValueID;
+
+                while (query.FetchNextRow())
+                {
+                    cellValueID = new ACEColumnValue();
+
+                    result = query.GetRowData("authid", cellValueID);
+
+                    AuthIds.Add(cellValueID.value);
+                }
+
+                if (AuthIds.Count > 0)
+                {
+                    foreach (var authId in AuthIds)
+                    {
+                        ACEAuthorizations auth = new ACEAuthorizations(ace);
+                        result = auth.Get(authId);
+
+                        if (API_RETURN_CODES_CS.API_SUCCESS_CS == result)
+                        {
+                            listAuthorizations.Add(auth);
+                        }
+                    }
+                }
+            }
+
+            return listAuthorizations;
         }
 
         /// <summary>
@@ -132,11 +176,10 @@ namespace BisAceAPIBusinessLogic
                 return result;
             }
 
-            var personId = "0013475D736CCE66";
             ACECards aceCard = new ACECards(ace)
             {
-                CARDNO = card.CardNumber,
-                PERSID = personId, // card.PERSONID
+                CARDNO = card.CardNumber.PadLeft(12, '0'),
+                PERSID = card.PersonId,
                 CODEDATA = HexadecimalEncodingHelper.ToHexString(card.CardNumber.PadLeft(12, '0'))
             };
             API_RETURN_CODES_CS apiCallResult = aceCard.Add();
@@ -150,11 +193,20 @@ namespace BisAceAPIBusinessLogic
 
             // SAVE PERSON DATA
             ACEPersons person = new ACEPersons(ace);
-            apiCallResult = person.Get(personId);
+            apiCallResult = person.Get(card.PersonId);
+            if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
+            {
+                person.Add();
+            }
 
-            // API_PERS_INVALID_CUSTOM_FIELD_NAME is returned if fieldname is not found
-            apiCallResult = person.SetCustomFieldValue(("CardName"), card.CardName);
-            //apiCallResult = person.SetCustomFieldValue("CardStartValidDate", card.CardStartValidDate);
+            // Build Person entity...
+            if (!string.IsNullOrEmpty(card.CardStartValidDate) &&
+    DateTime.TryParse(card.CardStartValidDate, out DateTime startValidDate))
+            { person.AUTHFROM = startValidDate; }
+
+            if (!string.IsNullOrEmpty(card.CardExpiryDate) &&
+                DateTime.TryParse(card.CardExpiryDate, out DateTime expiryDate))
+            { person.AUTHUNTIL = expiryDate; }
 
             apiCallResult = person.Update();
             if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
@@ -216,7 +268,7 @@ namespace BisAceAPIBusinessLogic
         /// <returns>API_RETURN_CODES_CS Code of delete operation.</returns>
         public API_RETURN_CODES_CS DeleteCard(ACECards aceCard)
         {
-            if(aceCard == null)
+            if (aceCard == null)
             {
                 return API_RETURN_CODES_CS.API_CARD_INVALID_CARDNO_CS;
             }
@@ -235,7 +287,7 @@ namespace BisAceAPIBusinessLogic
             // Create query
             var ace_Query = new ACEQuery(ace);
             string strColumn = "cardid";
-            string strTable = "cards";
+            string strTable = "bsuser.cards";
             string strWhere = String.Format("cardno='{0}' and status>0", cardNumber);
 
             API_RETURN_CODES_CS result = ace_Query.Select(strColumn, strTable, strWhere);

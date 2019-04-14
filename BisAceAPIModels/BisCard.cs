@@ -13,9 +13,9 @@ namespace BisAceAPIModels.Models
         public string CardExpiryDate { get; set; }
         public string StartTime { get; set; }
         public string EndTime { get; set; }
-        public List<int> DoorAccessGroupIds { get; set; }
-        public List<int> LiftAccessGroupIds { get; set; }
-        public int DefaultFloorId { get; set; }
-        public bool IsVisitor { get; set; }
+        public string PersonId { get; set; }
+        public List<int> SADoorGroupIds { get; set; }
+        public List<int> DeviceGroupIds { get; set; }
+        public string AuthProfileId { get; set; }
     }
 }
