@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace BisAceAPIModels.Models
+namespace BisAceAPIModels
 {
-    public class BisCard
+    public class BisCardAuthorization
     {
         public string CardNumber { get; set; }
         public string PersonId { get; set; }
@@ -13,7 +14,6 @@ namespace BisAceAPIModels.Models
         public string PersonLastName { get; set; }
         public string CardStartValidDate { get; set; }
         public string CardExpiryDate { get; set; }
-        public List<string> AuthorizationIds { get; set; }
-        public string AuthProfileId { get; set; }
+        public List<ACEAuthorizations> Authorizations { get; set; }
     }
 }

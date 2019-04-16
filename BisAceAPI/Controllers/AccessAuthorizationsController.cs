@@ -2,7 +2,9 @@
 using System.Web.Http;
 using System.Web.Http.Description;
 using BisAceAPIBusinessLogicInterface;
+using BisAceAPIModels;
 using BisAceAPIModels.Models;
+using BisAceAPIModels.Models.Enums;
 
 namespace BisAceAPI.Controllers
 {
@@ -14,20 +16,18 @@ namespace BisAceAPI.Controllers
     public class AccessAuthorizationsController : ABisApiController
     {
         #region Controller Meta Data
-        private readonly ICardsBusinessLogic _cardsBL;
+        private readonly IAuthorizationsBusinessLogic _authsBL;
         #endregion
 
         #region Constructor
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="resultFactory"></param>
-        /// <param name="cardsBusinessLogic"></param>
         public AccessAuthorizationsController(Func<IBisResult> resultFactory,
-            ICardsBusinessLogic cardsBusinessLogic)
+            IAuthorizationsBusinessLogic authsBL)
         {
             _resultFactory = resultFactory;
-            _cardsBL = cardsBusinessLogic;
+            _authsBL =authsBL;
         }
         #endregion
 
@@ -43,7 +43,7 @@ namespace BisAceAPI.Controllers
             {
                 IBisResult result = TryLogin(out AccessEngine ace);
 
-
+                result  = _authsBL.GetAllAuthorizationsForActiveCards(ace);
 
                 return CreateResponseFromResult(result);
             }

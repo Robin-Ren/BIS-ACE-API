@@ -21,13 +21,18 @@
         InvalidInput = 2,
 
         /// <summary>
+        /// This indicates that the operation to create/update/delete/get failed on ACE objects.
+        /// </summary>
+        OperationFailed = 3,
+
+        /// <summary>
         /// System configuration prevented the API from returning data which is part of a larger
         /// resource which the system does have access to.
         /// For example, if the system is set up to not display the list price in the configurator
         /// and the user calls the pricing API endpoint, the call will return a 400 and in the
         /// response body have this for the error type.
         /// </summary>
-        Configuration = 3,
+        Configuration = 4,
 
         /// <summary>
         /// The user's security settings prevented the API from returning data which is part of a
@@ -37,11 +42,11 @@
         /// of the configurator state and the user doesn't have access to see it, a 200 response
         /// will still be sent and the price field will just be blank.
         /// </summary>
-        Unauthorised = 4,
+        Unauthorised = 5,
 
         /// <summary>
         /// This indicates that the resource the user was looking for based on the URI was not found.
         /// </summary>
-        NotFound = 5
+        NotFound = 6
     }
 }

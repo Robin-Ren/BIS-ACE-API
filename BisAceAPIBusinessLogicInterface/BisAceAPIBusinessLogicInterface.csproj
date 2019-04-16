@@ -52,8 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ILiftAccessGroupsBusinessLogic.cs" />
-    <Compile Include="IDoorAccessGroupsBusinessLogic.cs" />
+    <Compile Include="IAuthorizationsBusinessLogic.cs" />
     <Compile Include="IPersonsBusinessLogic.cs" />
     <Compile Include="ICardsBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

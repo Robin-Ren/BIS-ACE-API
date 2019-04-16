@@ -50,14 +50,14 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="W32_ACEInterface">
-      <HintPath>..\..\..\BISAPI\BISAPI\ASSEM\W32_ACEInterface.dll</HintPath>
+    <Reference Include="W32_ACEInterface, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BisAceAPI\ASSEM\W32_ACEInterface.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BisAceAPIBusinessLogicHelperMethods.cs" />
-    <Compile Include="LiftAccessGroupsBusinessLogic.cs" />
-    <Compile Include="DoorAccessGroupsBusinessLogic.cs" />
+    <Compile Include="AuthorizationsBusinessLogic.cs" />
     <Compile Include="PersonsBusinessLogic.cs" />
     <Compile Include="CardsBusinessLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

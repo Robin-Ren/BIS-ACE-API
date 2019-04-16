@@ -124,8 +124,7 @@ namespace BisAceDIContainer.DIContainer
             // ToDo - Use reflection for this so we don't pull in the actual dll references
             _container.Register<ICardsBusinessLogic, CardsBusinessLogic>();
             _container.Register<IPersonsBusinessLogic, PersonsBusinessLogic>();
-            _container.Register<IDoorAccessGroupsBusinessLogic, DoorAccessGroupsBusinessLogic>();
-            _container.Register<ILiftAccessGroupsBusinessLogic, LiftAccessGroupsBusinessLogic>();
+            _container.Register<IAuthorizationsBusinessLogic, AuthorizationsBusinessLogic>();
         }
 
         /// <summary>
@@ -135,8 +134,7 @@ namespace BisAceDIContainer.DIContainer
         {
             _container.Register<ICardsDataAccess, CardsDataAccess>();
             _container.Register<IPersonsDataAccess, PersonsDataAccess>();
-            _container.Register<IDoorAccessGroupsDataAccess, DoorAccessGroupsDataAccess>();
-            _container.Register<ILiftAccessGroupsDataAccess, LiftAccessGroupsDataAccess>();
+            _container.Register<IAuthorizationsDataAccess, AuthorizationsDataAccess>();
         }
 
         /// <summary>

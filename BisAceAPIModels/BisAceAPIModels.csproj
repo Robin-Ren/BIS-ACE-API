@@ -58,9 +58,13 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="W32_ACEInterface">
+      <HintPath>..\BisAceAPI\ASSEM\W32_ACEInterface.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BisCard.cs" />
+    <Compile Include="BisCardAuthorization.cs" />
     <Compile Include="BisConstants.cs" />
     <Compile Include="BisDoorAccessGroup.cs" />
     <Compile Include="BisErrorResponseViewModel.cs" />

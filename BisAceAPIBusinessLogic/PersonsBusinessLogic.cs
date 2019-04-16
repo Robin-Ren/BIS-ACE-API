@@ -77,17 +77,46 @@ namespace BisAceAPIBusinessLogic
         {
             IBisResult result = _resultFactory();
 
-            // API_PERS_INVALID_CUSTOM_FIELD_NAME is returned if fieldname is not found
-            API_RETURN_CODES_CS apiCallResult = person.SetCustomFieldValue(("CardName"), card.CardName);
-            //apiCallResult = person.SetCustomFieldValue("CardStartValidDate", card.CardStartValidDate);
+            person.FIRSTNAME = card.PersonFirstName;
+            person.LASTNAME = card.PersonLastName;
 
-            apiCallResult = person.Update();
+            API_RETURN_CODES_CS apiCallResult = person.Update();
             if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
             {
                 result.ErrorType = BisErrorType.InvalidInput;
                 result.ErrorMessage = BisConstants.RESPONSE_BIS_API_CALL_FAILED;
                 return result;
             }
+
+            #region Authorizations
+            if (card.AuthorizationIds != null && card.AuthorizationIds.Count > 0)
+            {
+                ACEDateT dateFrom = null;
+                ACEDateT dateUtil = null;
+
+                if (!string.IsNullOrEmpty(card.CardStartValidDate) &&
+                    DateTime.TryParse(card.CardStartValidDate, out DateTime startValidDate))
+                {
+                    dateFrom = new ACEDateT((uint)startValidDate.Day, (uint)startValidDate.Month, (uint)startValidDate.Year);
+                }
+
+                if (!string.IsNullOrEmpty(card.CardExpiryDate) &&
+                DateTime.TryParse(card.CardExpiryDate, out DateTime expiryDate))
+                {
+                    dateUtil = new ACEDateT((uint)expiryDate.Day, (uint)expiryDate.Month, (uint)expiryDate.Year);
+                }
+
+                apiCallResult = person.SetAuthorizations(card.AuthorizationIds.ToArray(),
+                    new ACEDateT[] { dateFrom, dateFrom },
+                    new ACEDateT[] { dateUtil, dateUtil });
+                if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
+                {
+                    result.ErrorType = BisErrorType.OperationFailed;
+                    result.ErrorMessage = BisConstants.RESPONSE_BIS_API_CALL_FAILED;
+                    return result;
+                }
+            }
+            #endregion
 
             return result;
         }

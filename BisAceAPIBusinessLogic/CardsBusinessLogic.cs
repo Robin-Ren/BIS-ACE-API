@@ -1,23 +1,20 @@
-﻿using System.Threading.Tasks;
+﻿using System;
 using System.Collections.Generic;
-using BisAceAPIDataAccess;
-using BisAceAPIBusinessLogicInterface;
-using BisAceAPIDataAccessInterface;
 using BisAceAPIBase;
-using BisAceAPIModels.Models;
-using System;
-using BisAceAPIModels.Models.Enums;
-using BisAceAPIModels;
-using BisAceAPIModels.Utils;
+using BisAceAPIBusinessLogicInterface;
 using BisAceAPILogging;
+using BisAceAPIModels;
+using BisAceAPIModels.Models;
+using BisAceAPIModels.Models.Enums;
+using BisAceAPIModels.Utils;
 
 namespace BisAceAPIBusinessLogic
 {
     public class CardsBusinessLogic : ICardsBusinessLogic
     {
         #region Private Members
-        private readonly ICardsDataAccess _dataAccess;
         private readonly IPersonsBusinessLogic _personsBL;
+        private readonly IAuthorizationsBusinessLogic _authsBL;
         private readonly IBisApplicationConfig _webApiConfig;
         private readonly Func<IBisResult> _resultFactory;
         private readonly ILog _logger;
@@ -25,17 +22,17 @@ namespace BisAceAPIBusinessLogic
 
         #region Constructors
         public CardsBusinessLogic(
-            ICardsDataAccess dataAccess,
             IPersonsBusinessLogic personsBL,
+            IAuthorizationsBusinessLogic authsBL,
             IBisApplicationConfig config,
             Func<IBisResult> resultFactory,
             ILog logger
             )
         {
-            _dataAccess = dataAccess;
             _webApiConfig = config;
             _resultFactory = resultFactory;
             _personsBL = personsBL;
+            _authsBL = authsBL;
             _logger = logger;
         }
         #endregion
@@ -101,7 +98,7 @@ namespace BisAceAPIBusinessLogic
 
             var person = result.GetResource<ACEPersons>();
             // Check auth per person
-            var lstAuthorization = GetAuthorizationsForPersonId(ace, person.GetPersonId());
+            var lstAuthorization = _authsBL.GetAuthorizationsForPersonId(ace, person.GetPersonId());
 
             BisCard card = new BisCard
             {
@@ -114,50 +111,6 @@ namespace BisAceAPIBusinessLogic
             result.SetResource(card);
 
             return result;
-        }
-
-        public List<ACEAuthorizations> GetAuthorizationsForPersonId(AccessEngine ace, string personId)
-        {
-            List<ACEAuthorizations> listAuthorizations = new List<ACEAuthorizations>();
-
-            var query = new ACEQuery(ace);
-            String str_Columns = "bsuser.authorizations.authid";
-            String str_Tables = "bsuser.authperperson JOIN bsuser.authorizations on(bsuser.authperperson.authid = bsuser.authorizations.authid) ";
-            String str_Where = string.Format("bsuser.authperperson.persid = \'{0}\'", personId);
-
-            API_RETURN_CODES_CS result = query.Select(str_Columns, str_Tables, str_Where);
-
-
-            if (API_RETURN_CODES_CS.API_SUCCESS_CS == result)
-            {
-                var AuthIds = new List<string>();
-                ACEColumnValue cellValueID;
-
-                while (query.FetchNextRow())
-                {
-                    cellValueID = new ACEColumnValue();
-
-                    result = query.GetRowData("authid", cellValueID);
-
-                    AuthIds.Add(cellValueID.value);
-                }
-
-                if (AuthIds.Count > 0)
-                {
-                    foreach (var authId in AuthIds)
-                    {
-                        ACEAuthorizations auth = new ACEAuthorizations(ace);
-                        result = auth.Get(authId);
-
-                        if (API_RETURN_CODES_CS.API_SUCCESS_CS == result)
-                        {
-                            listAuthorizations.Add(auth);
-                        }
-                    }
-                }
-            }
-
-            return listAuthorizations;
         }
 
         /// <summary>
@@ -179,15 +132,15 @@ namespace BisAceAPIBusinessLogic
             ACECards aceCard = new ACECards(ace)
             {
                 CARDNO = card.CardNumber.PadLeft(12, '0'),
-                PERSID = card.PersonId,
+                PERSID = card.PersonId.PadLeft(16, '0'),
                 CODEDATA = HexadecimalEncodingHelper.ToHexString(card.CardNumber.PadLeft(12, '0'))
             };
             API_RETURN_CODES_CS apiCallResult = aceCard.Add();
 
             if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
             {
-                result.ErrorType = BisErrorType.InvalidInput;
-                result.ErrorMessage = BisConstants.RESPONSE_BIS_API_CALL_FAILED;
+                result.ErrorType = BisErrorType.OperationFailed;
+                result.ErrorMessage = BisConstants.RESPONSE_UNABLE_TO_CREATE_CARD;
                 return result;
             }
 
@@ -199,16 +152,6 @@ namespace BisAceAPIBusinessLogic
                 person.Add();
             }
 
-            // Build Person entity...
-            if (!string.IsNullOrEmpty(card.CardStartValidDate) &&
-    DateTime.TryParse(card.CardStartValidDate, out DateTime startValidDate))
-            { person.AUTHFROM = startValidDate; }
-
-            if (!string.IsNullOrEmpty(card.CardExpiryDate) &&
-                DateTime.TryParse(card.CardExpiryDate, out DateTime expiryDate))
-            { person.AUTHUNTIL = expiryDate; }
-
-            apiCallResult = person.Update();
             if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
             {
                 result.ErrorType = BisErrorType.InvalidInput;
@@ -216,7 +159,8 @@ namespace BisAceAPIBusinessLogic
                 return result;
             }
 
-            return result;
+            // Save Person data
+            return _personsBL.UpdatePersonFromCardInfo(ace, card, person);
         }
 
         /// <summary>
@@ -237,8 +181,7 @@ namespace BisAceAPIBusinessLogic
             }
 
             // Save card data
-            var personId = "0013475D736CCE66";
-            aceCard.PERSID = personId;
+            aceCard.PERSID = card.PersonId;
 
             API_RETURN_CODES_CS apiCallResult = aceCard.Update();
 
