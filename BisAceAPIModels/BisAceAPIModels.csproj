@@ -44,6 +44,7 @@
       <HintPath>..\packages\SimpleInjector.Integration.WebApi.3.1.3\lib\net45\SimpleInjector.Integration.WebApi.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
@@ -66,7 +67,6 @@
     <Compile Include="BisCard.cs" />
     <Compile Include="BisCardAuthorization.cs" />
     <Compile Include="BisConstants.cs" />
-    <Compile Include="BisDoorAccessGroup.cs" />
     <Compile Include="BisErrorResponseViewModel.cs" />
     <Compile Include="BisHttpResultBase.cs" />
     <Compile Include="BisResult.cs" />

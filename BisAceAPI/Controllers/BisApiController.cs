@@ -32,9 +32,8 @@ namespace BisAceAPI.Controllers
         /// <summary>
         /// Try to login to BIS System.
         /// </summary>
-        /// <param name="aceEngine">Output instance of access engine.</param>
-        /// <returns></returns>
-        protected IBisResult TryLogin(out AccessEngine aceEngine)
+        /// <returns>IBisResult instance with instance of access engine if succeeds.</returns>
+        protected IBisResult TryLogin()
         {
             var userId = string.Empty;
             var password = string.Empty;
@@ -59,15 +58,17 @@ namespace BisAceAPI.Controllers
             IBisResult result = _resultFactory();
 
             // Do the login process here
-            aceEngine = new AccessEngine();
+            AccessEngine aceEngine = new AccessEngine();
             API_RETURN_CODES_CS apiCallResult = aceEngine.Login(userId, password, ConfigurationHelper.SERVER_NAME);
 
             if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
             {
                 result.ErrorType = BisErrorType.Unauthorised;
                 result.ErrorMessage = BisConstants.RESPONSE_LOGIN_ERROR;
+                return result;
             }
 
+            result.SetResource(aceEngine);
             return result;
         }
 

@@ -41,7 +41,13 @@ namespace BisAceAPI.Controllers
         {
             try
             {
-                IBisResult result = TryLogin(out AccessEngine ace);
+                IBisResult result = TryLogin();
+                if (!result.IsSucceeded)
+                {
+                    return CreateResponseFromResult(result);
+                }
+
+                var ace = result.GetResource<AccessEngine>();
 
                 result  = _authsBL.GetAllAuthorizationsForActiveCards(ace);
 

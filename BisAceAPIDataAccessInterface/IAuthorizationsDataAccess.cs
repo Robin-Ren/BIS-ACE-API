@@ -15,7 +15,7 @@ namespace BisAceAPIDataAccessInterface
         /// Get all active cards identifiers.
         /// </summary>
         /// <param name="ace">BIS Access engine.</param>
-        /// <returns>All Card IDs (Tuple.Item1) and related Person IDs (Tuple.Item2).</returns>
-        List<Tuple<string, string>> GetAllCardIds(AccessEngine ace);
+        /// <returns>All Card IDs.</returns>
+        List<string> GetAllCardIds(AccessEngine ace);
     }
 }

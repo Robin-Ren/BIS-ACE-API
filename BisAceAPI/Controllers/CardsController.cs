@@ -46,7 +46,11 @@ namespace BisAceAPI.Controllers
         {
             try
             {
-                IBisResult result = TryLogin(out AccessEngine ace);
+                IBisResult result = TryLogin();
+                if (!result.IsSucceeded)
+                {
+                    return CreateResponseFromResult(result);
+                }
 
                 // Validate if the card exists by card No.
                 result = _cardsBL.ValidateCardExist(ace, cardNumber);
@@ -54,6 +58,8 @@ namespace BisAceAPI.Controllers
                 {
                     return CreateResponseFromResult(result);
                 }
+
+                var ace = result.GetResource<AccessEngine>();
 
                 ACECards aceCard = result.GetResource<ACECards>();
                 // Get card info
@@ -78,8 +84,13 @@ namespace BisAceAPI.Controllers
         {
             try
             {
-                IBisResult result = TryLogin(out AccessEngine ace);
+                IBisResult result = TryLogin();
+                if (!result.IsSucceeded)
+                {
+                    return CreateResponseFromResult(result);
+                }
 
+                var ace = result.GetResource<AccessEngine>();
                 // Save card data
                 result = _cardsBL.CreateCard(ace, card);
 
@@ -102,7 +113,13 @@ namespace BisAceAPI.Controllers
         {
             try
             {
-                IBisResult result = TryLogin(out AccessEngine ace);
+                IBisResult result = TryLogin();
+                if (!result.IsSucceeded)
+                {
+                    return CreateResponseFromResult(result);
+                }
+
+                var ace = result.GetResource<AccessEngine>();
 
                 // Validate if the card exists by card No.
                 result = _cardsBL.ValidateCardExist(ace, card.CardNumber);
@@ -135,12 +152,18 @@ namespace BisAceAPI.Controllers
         {
             try
             {
-                IBisResult result = TryLogin(out AccessEngine ace);
+                IBisResult result = TryLogin();
+                if (!result.IsSucceeded)
+                {
+                    return CreateResponseFromResult(result);
+                }
+
+                var ace = result.GetResource<AccessEngine>();
 
                 if (string.IsNullOrEmpty(cardNumber))
                 {
                     result.ErrorType = BisErrorType.InvalidInput;
-                    result.ErrorMessage = BisConstants.RESPONSE_REQUEST_BODY_MUST_BE_PROVIDED;
+                    result.ErrorMessage = BisConstants.RESPONSE_CARD_NUMBER_MUST_BE_PROVIDED;
                     return CreateResponseFromResult(result);
                 }
 

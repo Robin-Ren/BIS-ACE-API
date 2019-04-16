@@ -83,8 +83,8 @@ namespace BisAceAPIBusinessLogic
             API_RETURN_CODES_CS apiCallResult = person.Update();
             if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
             {
-                result.ErrorType = BisErrorType.InvalidInput;
-                result.ErrorMessage = BisConstants.RESPONSE_BIS_API_CALL_FAILED;
+                result.ErrorType = BisErrorType.OperationFailed;
+                result.ErrorMessage = BisConstants.RESPONSE_LOAD_OR_SAVE_PERSON_FAILED;
                 return result;
             }
 

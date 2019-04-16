@@ -60,10 +60,18 @@ namespace BisAceAPIBusinessLogic
             if (cardIds == null && cardIds.Count == 0)
                 return result;
 
-            foreach(var cardId in cardIds)
+            foreach (var cardId in cardIds)
             {
-                result = _personsBL.GetPerson(ace, cardId.Item2);
+                ACECards aceCard = new ACECards(ace);
+                var apiCallResult = aceCard.Get(cardId);
+                if (apiCallResult != API_RETURN_CODES_CS.API_SUCCESS_CS)
+                {
+                    result.ErrorType = BisErrorType.NotFound;
+                    result.ErrorMessage = BisConstants.RESPONSE_CARD_NOT_FOUND;
+                    return result;
+                }
 
+                result = _personsBL.GetPerson(ace, aceCard.PERSID);
                 if (!result.IsSucceeded)
                 {
                     return result;
@@ -73,9 +81,7 @@ namespace BisAceAPIBusinessLogic
 
                 BisCardAuthorization cardAuth = new BisCardAuthorization
                 {
-                    PersonId = person.GetPersonId(),
-                    PersonFirstName=person.FIRSTNAME,
-                    PersonLastName = person.LASTNAME,
+                    Person = person
                 };
 
                 // Check auth per person

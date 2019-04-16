@@ -119,15 +119,15 @@ namespace BisAceAPIDataAccess
         /// Get all active cards identifiers.
         /// </summary>
         /// <param name="ace">BIS Access engine.</param>
-        /// <returns>All Card IDs (Tuple.Item1) and related Person IDs (Tuple.Item2).</returns>
-        public List<Tuple<string, string>> GetAllCardIds(AccessEngine ace)
+        /// <returns>All Card IDs.</returns>
+        public List<string> GetAllCardIds(AccessEngine ace)
         {
-            List<Tuple<string, string>> allCardIds = new List<Tuple<string, string>>();
+            List<string> allCardIds = new List<string>();
             // Create query
             var ace_Query = new ACEQuery(ace);
             string strColumn = "cardid,persid";
             string strTable = "bsuser.cards";
-            string strWhere = "status>0";
+            string strWhere = "status > 0";
 
             API_RETURN_CODES_CS result = ace_Query.Select(strColumn, strTable, strWhere);
 
@@ -139,9 +139,12 @@ namespace BisAceAPIDataAccess
                 while (ace_Query.FetchNextRow())
                 {
                     result = ace_Query.GetRowData("cardid", cardid);
-                    result = ace_Query.GetRowData("persid", personid);
+                    //result = ace_Query.GetRowData("persid", personid);
 
-                    allCardIds.Add(new Tuple<string, string>(cardid.value, personid.value));
+                    if (result == API_RETURN_CODES_CS.API_SUCCESS_CS)
+                    {
+                        allCardIds.Add(cardid.value);
+                    }
                 }
             }
             return allCardIds;

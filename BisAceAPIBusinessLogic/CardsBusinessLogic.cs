@@ -50,7 +50,7 @@ namespace BisAceAPIBusinessLogic
             if (string.IsNullOrEmpty(cardNumber))
             {
                 result.ErrorType = BisErrorType.InvalidInput;
-                result.ErrorMessage = BisConstants.RESPONSE_REQUEST_BODY_MUST_BE_PROVIDED;
+                result.ErrorMessage = BisConstants.RESPONSE_CARD_NUMBER_MUST_BE_PROVIDED;
                 return result;
             }
 
@@ -140,7 +140,7 @@ namespace BisAceAPIBusinessLogic
             if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
             {
                 result.ErrorType = BisErrorType.OperationFailed;
-                result.ErrorMessage = BisConstants.RESPONSE_UNABLE_TO_CREATE_CARD;
+                result.ErrorMessage = BisConstants.RESPONSE_UNABLE_TO_CREATE_OR_UPDATE_CARD;
                 return result;
             }
 
@@ -149,13 +149,13 @@ namespace BisAceAPIBusinessLogic
             apiCallResult = person.Get(card.PersonId);
             if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
             {
-                person.Add();
+                apiCallResult = person.Add();
             }
 
             if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
             {
-                result.ErrorType = BisErrorType.InvalidInput;
-                result.ErrorMessage = BisConstants.RESPONSE_BIS_API_CALL_FAILED;
+                result.ErrorType = BisErrorType.OperationFailed;
+                result.ErrorMessage = BisConstants.RESPONSE_LOAD_OR_SAVE_PERSON_FAILED;
                 return result;
             }
 
@@ -187,8 +187,8 @@ namespace BisAceAPIBusinessLogic
 
             if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
             {
-                result.ErrorType = BisErrorType.InvalidInput;
-                result.ErrorMessage = BisConstants.RESPONSE_BIS_API_CALL_FAILED;
+                result.ErrorType = BisErrorType.OperationFailed;
+                result.ErrorMessage = BisConstants.RESPONSE_UNABLE_TO_CREATE_OR_UPDATE_CARD;
                 return result;
             }
 
@@ -231,7 +231,7 @@ namespace BisAceAPIBusinessLogic
             var ace_Query = new ACEQuery(ace);
             string strColumn = "cardid";
             string strTable = "bsuser.cards";
-            string strWhere = String.Format("cardno='{0}' and status>0", cardNumber);
+            string strWhere = String.Format("cardno='{0}' and status > 0", cardNumber);
 
             API_RETURN_CODES_CS result = ace_Query.Select(strColumn, strTable, strWhere);
 
