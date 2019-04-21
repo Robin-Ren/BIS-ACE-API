@@ -2,6 +2,7 @@
 using System.Web.Http;
 using System.Web.Http.Description;
 using BisAceAPIBusinessLogicInterface;
+using BisAceAPILogging;
 using BisAceAPIModels;
 using BisAceAPIModels.Models;
 using BisAceAPIModels.Models.Enums;
@@ -24,10 +25,12 @@ namespace BisAceAPI.Controllers
         /// Constructor
         /// </summary>
         public AccessAuthorizationsController(Func<IBisResult> resultFactory,
-            IAuthorizationsBusinessLogic authsBL)
+            IAuthorizationsBusinessLogic authsBL,
+            ILog logger)
         {
             _resultFactory = resultFactory;
             _authsBL =authsBL;
+            _logger = logger;
         }
         #endregion
 
@@ -55,6 +58,8 @@ namespace BisAceAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.ErrorException("GetAuthorizations failed.",
+                         ex);
                 return InternalServerError(ex);
             }
         }

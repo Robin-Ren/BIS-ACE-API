@@ -65,6 +65,7 @@ namespace BisAceAPI.Controllers
             {
                 result.ErrorType = BisErrorType.Unauthorised;
                 result.ErrorMessage = BisConstants.RESPONSE_LOGIN_ERROR;
+                _logger.Error(result.ErrorMessage);
                 return result;
             }
 

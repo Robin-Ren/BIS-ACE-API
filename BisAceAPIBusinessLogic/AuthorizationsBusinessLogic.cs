@@ -74,6 +74,9 @@ namespace BisAceAPIBusinessLogic
                 result = _personsBL.GetPerson(ace, aceCard.PERSID);
                 if (!result.IsSucceeded)
                 {
+                    result.ErrorType = BisErrorType.OperationFailed;
+                    result.ErrorMessage = BisConstants.RESPONSE_LOAD_OR_SAVE_PERSON_FAILED;
+                    _logger.Error(result.ErrorMessage);
                     return result;
                 }
 
@@ -81,7 +84,8 @@ namespace BisAceAPIBusinessLogic
 
                 BisCardAuthorization cardAuth = new BisCardAuthorization
                 {
-                    Person = person
+                    CardStartValidDate = person.AUTHFROM.ToString(),
+                    CardExpiryDate = person.AUTHUNTIL.ToString()
                 };
 
                 // Check auth per person

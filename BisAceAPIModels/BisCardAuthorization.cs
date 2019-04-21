@@ -13,7 +13,6 @@ namespace BisAceAPIModels
         public string CardNumber { get; set; }
         public string CardStartValidDate { get; set; }
         public string CardExpiryDate { get; set; }
-        public ACEPersons Person { get; set; }
         public List<ACEAuthorizations> Authorizations { get; set; }
     }
 }

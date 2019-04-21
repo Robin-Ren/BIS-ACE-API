@@ -60,6 +60,7 @@ namespace BisAceAPIModels
         public static readonly string RESPONSE_LOGIN_ERROR = "Failed to login.";
         public static readonly string RESPONSE_CARD_NOT_FOUND = "Card can not be found.";
         public static readonly string RESPONSE_PERSON_NOT_FOUND = "Person can not be found.";
+        public static readonly string RESPONSE_SET_PERSON_AUTHORIZATIONS_FAILED = "Failed to Set Authorizations to Person.";
         #endregion
     }
 }

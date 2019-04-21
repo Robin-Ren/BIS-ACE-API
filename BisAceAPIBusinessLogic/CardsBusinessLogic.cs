@@ -51,6 +51,7 @@ namespace BisAceAPIBusinessLogic
             {
                 result.ErrorType = BisErrorType.InvalidInput;
                 result.ErrorMessage = BisConstants.RESPONSE_CARD_NUMBER_MUST_BE_PROVIDED;
+                _logger.Error(result.ErrorMessage);
                 return result;
             }
 
@@ -64,6 +65,7 @@ namespace BisAceAPIBusinessLogic
             {
                 result.ErrorType = BisErrorType.NotFound;
                 result.ErrorMessage = BisConstants.RESPONSE_CARD_NOT_FOUND;
+                _logger.Error(result.ErrorMessage);
             }
             else
             {
@@ -86,6 +88,7 @@ namespace BisAceAPIBusinessLogic
             {
                 result.ErrorType = BisErrorType.NotFound;
                 result.ErrorMessage = BisConstants.RESPONSE_CARD_NOT_FOUND;
+                _logger.Error(result.ErrorMessage);
                 return result;
             }
 
@@ -93,6 +96,9 @@ namespace BisAceAPIBusinessLogic
 
             if (!result.IsSucceeded)
             {
+                result.ErrorType = BisErrorType.OperationFailed;
+                result.ErrorMessage = BisConstants.RESPONSE_LOAD_OR_SAVE_PERSON_FAILED;
+                _logger.Error(result.ErrorMessage);
                 return result;
             }
 
@@ -126,6 +132,7 @@ namespace BisAceAPIBusinessLogic
             {
                 result.ErrorType = BisErrorType.InvalidInput;
                 result.ErrorMessage = BisConstants.RESPONSE_REQUEST_BODY_MUST_BE_PROVIDED;
+                _logger.Error(result.ErrorMessage + " [CARD]");
                 return result;
             }
 
@@ -141,6 +148,7 @@ namespace BisAceAPIBusinessLogic
             {
                 result.ErrorType = BisErrorType.OperationFailed;
                 result.ErrorMessage = BisConstants.RESPONSE_UNABLE_TO_CREATE_OR_UPDATE_CARD;
+                _logger.Error(result.ErrorMessage);
                 return result;
             }
 
@@ -156,6 +164,7 @@ namespace BisAceAPIBusinessLogic
             {
                 result.ErrorType = BisErrorType.OperationFailed;
                 result.ErrorMessage = BisConstants.RESPONSE_LOAD_OR_SAVE_PERSON_FAILED;
+                _logger.Error(result.ErrorMessage);
                 return result;
             }
 
@@ -177,6 +186,7 @@ namespace BisAceAPIBusinessLogic
             {
                 result.ErrorType = BisErrorType.InvalidInput;
                 result.ErrorMessage = BisConstants.RESPONSE_REQUEST_BODY_MUST_BE_PROVIDED;
+                _logger.Error(result.ErrorMessage + " [CARD]");
                 return result;
             }
 
@@ -189,6 +199,7 @@ namespace BisAceAPIBusinessLogic
             {
                 result.ErrorType = BisErrorType.OperationFailed;
                 result.ErrorMessage = BisConstants.RESPONSE_UNABLE_TO_CREATE_OR_UPDATE_CARD;
+                _logger.Error(result.ErrorMessage);
                 return result;
             }
 
@@ -196,6 +207,9 @@ namespace BisAceAPIBusinessLogic
             result = _personsBL.GetPerson(ace, aceCard.PERSID);
             if (!result.IsSucceeded)
             {
+                result.ErrorType = BisErrorType.OperationFailed;
+                result.ErrorMessage = BisConstants.RESPONSE_LOAD_OR_SAVE_PERSON_FAILED;
+                _logger.Error(result.ErrorMessage);
                 return result;
             }
             var person = result.GetResource<ACEPersons>();

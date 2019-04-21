@@ -6,6 +6,7 @@ using BisAceAPILogging;
 using BisAceAPIModels;
 using BisAceAPIModels.Models;
 using BisAceAPIModels.Models.Enums;
+using Newtonsoft.Json;
 
 namespace BisAceAPI.Controllers
 {
@@ -51,15 +52,13 @@ namespace BisAceAPI.Controllers
                 {
                     return CreateResponseFromResult(result);
                 }
-
+                var ace = result.GetResource<AccessEngine>();
                 // Validate if the card exists by card No.
                 result = _cardsBL.ValidateCardExist(ace, cardNumber);
                 if (!result.IsSucceeded)
                 {
                     return CreateResponseFromResult(result);
                 }
-
-                var ace = result.GetResource<AccessEngine>();
 
                 ACECards aceCard = result.GetResource<ACECards>();
                 // Get card info
@@ -69,6 +68,8 @@ namespace BisAceAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.ErrorException(string.Format("GetCard/{0} failed.", cardNumber),
+                    ex);
                 return InternalServerError(ex);
             }
         }
@@ -98,6 +99,8 @@ namespace BisAceAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.ErrorException(string.Format("AddCard failed. Input request body: {0}", JsonConvert.SerializeObject(card)),
+                       ex);
                 return InternalServerError(ex);
             }
         }
@@ -137,6 +140,8 @@ namespace BisAceAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.ErrorException(string.Format("UpdateCard failed. Input request body: {0}", JsonConvert.SerializeObject(card)),
+                      ex);
                 return InternalServerError(ex);
             }
         }
@@ -191,6 +196,8 @@ namespace BisAceAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.ErrorException(string.Format("DeleteCard/{0}", cardNumber),
+                         ex);
                 return InternalServerError(ex);
             }
         }

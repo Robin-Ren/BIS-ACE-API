@@ -50,6 +50,7 @@ namespace BisAceAPIBusinessLogic
             {
                 result.ErrorType = BisErrorType.InvalidInput;
                 result.ErrorMessage = BisConstants.RESPONSE_REQUEST_BODY_MUST_BE_PROVIDED;
+                _logger.Error(result.ErrorMessage + " [PersonId]");
                 return result;
             }
 
@@ -60,6 +61,7 @@ namespace BisAceAPIBusinessLogic
             {
                 result.ErrorType = BisErrorType.NotFound;
                 result.ErrorMessage = BisConstants.RESPONSE_PERSON_NOT_FOUND;
+                _logger.Error(result.ErrorMessage);
                 return result;
             }
 
@@ -85,6 +87,7 @@ namespace BisAceAPIBusinessLogic
             {
                 result.ErrorType = BisErrorType.OperationFailed;
                 result.ErrorMessage = BisConstants.RESPONSE_LOAD_OR_SAVE_PERSON_FAILED;
+                _logger.Error(result.ErrorMessage);
                 return result;
             }
 
@@ -112,7 +115,8 @@ namespace BisAceAPIBusinessLogic
                 if (API_RETURN_CODES_CS.API_SUCCESS_CS != apiCallResult)
                 {
                     result.ErrorType = BisErrorType.OperationFailed;
-                    result.ErrorMessage = BisConstants.RESPONSE_BIS_API_CALL_FAILED;
+                    result.ErrorMessage = BisConstants.RESPONSE_SET_PERSON_AUTHORIZATIONS_FAILED;
+                    _logger.Error(result.ErrorMessage);
                     return result;
                 }
             }
