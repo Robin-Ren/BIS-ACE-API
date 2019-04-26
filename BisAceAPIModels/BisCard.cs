@@ -17,6 +17,6 @@ namespace BisAceAPIModels.Models
         public string CardStartValidDate { get; set; }
         public string CardExpiryDate { get; set; }
         public List<string> AuthorizationIds { get; set; }
-        public string AuthProfileId { get; set; }
+        //public string AuthProfileId { get; set; }
     }
 }

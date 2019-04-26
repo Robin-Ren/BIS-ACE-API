@@ -84,6 +84,7 @@ namespace BisAceAPIBusinessLogic
 
                 BisCardAuthorization cardAuth = new BisCardAuthorization
                 {
+                    CardNumber = aceCard.CARDNO,
                     CardStartValidDate = person.AUTHFROM.ToString(),
                     CardExpiryDate = person.AUTHUNTIL.ToString()
                 };

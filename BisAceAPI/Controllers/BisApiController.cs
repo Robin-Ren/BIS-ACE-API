@@ -81,10 +81,10 @@ namespace BisAceAPI.Controllers
         protected IHttpActionResult Create4xxErrorResponse(IBisResult errorResult)
         {
             // If the error is not found, return a 404
-            if (errorResult.ErrorType == BisErrorType.NotFound)
-            {
-                return NotFound();
-            }
+            //if (errorResult.ErrorType == BisErrorType.NotFound)
+            //{
+            //    return NotFound();
+            //}
 
             // Otherwise, create a new response body and return a 400
             return new BadRequestWithErrorResponseModelResult(errorResult.CreateErrorResponseModel(), Request);

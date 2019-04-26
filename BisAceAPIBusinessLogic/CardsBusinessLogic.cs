@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using BisAceAPIBase;
 using BisAceAPIBusinessLogicInterface;
 using BisAceAPILogging;
@@ -113,6 +114,11 @@ namespace BisAceAPIBusinessLogic
 
             card.CardStartValidDate = person.AUTHFROM.ToString();
             card.CardExpiryDate = person.AUTHUNTIL.ToString();
+            if (lstAuthorization != null && lstAuthorization.Count > 0)
+            {
+                card.AuthorizationIds = new List<string>();
+                card.AuthorizationIds.AddRange(lstAuthorization.Select(x => x.GetAuthorizationId()));
+            }
 
             result.SetResource(card);
 
