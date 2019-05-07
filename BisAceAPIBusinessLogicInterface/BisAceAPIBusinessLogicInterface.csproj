@@ -48,7 +48,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="W32_ACEInterface">
-      <HintPath>..\..\..\BISAPI\BISAPI\ASSEM\W32_ACEInterface.dll</HintPath>
+      <HintPath>..\BisAceAPI\ASSEM\W32_ACEInterface.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
