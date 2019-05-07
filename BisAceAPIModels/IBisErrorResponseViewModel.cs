@@ -5,6 +5,11 @@ namespace BisAceAPIModels.Models
     public interface IBisErrorResponseViewModel
     {
         /// <summary>
+        /// Gets a flag indicating whether the result is valid or not.
+        /// </summary>
+        bool IsSucceeded { get; }
+
+        /// <summary>
         /// A code indicating the type of error which occurred.
         /// </summary>
         /// <remarks>This is in lower case to match up with the object format returned from the Auth

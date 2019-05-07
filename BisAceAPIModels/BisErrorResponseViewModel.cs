@@ -9,6 +9,17 @@ namespace BisAceAPIModels.Models
     public class BisErrorResponseViewModel : IBisErrorResponseViewModel
     {
         /// <summary>
+        /// Gets a flag indicating whether the result is valid or not.
+        /// </summary>
+        public bool IsSucceeded
+        {
+            get
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
         /// A code indicating the type of error which occurred.
         /// </summary>
         /// <remarks>

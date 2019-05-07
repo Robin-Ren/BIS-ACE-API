@@ -68,7 +68,7 @@ namespace BisAceAPI.Controllers
             }
             catch (Exception ex)
             {
-                _logger.ErrorException(string.Format("GetCard/{0} failed.", cardNumber),
+                _logger.ErrorException(string.Format(@"GetCard/{0} failed.", cardNumber),
                     ex);
                 return InternalServerError(ex);
             }
@@ -196,7 +196,7 @@ namespace BisAceAPI.Controllers
             }
             catch (Exception ex)
             {
-                _logger.ErrorException(string.Format("DeleteCard/{0}", cardNumber),
+                _logger.ErrorException(string.Format(@"DeleteCard/{0}", cardNumber),
                          ex);
                 return InternalServerError(ex);
             }
